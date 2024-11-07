@@ -1,5 +1,5 @@
 import './App.css'
-import Artifact from './artifact-component'
+import Artifact from './artifacts-lab'
 
 function App() {
   return (
