@@ -33,12 +33,58 @@ This platform is designed for educators and learners who want to:
 - Topics-based organization structure
 - Performance optimizations for large component sets
 - Educational content management tools
+- 
 
-## Prerequisites
+#### Prerequisites
 
-- Node.js 20 or later (install via Homebrew on macOS)
-- npm (comes with Node.js)
-- Git for version control
+### Installing Node.js 20
+
+#### On macOS (using Homebrew):
+
+```bash
+# Install Homebrew if you haven't already
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Node.js 20
+brew install node@20
+
+# Link node@20
+brew link node@20
+
+# Verify installation
+node --version  # Should show v20.x.x
+```
+
+#### On Windows:
+
+1. Download the Node.js 20 LTS installer from [nodejs.org](https://nodejs.org)
+2. Run the installer and follow the installation wizard
+3. Open Command Prompt and verify:
+   
+   ```bash
+   node --version
+   ```
+
+#### On Linux (Ubuntu/Debian):
+
+```bash
+# Add NodeSource repository
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
+# Install Node.js
+sudo apt-get install -y nodejs
+
+# Verify installation
+node --version
+```
+
+### Other Requirements
+
+* npm (automatically installed with Node.js)
+* Git for version control
+  - macOS: `brew install git`
+  - Windows: Download from [git-scm.com](https://git-scm.com)
+  - Linux: `sudo apt-get install git`
 
 ## Getting Started
 
@@ -49,15 +95,17 @@ This platform is designed for educators and learners who want to:
    cd artifacts-lab
    ```
 
-2. Install dependencies:
+[Rest of the README remains the same...]
+
+1. Install dependencies:
    
    ```bash
    npm install
    ```
 
-3. 
+2. 
 
-4. Start the development server:
+3. Start the development server:
    
    ```bash
    npm run dev
