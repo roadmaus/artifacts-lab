@@ -2,7 +2,7 @@
 
 ## Summary
 
-Artifacts Lab is an enhanced fork of the Claude Artifact Runner, transformed into a specialized learning platform that enables managing and rendering hundreds of components within a unified knowledge base. The project extends the original runner's capabilities to support educational use cases and bulk component management.
+Artifacts Lab is a fork of the Claude Artifact Runner, transformed into a specialized learning platform that enables managing and rendering hundreds of components within a unified knowledge base. The project extends the original runner's capabilities to support educational use cases and bulk component management.
 
 ## Overview
 
@@ -12,6 +12,7 @@ This platform is designed for educators and learners who want to:
 2. Create structured learning paths through component-based content
 3. Efficiently render and serve multiple components simultaneously
 4. Build and maintain educational knowledge bases
+5. visual learners
 
 ## What's Included
 
