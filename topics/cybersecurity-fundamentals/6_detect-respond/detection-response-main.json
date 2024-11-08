@@ -1,0 +1,120 @@
+{
+  "id": "detection-and-response",
+  "title": "Sound the Alarm: Detection and Response",
+  "description": "Master the complete incident response lifecycle, from initial detection through containment and recovery. Learn to effectively use essential security tools including SIEM platforms, packet analyzers, and IDS/NIDS systems while developing practical incident response skills through hands-on experience with real-world scenarios and industry-standard tools.",
+  "icon": "Bell",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "incident-response-lifecycle",
+      "title": "Incident Response Lifecycle",
+      "description": "Understand and implement the complete incident response process, from preparation through lessons learned, including creating effective playbooks and establishing clear roles and responsibilities.",
+      "icon": "Repeat"
+    },
+    {
+      "id": "network-monitoring-tools",
+      "title": "Network Monitoring and Analysis",
+      "description": "Master essential network monitoring tools and techniques, including packet analysis, IDS/NIDS configuration, and traffic pattern analysis for effective threat detection.",
+      "icon": "Network"
+    },
+    {
+      "id": "security-investigation-tools",
+      "title": "Security Investigation and SIEM",
+      "description": "Learn to leverage SIEM platforms and forensic tools for effective security investigations, including log analysis, artifact examination, and threat hunting.",
+      "icon": "Search"
+    },
+    {
+      "id": "incident-management",
+      "title": "Response and Recovery Management",
+      "description": "Develop practical skills in incident containment, eradication, and system recovery while maintaining business continuity and documenting lessons learned.",
+      "icon": "ShieldCheck"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Detection and Response Fundamentals Assessment",
+    "description": "Validate your understanding of incident response principles, tools, and techniques",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which phase of the incident response lifecycle focuses on preventing the incident from spreading while preserving evidence?",
+        "options": [
+          "Containment",
+          "Analysis",
+          "Detection",
+          "Recovery"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The containment phase focuses on preventing the incident from spreading further while ensuring evidence is preserved for investigation. This involves isolating affected systems and implementing immediate mitigation measures."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of a SIEM platform in incident response?",
+        "options": [
+          "Network packet capture",
+          "Malware removal",
+          "Log aggregation and correlation",
+          "System backup"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SIEM platforms primarily focus on collecting, aggregating, and correlating log data from various sources to detect and investigate security incidents across the organization."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which tool is best suited for detailed analysis of network traffic content and protocol behavior?",
+        "options": [
+          "SIEM",
+          "Wireshark",
+          "Antivirus",
+          "Firewall"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Wireshark is a packet analyzer that allows detailed inspection of network traffic content and protocol behavior, making it ideal for investigating network-based incidents."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "During incident response, what is the purpose of the lessons learned phase?",
+        "options": [
+          "To assign blame for the incident",
+          "To improve future response capabilities",
+          "To recover damaged systems",
+          "To contain the threat"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lessons learned phase focuses on analyzing the incident response process to identify areas for improvement and update procedures, ultimately enhancing the organization's future incident response capabilities."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "What is the key difference between IDS and IPS systems?",
+        "options": [
+          "IDS only detects threats while IPS can prevent them",
+          "IPS is older technology than IDS",
+          "IDS works with networks, IPS works with endpoints",
+          "IPS requires more maintenance than IDS"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main difference is that an Intrusion Detection System (IDS) only detects and alerts on suspicious activity, while an Intrusion Prevention System (IPS) can actively block or prevent detected threats."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": [
+      "incident response",
+      "network monitoring",
+      "security tools",
+      "SIEM",
+      "forensics",
+      "threat detection",
+      "incident management"
+    ]
+  }
+}

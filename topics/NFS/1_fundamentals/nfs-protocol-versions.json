@@ -1,0 +1,115 @@
+{
+  "id": "nfs-protocol-versions",
+  "parentTopic": "linux-nfs-fundamentals",
+  "title": "NFS Protocol Versions and Features",
+  "description": "A comprehensive exploration of NFS protocol versions 2, 3, and 4, including their features, capabilities, and architectural differences. Understanding these versions is crucial for implementing effective and secure network file sharing solutions.",
+  "icon": "Versions",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "3 hours",
+  "content": [
+    {
+      "title": "NFS Version 2 Fundamentals",
+      "icon": "History",
+      "sections": [
+        {
+          "subtitle": "Core Features and Limitations",
+          "description": "Understanding the basic architecture and limitations of NFS Version 2, which laid the foundation for network file sharing.",
+          "points": [
+            "File Size Limitations: NFS v2 clients can only access the lowest 2GB of a file due to 32-bit offset limitations. This constraint makes v2 unsuitable for modern large file operations. For example, trying to write beyond the 2GB limit results in an error, even if the server's filesystem supports larger files.",
+            "Write Operations: V2 implements a strict synchronous write model where servers must save all data to permanent storage before replying to clients. While this ensures data safety, it significantly impacts performance by forcing small, serialized write operations. Every write operation (maximum 8KB) requires a complete disk write cycle before proceeding.",
+            "Security Model: V2 relies on client-side interpretation of file permissions. Clients determine access rights based on file mode bits, which limits the implementation of advanced security features like Access Control Lists (ACLs). This means servers cannot enforce complex permission schemes beyond basic Unix permissions.",
+            "Protocol Simplicity: The stateless design of NFSv2 makes it highly resilient to server crashes but limits its functionality. Recovery after a server crash is straightforward as no state information needs to be restored, though this comes at the cost of reduced features."
+          ],
+          "codeExample": "nfs-v2-mount-example-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "NFS Version 3 Improvements",
+      "icon": "ArrowUp",
+      "sections": [
+        {
+          "subtitle": "Enhanced Features and Capabilities",
+          "description": "Exploring the significant improvements and new features introduced in NFS Version 3 that address many V2 limitations.",
+          "points": [
+            "64-bit File Support: V3 introduces support for files larger than 2GB through 64-bit offset capabilities. This enables handling of large files common in modern applications, such as virtual machine images, large databases, and media files. The actual maximum file size depends on the server's filesystem capabilities.",
+            "Safe Asynchronous Writes: V3 implements a sophisticated write system allowing both synchronous and asynchronous operations. Clients can request UNSTABLE writes for better performance, with the server gathering multiple small writes into efficient disk operations. The COMMIT operation ensures data durability when needed, providing a balance between performance and data safety.",
+            "Weak Cache Consistency: Introduces enhanced cache management through attribute information in read/write replies. This helps clients detect file modifications more quickly by other clients. For example, when a client receives a write reply, it includes updated file attributes that can be compared with cached values to detect changes.",
+            "Enhanced Error Reporting: V3 provides more detailed error reporting and better handling of server-side errors. This improves diagnostic capabilities and allows for more sophisticated error recovery strategies in client applications."
+          ],
+          "codeExample": "nfs-v3-features-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "NFS Version 4 Architecture",
+      "icon": "Network",
+      "sections": [
+        {
+          "subtitle": "Modern Features and Protocols",
+          "description": "Examining the major architectural changes and advanced features introduced in NFS Version 4.",
+          "points": [
+            "Stateful Operation: Unlike v2/v3, NFSv4 maintains state information about file operations. This enables features like delegations, where servers can grant clients exclusive access to files, dramatically improving performance for unshared files. The lease-based system ensures proper state management even during network interruptions.",
+            "Integrated Services: V4 consolidates multiple protocols (mount, lock, ACL) into a single protocol specification. This simplifies firewall configuration and improves security by requiring only a single port (2049) for all NFS operations. For example, file locking no longer requires separate RPC calls to multiple services.",
+            "Enhanced Security: Mandates implementation of sophisticated security mechanisms including Kerberos 5 and SPKM3. Supports UTF-8 encoding for filenames and attributes, enabling true internationalization. The security framework is extensible, allowing addition of new security mechanisms without protocol changes.",
+            "Compound Operations: Introduces the ability to combine multiple operations into single RPC requests. For example, a file open operation can include lookup, access check, and read operations in a single network round trip, significantly improving performance over high-latency networks."
+          ],
+          "codeExample": "nfs-v4-architecture-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "NFS Protocol Versions Assessment",
+    "description": "Test your understanding of NFS protocol versions, their features, and architectural differences",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What mechanism does NFS Version 3 use to ensure data durability with asynchronous writes?",
+        "options": [
+          "The COMMIT operation",
+          "Automatic file locking",
+          "Synchronous disk writes",
+          "Cache invalidation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "NFS Version 3 uses the COMMIT operation to ensure that data written asynchronously (UNSTABLE writes) is permanently stored on disk, providing a mechanism for applications to guarantee data durability when needed."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "How does NFS Version 4's stateful design improve performance?",
+        "options": [
+          "By requiring fewer network connections",
+          "Through file delegation to clients",
+          "By increasing the maximum file size",
+          "Through automatic compression"
+        ],
+        "correctAnswer": 1,
+        "explanation": "NFSv4's stateful design allows servers to delegate file access to clients, enabling them to cache and modify files locally without constant server communication, significantly improving performance for unshared files."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which NFS version first introduced the ability to combine multiple operations into a single RPC request?",
+        "options": [
+          "Version 2",
+          "Version 3",
+          "Version 4",
+          "All versions support this"
+        ],
+        "correctAnswer": 2,
+        "explanation": "NFS Version 4 introduced compound operations, allowing multiple operations to be combined into a single RPC request, reducing network round trips and improving performance."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-06",
+    "language": "English",
+    "tags": ["nfs", "protocols", "network file system", "file sharing", "linux"]
+  }
+}

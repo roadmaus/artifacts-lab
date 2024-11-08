@@ -1,0 +1,124 @@
+{
+  "id": "wireless-attack-vectors",
+  "parentTopic": "network-security-testing",
+  "title": "Wireless Attack Vectors",
+  "description": "Comprehensive exploration of common wireless network vulnerabilities, attack methodologies, and defense strategies. Understand how attacks work to better defend against them and conduct thorough security assessments.",
+  "icon": "Shield",
+  "difficulty": "Beginner",
+  "estimatedDuration": "5 hours",
+  "content": [
+    {
+      "title": "Passive Attack Methodologies",
+      "icon": "Eye",
+      "sections": [
+        {
+          "subtitle": "Traffic Analysis and Monitoring",
+          "description": "Understanding passive attack techniques that don't require direct network interaction.",
+          "points": [
+            "Network Reconnaissance Techniques: Passive reconnaissance involves collecting network information without direct interaction. Key components include: Beacon frame analysis revealing network configuration and security settings, Client probe request monitoring to identify potential target devices, Traffic pattern analysis to determine network usage and behavior, Signal strength mapping for physical location assessment. Example: Using signal strength measurements from multiple locations to triangulate AP physical location.",
+
+            "Initialization Vector Collection: In WEP-protected networks, passive IV collection is crucial for cryptographic analysis. Important aspects include: Understanding IV generation patterns and weaknesses, Optimal capture positions for maximum IV collection, Statistical analysis of IV patterns for identifying weak implementations, Relationship between IV quantity and key recovery probability. Example: Collecting 40,000-85,000 unique IVs typically provides enough data for successful WEP key recovery.",
+
+            "Client Behavior Analysis: Monitoring client behavior provides insights into network vulnerabilities. Key aspects include: Analyzing client connection patterns and preferences, Identifying cached network lists through probe requests, Detecting client susceptibility to rogue AP attacks, Mapping client-AP relationships for targeted testing. Example: Using collected probe requests to identify enterprise devices connecting to home networks, indicating potential security policy violations."
+          ],
+          "codeExample": "passive-monitoring-dashboard-visual.tsx"
+        },
+        {
+          "subtitle": "Encryption Analysis",
+          "description": "Methods for analyzing wireless encryption implementations and identifying vulnerabilities.",
+          "points": [
+            "WEP Encryption Analysis: Despite obsolescence, understanding WEP helps grasp encryption vulnerabilities. Key concepts include: RC4 stream cipher weaknesses, IV reuse vulnerabilities and statistical attacks, Known plaintext attack methodologies, Key scheduling algorithm flaws. Example: Statistical analysis showing how WEP's IV usage makes it vulnerable to related-key attacks.",
+
+            "WPA/WPA2 Analysis: Modern encryption requires different analysis approaches. Important aspects include: Handshake capture and analysis techniques, Password complexity assessment methods, Pre-shared key implementation analysis, Enterprise authentication framework evaluation. Example: Analyzing captured WPA handshakes to determine feasibility of offline dictionary attacks.",
+
+            "Encryption Implementation Assessment: Beyond theoretical vulnerabilities, implementation flaws create additional attack vectors. Key areas include: Key management procedure analysis, Cipher suite negotiation vulnerabilities, Downgrade attack possibilities, Replay protection implementation verification. Example: Identifying systems vulnerable to downgrade attacks forcing use of weaker encryption."
+          ],
+          "codeExample": "encryption-analysis-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Active Attack Methodologies",
+      "icon": "Zap",
+      "sections": [
+        {
+          "subtitle": "Packet Injection Techniques",
+          "description": "Understanding active attack methodologies involving packet injection.",
+          "points": [
+            "ARP Replay Attacks: ARP replay attacks can rapidly generate new IVs in WEP networks. Key concepts include: ARP packet identification and capture, Replay timing and rate control, Response monitoring and verification, Impact of distance and signal strength. Example: Using targeted ARP replay with rate limiting (50 packets/second) to maintain stable packet capture while avoiding network disruption.",
+
+            "Deauthentication Techniques: Deauthentication can be used to force client reconnections. Important aspects include: Frame crafting requirements, Targeted vs. broadcast deauthentication, Impact on different client types, Detection and prevention mechanisms. Example: Using selective deauthentication to capture specific client handshakes while minimizing network disruption.",
+
+            "Authentication Attacks: Various authentication mechanisms present different attack vectors. Key areas include: Fake authentication techniques for testing AP responses, MAC spoofing methods and effectiveness, Shared key authentication analysis, Enterprise authentication framework probing. Example: Testing AP security policies using fake authentication with spoofed MAC addresses."
+          ],
+          "codeExample": "active-attack-techniques-visual.tsx"
+        },
+        {
+          "subtitle": "Defense Strategies",
+          "description": "Understanding common defense mechanisms and their effectiveness.",
+          "points": [
+            "Detection and Prevention: Modern networks implement various defense mechanisms. Key aspects include: Wireless IDS/IPS capabilities and limitations, Rogue AP detection methods, Client blacklisting implementations, Rate limiting and abuse prevention. Example: Implementing rate limiting to detect and prevent automated attack tools.",
+
+            "Authentication Hardening: Strong authentication prevents many attack types. Important elements include: MAC filtering limitations and enhancements, Enterprise authentication best practices, Password and pre-shared key policies, Certificate management strategies. Example: Using client certificates with EAP-TLS to prevent unauthorized network access.",
+
+            "Encryption Best Practices: Proper encryption implementation is crucial for security. Key considerations include: Protocol selection and configuration, Key management procedures, Cipher suite selection criteria, Regular security assessment requirements. Example: Implementing WPA3 with SAE to prevent password-based attacks."
+          ],
+          "codeExample": "defense-mechanisms-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Wireless Attack Vectors Assessment",
+    "description": "Test your understanding of wireless network vulnerabilities and attack methodologies",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Why is ARP replay rate limiting important during active testing?",
+        "options": [
+          "To avoid disrupting network operations",
+          "To improve packet capture speed",
+          "To reduce power consumption",
+          "To prevent device detection"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Rate limiting during ARP replay attacks is crucial to maintain stable packet capture while preventing network disruption that could alert administrators or impact legitimate users."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What makes passive IV collection more challenging than active collection?",
+        "options": [
+          "It requires more storage space",
+          "It depends entirely on natural network traffic",
+          "It needs special hardware",
+          "It uses more bandwidth"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Passive IV collection relies solely on capturing natural network traffic, making it slower than active methods that can generate traffic through injection techniques."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which defense mechanism best prevents unauthorized network access?",
+        "options": [
+          "MAC filtering",
+          "EAP-TLS with client certificates",
+          "Hidden SSIDs",
+          "Rate limiting"
+        ],
+        "correctAnswer": 1,
+        "explanation": "EAP-TLS with client certificates provides strong authentication that cannot be easily bypassed, unlike MAC filtering or SSID hiding which can be circumvented."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-07",
+    "language": "English",
+    "tags": ["wireless security", "attack vectors", "network vulnerabilities", "encryption", "authentication", "defense strategies"]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "assets-threats-vulnerabilities",
+  "title": "Assets, Threats, and Vulnerabilities",
+  "description": "Master the critical aspects of organizational security by learning to identify and protect assets, analyze threats, and manage vulnerabilities. This course combines theoretical knowledge with practical skills to help you think like both a defender and an attacker, enabling more effective security strategies.",
+  "icon": "Shield",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "asset-classification",
+      "title": "Asset Classification and Protection",
+      "description": "Learn to identify, classify, and protect organizational assets through systematic methodologies and controls",
+      "icon": "Database"
+    },
+    {
+      "id": "threat-analysis",
+      "title": "Threat Analysis and Modeling",
+      "description": "Master the identification and analysis of security threats using structured frameworks and methodologies",
+      "icon": "Target"
+    },
+    {
+      "id": "vulnerability-management",
+      "title": "Vulnerability Assessment and Management",
+      "description": "Develop skills in identifying, analyzing, and remediating security vulnerabilities",
+      "icon": "AlertTriangle"
+    },
+    {
+      "id": "defense-in-depth",
+      "title": "Defense in Depth Strategies",
+      "description": "Implement comprehensive security through layered defensive approaches and controls",
+      "icon": "Layers"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Assets, Threats, and Vulnerabilities Assessment",
+    "description": "Validate your understanding of core concepts in asset protection, threat analysis, and vulnerability management",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which factor is most critical when determining an asset's value to an organization?",
+        "options": [
+          "Purchase cost",
+          "Impact on business operations",
+          "Physical size",
+          "Age of the asset"
+        ],
+        "correctAnswer": 1,
+        "explanation": "While all factors may be relevant, the impact on business operations is the most critical factor as it directly relates to the organization's ability to function and achieve its objectives."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of threat modeling?",
+        "options": [
+          "To identify system vulnerabilities",
+          "To calculate security budgets",
+          "To understand potential attack scenarios",
+          "To test security controls"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Threat modeling is primarily used to understand and anticipate potential attack scenarios, helping organizations prepare appropriate defenses before attacks occur."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "A vulnerability scanner reports a 'high' severity finding. What should be the first step?",
+        "options": [
+          "Immediately patch the system",
+          "Verify the finding",
+          "Shut down the affected system",
+          "Report to management"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Always verify findings first to confirm they are not false positives and understand their context before taking potentially disruptive action."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "Which defense in depth layer typically provides the first line of protection?",
+        "options": [
+          "Network security",
+          "Physical security",
+          "Application security",
+          "Data security"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Physical security serves as the first line of defense by controlling physical access to assets before other security layers come into play."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "What distinguishes a threat from a vulnerability?",
+        "options": [
+          "Threats are external, vulnerabilities internal",
+          "Threats exploit vulnerabilities",
+          "Vulnerabilities are always technical",
+          "Threats require immediate action"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A threat is a potential danger that exploits vulnerabilities to cause harm. Vulnerabilities are weaknesses that can be exploited by threats."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": [
+      "security",
+      "asset management",
+      "threat analysis",
+      "vulnerability assessment",
+      "defense in depth",
+      "risk management"
+    ]
+  }
+}

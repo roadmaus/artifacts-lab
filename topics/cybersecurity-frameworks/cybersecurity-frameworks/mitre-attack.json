@@ -1,0 +1,210 @@
+{
+  "id": "mitre-attack",
+  "parentTopic": "cybersecurity-frameworks",
+  "title": "MITRE ATT&CK Framework",
+  "description": "Comprehensive guide to the MITRE ATT&CK framework, including tactics and techniques used by adversaries, implementation guidance, and threat intelligence integration.",
+  "icon": "Grid",
+  "difficulty": "Advanced",
+  "estimatedDuration": "3 hours",
+  "content": [
+    {
+      "title": "ATT&CK Framework Basics",
+      "icon": "Network",
+      "sections": [
+        {
+          "subtitle": "Understanding ATT&CK",
+          "description": "Introduction to the MITRE ATT&CK framework and its components",
+          "points": [
+            "Globally accessible knowledge base of adversary tactics and techniques",
+            "Based on real-world observations and threat intelligence",
+            "Provides common language for threat analysis",
+            "Enterprise, Mobile, and ICS matrices",
+            "Regular updates based on emerging threats"
+          ]
+        },
+        {
+          "subtitle": "Framework Structure",
+          "description": "Key components and organization of the framework",
+          "points": [
+            "Tactics (categories of adversary objectives)",
+            "Techniques (how adversaries achieve tactical goals)",
+            "Sub-techniques (specific implementations of techniques)",
+            "Procedures (specific implementations observed in the wild)",
+            "Relationships between different components"
+          ],
+          "codeExample": "// Example ATT&CK Matrix Structure\nconst attckMatrix = {\n  tactics: ['reconnaissance', 'resource_development', 'initial_access'],\n  getTechniques: (tactic) => {\n    return techniques[tactic].map(technique => ({\n      id: technique.id,\n      name: technique.name,\n      subTechniques: technique.subTechniques,\n      mitigations: technique.mitigations\n    }));\n  }\n};"
+        }
+      ]
+    },
+    {
+      "title": "Tactics and Techniques",
+      "icon": "GitBranch",
+      "sections": [
+        {
+          "subtitle": "Initial Access Tactics",
+          "description": "Understanding how adversaries gain initial access",
+          "points": [
+            "Phishing (T1566)",
+            "External Remote Services (T1133)",
+            "Drive-by Compromise (T1189)",
+            "Valid Accounts (T1078)",
+            "Supply Chain Compromise (T1195)"
+          ]
+        },
+        {
+          "subtitle": "Execution Tactics",
+          "description": "Methods used to run malicious code",
+          "points": [
+            "Command and Scripting Interpreter (T1059)",
+            "Native API (T1106)",
+            "User Execution (T1204)",
+            "Scheduled Task/Job (T1053)",
+            "Container Administration Command (T1609)"
+          ]
+        },
+        {
+          "subtitle": "Persistence Tactics",
+          "description": "Techniques for maintaining access",
+          "points": [
+            "Account Manipulation (T1098)",
+            "Create Account (T1136)",
+            "Boot or Logon Autostart Execution (T1547)",
+            "Hijack Execution Flow (T1574)",
+            "Office Application Startup (T1137)"
+          ]
+        },
+        {
+          "subtitle": "Privilege Escalation",
+          "description": "Methods to gain higher-level permissions",
+          "points": [
+            "Access Token Manipulation (T1134)",
+            "Boot or Logon Autostart Execution (T1547)",
+            "Exploitation for Privilege Escalation (T1068)",
+            "Process Injection (T1055)",
+            "Sudo and Sudo Caching (T1548.003)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "icon": "Settings",
+      "sections": [
+        {
+          "subtitle": "Threat Intelligence Integration",
+          "description": "Using ATT&CK for threat intelligence",
+          "points": [
+            "Mapping threat actors to techniques",
+            "Identifying gaps in detection",
+            "Prioritizing defense investments",
+            "Tracking emerging threats",
+            "Sharing threat intelligence"
+          ]
+        },
+        {
+          "subtitle": "Detection and Response",
+          "description": "Implementing ATT&CK for security operations",
+          "points": [
+            "Creating detection rules",
+            "Building response playbooks",
+            "Mapping logging requirements",
+            "Testing detection coverage",
+            "Measuring effectiveness"
+          ]
+        },
+        {
+          "subtitle": "Red Team Operations",
+          "description": "Using ATT&CK for adversary emulation",
+          "points": [
+            "Planning attack scenarios",
+            "Selecting techniques to emulate",
+            "Documenting procedures",
+            "Measuring detection capabilities",
+            "Improving defense strategies"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Defensive Applications",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Security Control Mapping",
+          "description": "Aligning defenses with ATT&CK",
+          "points": [
+            "Mapping existing controls to techniques",
+            "Identifying control gaps",
+            "Prioritizing security investments",
+            "Measuring defense coverage",
+            "Regular assessment and updates"
+          ]
+        },
+        {
+          "subtitle": "Threat Hunting",
+          "description": "Using ATT&CK for proactive hunting",
+          "points": [
+            "Developing hunting hypotheses",
+            "Creating hunting playbooks",
+            "Data source mapping",
+            "Identifying indicators of behavior",
+            "Documenting findings"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "MITRE ATT&CK Knowledge Check",
+    "description": "Test your understanding of the MITRE ATT&CK framework and its applications",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of technique IDs in the ATT&CK framework?",
+        "options": [
+          "To determine attack severity",
+          "To uniquely identify and reference specific techniques",
+          "To indicate the order of attacks",
+          "To classify threat actors"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Technique IDs (e.g., T1566) provide a unique identifier for each technique, allowing for consistent reference and documentation across the security community."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which component of the ATT&CK framework represents the 'why' of an adversary action?",
+        "options": [
+          "Techniques",
+          "Procedures",
+          "Tactics",
+          "Sub-techniques"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Tactics represent the adversary's tactical goals or the 'why' of an attack technique. They help understand the adversary's overall objectives."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "How is ATT&CK most effectively used in threat hunting?",
+        "options": [
+          "To replace existing security tools",
+          "To guide hypothesis development and data source mapping",
+          "To automate all security responses",
+          "To predict future attacks with certainty"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ATT&CK is most effectively used in threat hunting to develop hunting hypotheses and map required data sources based on known adversary techniques."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["mitre", "attack", "threat-intelligence", "cybersecurity", "adversary-emulation"]
+  }
+}

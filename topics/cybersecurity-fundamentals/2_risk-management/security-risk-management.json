@@ -1,0 +1,112 @@
+{
+  "id": "security-risk-management",
+  "title": "Play It Safe: Manage Security Risks",
+  "description": "Master the fundamentals of security risk management through a comprehensive exploration of core security concepts, risk assessment methodologies, and practical security operations. Learn to implement security frameworks, leverage SIEM tools, and execute incident response procedures while developing expertise across all security domains.",
+  "icon": "Shield",
+  "difficulty": "Beginner",
+  "subtopics": [
+    {
+      "id": "security-foundations",
+      "title": "Security Foundations and CIA Triad",
+      "description": "Explore fundamental security concepts, the CIA triad principles, and their practical applications in securing modern systems and data.",
+      "icon": "Lock"
+    },
+    {
+      "id": "risk-management-framework",
+      "title": "Risk Management Framework",
+      "description": "Master the systematic approach to identifying, analyzing, treating, and monitoring security risks in organizational contexts.",
+      "icon": "AlertTriangle"
+    },
+    {
+      "id": "security-operations",
+      "title": "Security Operations and SIEM",
+      "description": "Learn to operate SIEM dashboards, perform log analysis, and implement security monitoring procedures effectively.",
+      "icon": "Activity"
+    },
+    {
+      "id": "incident-response",
+      "title": "Incident Response and Recovery",
+      "description": "Understand and implement comprehensive incident response procedures from preparation through lessons learned.",
+      "icon": "Zap"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Security Risk Management Assessment",
+    "description": "Validate your understanding of core security concepts, risk management principles, and operational procedures.",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which phase of the incident response process focuses on identifying the full scope and impact of a security incident?",
+        "options": [
+          "Detection Phase",
+          "Analysis Phase",
+          "Containment Phase",
+          "Eradication Phase"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Analysis Phase is where teams conduct evidence collection, impact assessment, scope determination, and root cause analysis to fully understand the incident."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of risk treatment in the risk management process?",
+        "options": [
+          "To document all identified risks",
+          "To eliminate all security risks",
+          "To determine appropriate responses to identified risks",
+          "To calculate risk probabilities"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Risk treatment involves deciding how to handle identified risks through acceptance, mitigation, transfer, or avoidance based on organizational context and risk appetite."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "In the context of the CIA triad, which security principle is being addressed when implementing system redundancy?",
+        "options": [
+          "Availability",
+          "Integrity",
+          "Confidentiality",
+          "Authentication"
+        ],
+        "correctAnswer": 0,
+        "explanation": "System redundancy directly supports the Availability principle by ensuring systems remain operational and accessible even if primary components fail."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "What is the main function of a SIEM dashboard in security operations?",
+        "options": [
+          "To block all security threats",
+          "To generate security policies",
+          "To centralize security monitoring and analysis",
+          "To encrypt network traffic"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SIEM dashboards centralize security monitoring by aggregating logs, displaying alerts, and providing tools for analysis and reporting of security events."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "Which risk analysis method provides specific numerical values for potential losses and probabilities?",
+        "options": [
+          "Quantitative analysis",
+          "Risk avoidance",
+          "Risk transfer",
+          "Qualitative analysis"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Quantitative risk analysis assigns specific numerical values to potential losses and probabilities, allowing for precise calculation of risk exposure."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["security", "risk management", "incident response", "SIEM", "CIA triad", "security operations"]
+  }
+}

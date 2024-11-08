@@ -1,0 +1,112 @@
+{
+  "id": "cybersecurity-careers",
+  "title": "Put It to Work: Prepare for Cybersecurity Jobs",
+  "description": "Master the essential professional skills and strategies needed to launch a successful cybersecurity career. Learn effective stakeholder communication, build a compelling security portfolio, engage with the security community, and prepare for industry opportunities while developing your professional brand and network.",
+  "icon": "Briefcase",
+  "difficulty": "Beginner",
+  "subtopics": [
+    {
+      "id": "security-stakeholder-management",
+      "title": "Security Stakeholder Management",
+      "description": "Master the art of communicating with different security stakeholders, from C-suite executives to end users, while handling sensitive information professionally.",
+      "icon": "Users"
+    },
+    {
+      "id": "professional-portfolio-development",
+      "title": "Professional Portfolio Development",
+      "description": "Create a compelling security-focused portfolio, optimize your digital presence, and showcase your technical expertise effectively.",
+      "icon": "FileText"
+    },
+    {
+      "id": "security-community-engagement",
+      "title": "Security Community Engagement",
+      "description": "Navigate the cybersecurity community, leverage professional organizations, and build meaningful industry connections.",
+      "icon": "Network"
+    },
+    {
+      "id": "job-search-preparation",
+      "title": "Job Search and Interview Preparation",
+      "description": "Develop effective job search strategies, master technical interviews, and prepare for security role opportunities.",
+      "icon": "Target"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Cybersecurity Career Readiness Assessment",
+    "description": "Validate your understanding of key professional skills and career preparation strategies in cybersecurity.",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "When communicating a security incident to executives, what should be your primary focus?",
+        "options": [
+          "Business impact and recommended actions",
+          "Technical details of the attack vector",
+          "Complete timeline of the incident",
+          "List of all affected systems"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Executive communications should prioritize business impact and actionable recommendations, as this helps leadership make informed decisions quickly."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which approach is most effective for building a security portfolio on GitHub?",
+        "options": [
+          "Fork popular security tools",
+          "Document your security projects and methodologies",
+          "Copy code from security tutorials",
+          "List certificates and credentials"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A strong GitHub portfolio showcases your practical experience and thinking process through well-documented original projects and security methodologies."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the STAR method used for in security job interviews?",
+        "options": [
+          "Security Testing and Risk Assessment",
+          "Structured Technical Answer Review",
+          "Situation, Task, Action, Result",
+          "System Threat Analysis Response"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The STAR method (Situation, Task, Action, Result) is a structured approach to answering behavioral interview questions with specific examples."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "Which professional organization is best known for the CISSP certification?",
+        "options": [
+          "ISACA",
+          "(ISC)²",
+          "CompTIA",
+          "SANS Institute"
+        ],
+        "correctAnswer": 1,
+        "explanation": "(ISC)² is the organization that develops and maintains the CISSP (Certified Information Systems Security Professional) certification."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "How should sensitive information be handled in a portfolio?",
+        "options": [
+          "Share all details to demonstrate experience",
+          "Use generic examples without specific details",
+          "Only include public information",
+          "Avoid mentioning security work entirely"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When showcasing security work, only include publicly available information to maintain confidentiality and demonstrate professional ethics."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["cybersecurity careers", "professional development", "security communication", "job preparation", "portfolio building", "security community"]
+  }
+}

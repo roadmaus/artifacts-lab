@@ -1,0 +1,188 @@
+{
+  "id": "framework-comparison",
+  "parentTopic": "cybersecurity-frameworks",
+  "title": "Framework Comparison and Selection",
+  "description": "Comprehensive comparison of major cybersecurity frameworks, their strengths, overlaps, and guidance for selecting the most appropriate framework(s) for your organization.",
+  "icon": "GitCompare",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2 hours",
+  "content": [
+    {
+      "title": "Framework Characteristics",
+      "icon": "FileStack",
+      "sections": [
+        {
+          "subtitle": "Framework Types",
+          "description": "Understanding different categories of frameworks",
+          "points": [
+            "Control-based frameworks (CIS Controls, ISO 27001)",
+            "Risk-based frameworks (NIST CSF)",
+            "Program-based frameworks (COBIT)",
+            "Industry-specific frameworks (HIPAA, PCI DSS)",
+            "Technical frameworks (MITRE ATT&CK)"
+          ]
+        },
+        {
+          "subtitle": "Framework Objectives",
+          "description": "Primary goals and focus areas",
+          "points": [
+            "Risk management and assessment",
+            "Security control implementation",
+            "Compliance and certification",
+            "Threat detection and response",
+            "Security program management"
+          ],
+          "codeExample": "// Example Framework Objective Mapping\nconst frameworkObjectives = {\n  'NIST CSF': ['risk_management', 'program_structure', 'incident_response'],\n  'ISO 27001': ['governance', 'certification', 'control_implementation'],\n  'CIS Controls': ['technical_controls', 'prioritized_actions'],\n  'MITRE ATT&CK': ['threat_intelligence', 'detection_response'],\n  'PCI DSS': ['data_protection', 'compliance', 'specific_controls']\n};"
+        }
+      ]
+    },
+    {
+      "title": "Comparative Analysis",
+      "icon": "BarChart2",
+      "sections": [
+        {
+          "subtitle": "NIST CSF vs ISO 27001",
+          "description": "Comparing two major frameworks",
+          "points": [
+            "NIST CSF: Flexible, risk-based approach with five core functions",
+            "ISO 27001: Structured ISMS with certification option",
+            "Common focus on risk management",
+            "Different approaches to control selection",
+            "Complementary implementation possible"
+          ]
+        },
+        {
+          "subtitle": "CIS Controls vs NIST CSF",
+          "description": "Technical vs risk-based approaches",
+          "points": [
+            "CIS: Specific, prioritized technical controls",
+            "NIST: Broader risk management framework",
+            "CIS provides immediate actionable items",
+            "NIST offers comprehensive program structure",
+            "Can be implemented together effectively"
+          ]
+        },
+        {
+          "subtitle": "MITRE ATT&CK vs Traditional Frameworks",
+          "description": "Threat-based vs control-based approaches",
+          "points": [
+            "MITRE: Focus on adversary behavior and TTPs",
+            "Traditional: Focus on defensive controls",
+            "MITRE enhances threat detection capabilities",
+            "Traditional frameworks provide program structure",
+            "Complementary security perspectives"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Selection Criteria",
+      "icon": "Filter",
+      "sections": [
+        {
+          "subtitle": "Organizational Factors",
+          "description": "Key considerations for framework selection",
+          "points": [
+            "Industry requirements and regulations",
+            "Organization size and complexity",
+            "Available resources and expertise",
+            "Security program maturity",
+            "Business objectives and risk tolerance"
+          ]
+        },
+        {
+          "subtitle": "Framework Integration",
+          "description": "Combining multiple frameworks effectively",
+          "points": [
+            "Identify overlapping requirements",
+            "Map controls across frameworks",
+            "Establish primary framework",
+            "Supplement with complementary frameworks",
+            "Maintain consistent documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Decision Support",
+      "icon": "HelpCircle",
+      "sections": [
+        {
+          "subtitle": "Framework Selection Guide",
+          "description": "Decision tree for framework selection",
+          "points": [
+            "Start with regulatory requirements",
+            "Consider industry standards",
+            "Assess organizational capabilities",
+            "Evaluate implementation costs",
+            "Plan for future growth"
+          ]
+        },
+        {
+          "subtitle": "Common Implementation Patterns",
+          "description": "Successful framework combinations",
+          "points": [
+            "ISO 27001 + NIST CSF for comprehensive coverage",
+            "CIS Controls + MITRE ATT&CK for technical focus",
+            "PCI DSS + ISO 27001 for retail/finance",
+            "NIST CSF + COBIT for governance focus",
+            "Multiple frameworks with clear primary framework"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Framework Selection Assessment",
+    "description": "Test your understanding of framework comparison and selection",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which combination of frameworks would be most appropriate for a small retail business that processes credit cards?",
+        "options": [
+          "MITRE ATT&CK + COBIT",
+          "PCI DSS + CIS Controls",
+          "ISO 27001 + COBIT",
+          "NIST CSF + HITRUST"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PCI DSS is required for credit card processing, while CIS Controls provide practical, prioritized security controls suitable for smaller organizations."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the key difference between NIST CSF and ISO 27001?",
+        "options": [
+          "One is free and the other is paid",
+          "One is for small businesses only",
+          "ISO 27001 offers certification while NIST CSF is a voluntary framework",
+          "They cannot be used together"
+        ],
+        "correctAnswer": 2,
+        "explanation": "While both frameworks address cybersecurity, ISO 27001 offers formal certification for organizations, while NIST CSF is a voluntary framework focused on risk management."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "When should an organization consider implementing multiple frameworks?",
+        "options": [
+          "Never - one framework is always sufficient",
+          "When different frameworks serve complementary purposes",
+          "Only when required by regulations",
+          "Only for large enterprises"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Organizations should consider multiple frameworks when they serve complementary purposes, such as combining a risk-based framework with technical controls or industry-specific requirements."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["framework-comparison", "framework-selection", "cybersecurity", "best-practices", "decision-support"]
+  }
+}

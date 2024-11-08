@@ -1,0 +1,117 @@
+{
+  "id": "hashing-algorithms",
+  "title": "Hashing Algorithms",
+  "description": "Learn about cryptographic hash functions, their implementations, and security implications. Explore various hashing algorithms from MD5 to modern standards like SHA-3.",
+  "icon": "Key",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "md5-hash",
+      "title": "MD5 Algorithm",
+      "description": "Understand the MD5 hashing algorithm, its implementation, and why it's no longer considered secure for cryptographic purposes.",
+      "icon": "Shield"
+    },
+    {
+      "id": "sha1-hash",
+      "title": "SHA-1 Algorithm",
+      "description": "Explore the SHA-1 hashing algorithm, its improvements over MD5, and its current security status.",
+      "icon": "ShieldAlert"
+    },
+    {
+      "id": "sha256-hash",
+      "title": "SHA-256 Algorithm",
+      "description": "Master the widely-used SHA-256 algorithm, its implementation, and its role in modern cryptography.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "id": "sha3-hash",
+      "title": "SHA-3 Algorithm",
+      "description": "Learn about the newest member of the SHA family, its unique approach, and advantages over previous versions.",
+      "icon": "Shield"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Hashing Algorithms Fundamentals",
+    "description": "Test your understanding of various hashing algorithms, their properties, and security implications.",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which property of hash functions ensures that it's computationally infeasible to find two different inputs that produce the same hash?",
+        "options": [
+          "Collision resistance",
+          "Pre-image resistance",
+          "Second pre-image resistance",
+          "Avalanche effect"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Collision resistance ensures that finding two different inputs that hash to the same output is computationally infeasible, which is crucial for security applications."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Why is MD5 no longer recommended for security purposes?",
+        "options": [
+          "It's too slow",
+          "Collisions can be found efficiently",
+          "It produces too short outputs",
+          "It uses too much memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "MD5 is cryptographically broken as researchers have demonstrated efficient methods to find collisions, making it unsuitable for security applications."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the output size of SHA-256?",
+        "options": [
+          "256 bytes",
+          "256 bits",
+          "128 bits",
+          "512 bits"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SHA-256 produces a 256-bit (32-byte) hash value, providing a good balance between security and efficiency."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "Which hashing algorithm was selected by NIST as the winner of the SHA-3 competition?",
+        "options": [
+          "BLAKE",
+          "Grøstl",
+          "Keccak",
+          "Skein"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Keccak was selected as the winner of the SHA-3 competition in 2012 and standardized as SHA-3 due to its unique design and security properties."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "What is the recommended replacement for MD5 in file integrity checking?",
+        "options": [
+          "SHA-3",
+          "SHA-256",
+          "BLAKE2",
+          "Any of the above"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Any modern cryptographic hash function (SHA-3, SHA-256, or BLAKE2) is suitable for file integrity checking, as they all provide strong security properties."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": [
+      "cryptography",
+      "security",
+      "algorithms",
+      "hash-functions"
+    ]
+  }
+}

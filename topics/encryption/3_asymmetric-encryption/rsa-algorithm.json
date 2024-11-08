@@ -1,0 +1,162 @@
+{
+  "id": "rsa-algorithm",
+  "parentTopic": "asymmetric-encryption",
+  "title": "RSA Algorithm",
+  "description": "Deep dive into the RSA (Rivest-Shamir-Adleman) algorithm, including its implementation, operation modes, and security considerations.",
+  "icon": "Binary",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2 hours",
+  "content": [
+    {
+      "title": "RSA Algorithm Overview",
+      "icon": "FileText",
+      "sections": [
+        {
+          "subtitle": "Historical Background",
+          "description": "Understanding the development and significance of RSA.",
+          "points": [
+            "Developed in 1977 by Rivest, Shamir, and Adleman at MIT",
+            "First practical public-key cryptosystem",
+            "Based on the difficulty of factoring large composite numbers",
+            "Revolutionary for enabling secure communication without pre-shared keys"
+          ]
+        },
+        {
+          "subtitle": "Core Components",
+          "description": "Essential elements that make up the RSA system.",
+          "points": [
+            "Public key (e, n) for encryption",
+            "Private key (d, n) for decryption",
+            "Modulus n as product of two prime numbers",
+            "Public and private exponents (e and d)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "RSA Operations",
+      "icon": "Functions",
+      "sections": [
+        {
+          "subtitle": "Encryption Process",
+          "description": "Step-by-step explanation of RSA encryption.",
+          "points": [
+            "Convert message to numerical representation (m)",
+            "Apply encryption formula: c = m^e mod n",
+            "Result is ciphertext that can only be decrypted with private key",
+            "Ensure message is properly padded before encryption"
+          ],
+          "codeExample": "def rsa_encrypt(message, public_key):\n    e, n = public_key\n    # Convert message to integer\n    m = int.from_bytes(message.encode(), 'big')\n    # Perform encryption\n    if m >= n:\n        raise ValueError('Message too large for key size')\n    ciphertext = pow(m, e, n)\n    return ciphertext"
+        },
+        {
+          "subtitle": "Decryption Process",
+          "description": "How to decrypt RSA encrypted messages.",
+          "points": [
+            "Use private key (d, n) to decrypt ciphertext",
+            "Apply decryption formula: m = c^d mod n",
+            "Convert numerical result back to original message",
+            "Handle padding removal properly"
+          ],
+          "codeExample": "def rsa_decrypt(ciphertext, private_key):\n    d, n = private_key\n    # Perform decryption\n    m = pow(ciphertext, d, n)\n    # Convert integer back to bytes\n    try:\n        message = m.to_bytes((m.bit_length() + 7) // 8, 'big').decode()\n        return message\n    except:\n        raise ValueError('Decryption failed')"
+        }
+      ]
+    },
+    {
+      "title": "Security Considerations",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Padding Schemes",
+          "description": "Understanding the importance of proper padding in RSA.",
+          "points": [
+            "Raw RSA is vulnerable to various attacks",
+            "PKCS#1 v1.5 and OAEP are standard padding schemes",
+            "Padding adds randomness to prevent attacks",
+            "Never use raw RSA without proper padding in production"
+          ],
+          "codeExample": "from Crypto.Cipher import PKCS1_OAEP\nfrom Crypto.PublicKey import RSA\n\ndef secure_rsa_encrypt(message, public_key):\n    cipher = PKCS1_OAEP.new(public_key)\n    ciphertext = cipher.encrypt(message.encode())\n    return ciphertext"
+        },
+        {
+          "subtitle": "Common Vulnerabilities",
+          "description": "Key vulnerabilities and how to avoid them.",
+          "points": [
+            "Small exponent attacks when e is too small",
+            "Timing attacks on unprotected implementations",
+            "Common modulus attacks when n is reused",
+            "Proper key generation and storage is crucial"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Performance Optimization",
+      "icon": "Gauge",
+      "sections": [
+        {
+          "subtitle": "Chinese Remainder Theorem",
+          "description": "Using CRT to speed up RSA operations.",
+          "points": [
+            "CRT speeds up private key operations",
+            "Separate calculations for p and q components",
+            "Recombine results using modular arithmetic",
+            "Significant performance improvement for decryption"
+          ],
+          "codeExample": "def crt_rsa_decrypt(c, d, p, q):\n    # Compute dp and dq\n    dp = d % (p - 1)\n    dq = d % (q - 1)\n    \n    # Compute mp and mq\n    mp = pow(c, dp, p)\n    mq = pow(c, dq, q)\n    \n    # Compute qinv\n    qinv = pow(q, -1, p)\n    \n    # Combine results using CRT\n    h = (qinv * (mp - mq)) % p\n    m = mq + h * q\n    \n    return m"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "RSA Algorithm Quiz",
+    "description": "Test your understanding of RSA encryption, decryption, and security considerations.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Why is padding essential in RSA encryption?",
+        "options": [
+          "It prevents several cryptographic attacks by adding randomness",
+          "It makes the message longer",
+          "It speeds up the encryption process",
+          "It reduces the key size required"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Padding schemes like PKCS#1 v1.5 and OAEP add randomness to the message before encryption, preventing various attacks such as chosen-plaintext attacks."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the Chinese Remainder Theorem used for in RSA?",
+        "options": [
+          "To speed up RSA decryption operations",
+          "To generate stronger keys",
+          "To encrypt messages faster",
+          "To create better padding"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Chinese Remainder Theorem (CRT) is used to optimize RSA decryption by performing separate calculations modulo p and q, which is significantly faster than working modulo n directly."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which formula represents RSA encryption?",
+        "options": [
+          "c = m^e mod n",
+          "m = c^d mod n",
+          "c = m^d mod n",
+          "m = c^e mod n"
+        ],
+        "correctAnswer": 0,
+        "explanation": "RSA encryption is performed by computing c = m^e mod n, where m is the message, e is the public exponent, and n is the modulus. The result c is the ciphertext."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "RSA", "encryption", "security", "algorithms"]
+  }
+}

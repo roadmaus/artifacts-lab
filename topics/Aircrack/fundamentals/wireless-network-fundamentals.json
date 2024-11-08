@@ -1,0 +1,112 @@
+{
+  "id": "wireless-network-fundamentals",
+  "parentTopic": "network-security-testing",
+  "title": "Wireless Network Fundamentals",
+  "description": "Deep dive into IEEE 802.11 protocols, network discovery mechanisms, authentication methods, and fundamental wireless network architecture concepts essential for security testing.",
+  "icon": "Radio",
+  "difficulty": "Beginner",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "IEEE 802.11 Protocol Fundamentals",
+      "icon": "Network",
+      "sections": [
+        {
+          "subtitle": "Network Discovery and Beacon Frames",
+          "description": "Understanding how wireless networks advertise their presence and communicate essential network information through beacon frames.",
+          "points": [
+            "Beacon Frame Broadcasting: Access Points (APs) continuously broadcast beacon frames approximately 10 times per second, serving as the primary mechanism for network discovery and maintaining client synchronization. These frames are crucial for network visibility and initial connection establishment. For security analysts, these frames provide the first point of reconnaissance in wireless network assessment.",
+            
+            "Essential Beacon Frame Components: Each beacon frame carries critical network information including: Network identification (ESSID - Extended Service Set Identifier), Security parameters (encryption methods in use, authentication requirements), Supported data rates (determining network capabilities and compatibility), Channel information (operating frequency), and Timing information (for client synchronization). Understanding these components is crucial for both network troubleshooting and security assessment.",
+            
+            "Channel Operation: IEEE 802.11b/g networks operate in the 2.4 GHz spectrum across channels 1-14, with regional variations: North America allows channels 1-11, Europe typically permits channels 1-13, and Japan allows all 14 channels. IEEE 802.11a operates in the 5 GHz band with channels 36-165, subject to regional regulatory requirements. This knowledge is essential for proper network scanning and monitoring."
+          ],
+          "codeExample": "beacon-frame-structure-visual.tsx"
+        },
+        {
+          "subtitle": "Network Authentication Mechanisms",
+          "description": "Comprehensive overview of wireless network authentication methods and their security implications.",
+          "points": [
+            "Open System Authentication: The most basic authentication method, following a simple two-step process: 1) Client requests authentication, 2) AP immediately grants authentication. This is followed by the association process where the client officially joins the network. While simple, this method provides no inherent security and relies entirely on subsequent security measures like WPA/WPA2 for protection.",
+            
+            "Authentication Challenges: Modern wireless networks implement various security measures that can prevent unauthorized access: WPA/WPA2 requiring EAPOL authentication (preventing connection at the authentication stage), MAC address filtering (restricting access to pre-approved devices), and Shared Key Authentication (requiring WEP key presentation during authentication). Understanding these mechanisms is crucial for security assessment and penetration testing.",
+            
+            "MAC Address System: Every wireless device possesses a unique 48-bit MAC address (e.g., 00:01:23:4A:BC:DE) serving as its network identifier. While designed to be globally unique, MAC addresses can be spoofed, making MAC filtering a weak security measure. Security professionals must understand both the legitimate uses and potential vulnerabilities of MAC-based security measures."
+          ],
+          "codeExample": "authentication-flow-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Network Operations and Monitoring",
+      "icon": "Activity",
+      "sections": [
+        {
+          "subtitle": "Monitor Mode and Packet Capture",
+          "description": "Essential concepts of wireless network monitoring and packet capture methodologies.",
+          "points": [
+            "Monitor Mode Operations: Monitor mode is a specialized interface state that allows capture of all wireless packets within range, regardless of their destination. This mode is crucial for network analysis, security assessment, and troubleshooting. It differs from promiscuous mode in that it can capture wireless management and control frames in addition to data frames.",
+            
+            "Capture Techniques: Effective packet capture requires understanding of channel hopping vs. fixed channel monitoring. Channel hopping provides broad network discovery but may miss packets on specific channels. Fixed channel monitoring ensures complete capture for a specific network but requires proper channel selection. This knowledge is fundamental for successful wireless network analysis.",
+            
+            "Signal Analysis: Understanding signal strength indicators (RSSI, Signal Quality) and their implications is crucial for effective monitoring. Signal strength affects packet capture quality, injection capabilities, and overall assessment effectiveness. Proper antenna positioning and environmental considerations can significantly impact monitoring success."
+          ],
+          "codeExample": "monitor-mode-visualization.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Wireless Network Fundamentals Assessment",
+    "description": "Test your understanding of IEEE 802.11 protocols and wireless network fundamentals",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What key security concern exists with MAC address filtering?",
+        "options": [
+          "MAC addresses can be easily spoofed",
+          "It slows down network performance",
+          "It requires regular updates",
+          "It uses too much bandwidth"
+        ],
+        "correctAnswer": 0,
+        "explanation": "MAC address filtering is vulnerable because MAC addresses can be easily spoofed, allowing unauthorized devices to impersonate approved devices."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Why might a wireless network analyzer use channel hopping?",
+        "options": [
+          "To save battery power",
+          "To discover networks on different channels",
+          "To improve signal strength",
+          "To avoid detection"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Channel hopping allows network analyzers to discover and monitor networks operating on different channels, providing a comprehensive view of the wireless environment."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What happens after successful Open System Authentication?",
+        "options": [
+          "Network access is granted immediately",
+          "The client must still request association",
+          "Data encryption begins automatically",
+          "The AP assigns a static IP"
+        ],
+        "correctAnswer": 1,
+        "explanation": "After Open System Authentication, the client must still send an association request and receive approval before gaining network access."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-07",
+    "language": "English",
+    "tags": ["wireless networks", "802.11", "network security", "authentication", "monitor mode", "packet capture"]
+  }
+}

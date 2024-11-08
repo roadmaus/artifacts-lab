@@ -1,0 +1,115 @@
+{
+  "id": "nfs-troubleshooting",
+  "parentTopic": "linux-nfs-fundamentals",
+  "title": "NFS Troubleshooting and Common Issues",
+  "description": "Master the essential skills for diagnosing and resolving NFS issues. Learn to interpret error messages, use troubleshooting tools, and implement effective solutions for common NFS problems in Linux environments.",
+  "icon": "AlertCircle",
+  "difficulty": "Advanced",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Common Error Messages and Resolution",
+      "icon": "AlertTriangle",
+      "sections": [
+        {
+          "subtitle": "Understanding NFS Error Messages",
+          "description": "Interpreting and resolving common NFS error messages encountered in client and server operations.",
+          "points": [
+            "ESTALE Errors: Occurs when accessing stale file handles, typically caused by file deletion, export changes, or server-side modifications. Resolution steps include: 1) Verify file existence and export status, 2) Check for recent file system changes or renames, 3) Consider enabling/disabling subtree checking. Common cause: Replacing files while they're in use by clients can trigger ESTALE errors.",
+            "Permission Denied Errors: Can stem from multiple sources: 1) Incorrect export options ('rw' vs 'ro'), 2) Root squashing settings, 3) File system permissions, or 4) SELinux/AppArmor restrictions. Example troubleshooting: Check /var/log/audit/audit.log for SELinux denials, verify effective UID mapping with 'id' command, and review export options with 'exportfs -v'.",
+            "Server Not Responding: Common triggers include: 1) Network connectivity issues, 2) Firewall rules blocking NFS ports, 3) NFS service failures, or 4) Server overload. Diagnostic approach: Use 'rpcinfo -p' to verify RPC services, 'tcpdump' to check network traffic, and 'showmount -e' to verify exports. Key investigation: Check system logs for resource exhaustion or service failures.",
+            "Mount Point Issues: Problems include: 1) 'mount.nfs: access denied' due to export restrictions, 2) 'No such device' from missing kernel modules, or 3) 'Operation not permitted' from insufficient privileges. Resolution workflow: Verify kernel NFS support with 'lsmod', check mount point permissions, and confirm export visibility using 'showmount'."
+          ],
+          "codeExample": "nfs-error-resolution-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Diagnostic Tools and Techniques",
+      "icon": "Tool",
+      "sections": [
+        {
+          "subtitle": "Troubleshooting Tools Usage",
+          "description": "Utilizing system tools and commands effectively for NFS problem diagnosis.",
+          "points": [
+            "Network Diagnostics: Essential tools include: 1) 'tcpdump' for packet analysis (e.g., 'tcpdump -i any port 2049'), 2) 'nfsstat' for NFS statistics and operation counts, 3) 'netstat' for connection status. Advanced usage: Combine 'tcpdump' with 'wireshark' for detailed protocol analysis. Example filter: 'port 2049 or port 111' captures both NFS and portmapper traffic.",
+            "Server-side Monitoring: Key monitoring points: 1) '/proc/net/rpc/nfsd' for server thread utilization, 2) 'exportfs -v' for export status, 3) 'rpcinfo' for RPC service verification. Performance analysis: Use 'iostat', 'vmstat', and 'dstat' to correlate NFS issues with system resource usage. Monitor file handle usage with '/proc/sys/fs/file-nr'.",
+            "Client Diagnostics: Critical tools: 1) 'mount' command with '-v' option for verbose output, 2) '/proc/mounts' for actual mount options, 3) 'strace' for system call tracing. Debugging strategy: Use 'strace -f -e trace=network mount -t nfs' to trace mount problems. Monitor client caching with '/proc/fs/nfs/content'.",
+            "Lock Management Tools: Troubleshoot locking with: 1) 'lslocks' to view current file locks, 2) 'sm-notify' for lock recovery testing, 3) '/var/lib/nfs/statd' for NSM state examination. Recovery procedure: Use 'rm -f /var/lib/nfs/state' and restart services to reset lock state in case of corruption."
+          ],
+          "codeExample": "nfs-diagnostic-tools-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Recovery Procedures",
+      "icon": "RefreshCw",
+      "sections": [
+        {
+          "subtitle": "System Recovery and Problem Resolution",
+          "description": "Implementing effective recovery procedures for various NFS failure scenarios.",
+          "points": [
+            "Client Recovery: Handle unresponsive mounts through: 1) Force unmount with 'umount -f' for stuck mounts, 2) Lazy unmount with 'umount -l' as last resort, 3) Kill hanging processes with 'fuser -k'. Recovery sequence: First attempt normal unmount, escalate to force unmount, then use lazy unmount only if necessary. Important: Document process state before killing for post-mortem analysis.",
+            "Server Recovery: Service restoration steps: 1) Verify file system integrity with fsck before re-export, 2) Clear stale locks using 'rpc.statd --no-notify', 3) Re-establish exports with 'exportfs -ra'. Critical consideration: Check for active clients before restart using 'showmount -a'. Implement graduated recovery to minimize client impact.",
+            "Network Problem Resolution: Address network issues through: 1) MTU size adjustment for fragmentation problems, 2) Socket buffer tuning for performance issues, 3) Connection tracking cleanup for firewall-related problems. Example: Reset connection tracking with 'echo 1 > /proc/sys/net/ipv4/route/flush' for stuck connections.",
+            "Data Consistency Recovery: Handle cache coherency issues by: 1) Using 'sync' command to flush buffers, 2) Implementing 'noac' mount option temporarily, 3) Verifying file timestamps across clients. Recovery validation: Use 'rsync -n' to detect inconsistencies without making changes. Important: Create file system snapshots before major recovery operations."
+          ],
+          "codeExample": "nfs-recovery-procedures-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "NFS Troubleshooting Assessment",
+    "description": "Test your understanding of NFS problem diagnosis and resolution techniques",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the most likely cause of an ESTALE error in NFS?",
+        "options": [
+          "Network connectivity issues",
+          "Server running out of memory",
+          "Accessing a file that has been deleted or renamed",
+          "Incorrect mount options"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ESTALE errors typically occur when attempting to access a file handle that is no longer valid, most commonly because the file has been deleted or renamed on the server while still in use by clients."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which command should be used first when diagnosing NFS mount issues?",
+        "options": [
+          "showmount -e",
+          "strace mount",
+          "tcpdump",
+          "nfsstat"
+        ],
+        "correctAnswer": 0,
+        "explanation": "showmount -e should be used first to verify that the export is actually available and visible to the client, before investigating more complex issues with other tools."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the safest way to handle an unresponsive NFS mount?",
+        "options": [
+          "Immediately use umount -l",
+          "Try normal unmount, then umount -f, and lastly umount -l",
+          "Reboot the system",
+          "Kill all NFS-related processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The safest approach is to try a normal unmount first, then escalate to force unmount (umount -f), and only use lazy unmount (umount -l) as a last resort to prevent potential data loss or corruption."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-06",
+    "language": "English",
+    "tags": ["nfs", "troubleshooting", "linux", "system administration", "error resolution"]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "ancient-encryption",
+  "title": "Ancient Encryption Methods",
+  "description": "Explore fascinating encryption techniques used throughout history before the modern era, from simple substitution ciphers to complex mechanical methods that shaped the evolution of cryptography.",
+  "icon": "KeyRound",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "substitution-ciphers",
+      "title": "Classical Substitution Ciphers",
+      "description": "Learn about basic substitution methods like Caesar cipher and atbash",
+      "icon": "Replace"
+    },
+    {
+      "id": "polyalphabetic-ciphers",
+      "title": "Polyalphabetic Ciphers",
+      "description": "Discover Vigenère cipher and other advanced substitution methods",
+      "icon": "Library"
+    },
+    {
+      "id": "mechanical-devices",
+      "title": "Early Mechanical Encryption",
+      "description": "Explore mechanical encryption tools like cipher disks and scytale",
+      "icon": "Cog"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Ancient Encryption Fundamentals",
+    "description": "Test your knowledge of historical encryption methods and their significance",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which civilization is credited with inventing the scytale, one of the first military encryption devices?",
+        "options": [
+          "Spartans",
+          "Romans",
+          "Persians",
+          "Egyptians"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Spartans invented the scytale in the 5th century BCE for military communications. It consisted of a cylinder with a strip of parchment wrapped around it."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the key characteristic of a monoalphabetic substitution cipher?",
+        "options": [
+          "Each letter is consistently replaced by the same substitute",
+          "Multiple alphabets are used for encryption",
+          "The message is written backwards",
+          "Numbers replace letters"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In a monoalphabetic substitution cipher, each letter in the plaintext is consistently replaced by the same letter in the ciphertext."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "The Vigenère cipher improved upon simpler ciphers by:",
+        "options": [
+          "Using multiple shift values",
+          "Adding numbers to the alphabet",
+          "Writing in reverse",
+          "Removing vowels"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Vigenère cipher used a keyword to create multiple shift values, making it much harder to crack than single-shift ciphers."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "What made the Pigpen cipher unique?",
+        "options": [
+          "It used symbols instead of letters",
+          "It could only encrypt numbers",
+          "It required sunlight to decode",
+          "It needed two people to operate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Pigpen (or masonic) cipher replaced letters with symbolic representations based on their position in a grid, making it visually distinct from other methods."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "Which historical figure is famous for breaking the Vigenère cipher?",
+        "options": [
+          "Charles Babbage",
+          "Leonardo da Vinci",
+          "Isaac Newton",
+          "Galileo Galilei"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Charles Babbage broke the Vigenère cipher in the 19th century, though his discovery wasn't published until years later."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "history", "security", "classical-methods"]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "linux-security",
+  "parentTopic": "tools-of-trade",
+  "title": "Linux Security and User Management",
+  "description": "Master essential Linux security concepts and user management principles. Learn to implement robust access controls, manage user permissions, and secure system resources while following security best practices and compliance requirements.",
+  "icon": "Shield",
+  "difficulty": "Beginner",
+  "estimatedDuration": "8 hours",
+  "content": [
+    {
+      "title": "User and Group Management",
+      "icon": "Users",
+      "sections": [
+        {
+          "subtitle": "User Account Administration",
+          "description": "Comprehensive understanding of user account management and security principles",
+          "points": [
+            "User Account Types and Security Implications distinguish between system users (UID < 1000) and regular users (UID >= 1000). Special accounts like root (UID 0) have complete system access and must be carefully controlled. Example: Creating service-specific users with 'useradd -r servicename' ensures proper isolation and limited privileges for system services.",
+            "User Account Management Commands (useradd, usermod, userdel) handle the full user lifecycle. Critical options include password aging (-e, -f), shell restrictions (-s), and home directory management (-m, -d). Example: 'usermod -aG sudo username' carefully grants administrative privileges by adding a user to the sudo group rather than directly modifying permissions.",
+            "Password Policies and Security enforce strong authentication through PAM (Pluggable Authentication Modules) and password complexity rules in /etc/security/pwquality.conf. Example: Configuring 'minlen=12 minclass=3 enforce_for_root' ensures strong passwords with minimum length and character class requirements, even for the root account."
+          ],
+          "codeExample": "user-management-visual.tsx"
+        },
+        {
+          "subtitle": "Group Management and Access Control",
+          "description": "Advanced group management techniques and access control implementation",
+          "points": [
+            "Group Management Strategies implement role-based access control through strategic group creation and membership management. Primary vs. supplementary groups affect file creation and access permissions. Example: Creating project-specific groups with 'groupadd -f projectname' and using 'chmod g+s directory' ensures proper file ownership for collaborative work.",
+            "Access Control Lists (ACLs) extend traditional Unix permissions with fine-grained controls using setfacl/getfacl. This enables complex permission scenarios beyond basic user/group/other. Example: 'setfacl -m u:username:rx directory' grants specific read/execute permissions to a user while maintaining existing ACLs.",
+            "Sudo Configuration and Privilege Management in /etc/sudoers enables controlled elevation of privileges. Best practices include using sudo_editor, NOPASSWD restrictions, and command aliases. Example: Creating a limited sudo rule 'username ALL=(root) /usr/bin/systemctl restart apache2' allows specific service management without full root access."
+          ],
+          "codeExample": "group-management-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "File System Security",
+      "icon": "Lock",
+      "sections": [
+        {
+          "subtitle": "Permission Management",
+          "description": "Advanced file permission concepts and security implementations",
+          "points": [
+            "Extended File Attributes and Special Permissions (SUID, SGID, Sticky Bit) provide additional security controls. Understanding when to use each permission type prevents security vulnerabilities. Example: Using sticky bit (+t) on /tmp prevents users from deleting others' files while maintaining a shared workspace.",
+            "File System Security Attributes through chattr/lsattr protect critical files from modification. Important attributes include immutable (+i) and append-only (+a). Example: 'chattr +i /etc/resolv.conf' prevents DNS configuration tampering, even by privileged users.",
+            "Mandatory Access Control (MAC) using SELinux or AppArmor provides kernel-level security enforcement. Security contexts and policy configurations restrict process behaviors beyond traditional permissions. Example: Configuring SELinux contexts for web server content ensures proper isolation: 'chcon -R -t httpd_content_t /var/www/html/'."
+          ],
+          "codeExample": "filesystem-security-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "System Security Monitoring",
+      "icon": "Activity",
+      "sections": [
+        {
+          "subtitle": "Security Auditing and Monitoring",
+          "description": "Implementation of security monitoring and audit controls",
+          "points": [
+            "Audit Configuration using auditd tracks security-relevant system events. Key areas include authentication attempts, file access, and system calls. Example: Configuring audit rules to monitor sensitive file access: 'auditctl -w /etc/shadow -p wa -k shadow_changes'.",
+            "Log Management and Analysis through systemd-journald and rsyslog provides comprehensive system activity tracking. Proper log rotation and retention policies prevent disk space issues while maintaining security records. Example: Configuring remote log shipping: 'rsyslog.conf' configuration to send security events to a centralized log server using TLS encryption.",
+            "Security Monitoring Tools (fail2ban, rkhunter) provide automated threat detection and response. Configuration focuses on balance between security and accessibility. Example: Implementing fail2ban for SSH protection: 'bantime=1h findtime=10m maxretry=3' blocks repeated authentication failures while allowing legitimate access attempts."
+          ],
+          "codeExample": "security-monitoring-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Linux Security Assessment",
+    "description": "Validate your understanding of Linux security principles and user management",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the effect of setting the SUID bit on an executable file?",
+        "options": [
+          "The file can't be executed",
+          "The file runs with the owner's permissions",
+          "The file becomes hidden",
+          "The file can't be modified"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Set User ID (SUID) bit causes an executable to run with the permissions of the file owner rather than the user executing it, commonly used for controlled privilege elevation."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which command would prevent all users, including root, from modifying a file?",
+        "options": [
+          "chmod 444 file",
+          "chattr +i file",
+          "chown root:root file",
+          "setfacl -m u::r file"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The chattr command with +i (immutable) attribute prevents any modification to the file, even by the root user, until the attribute is removed."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of SELinux contexts?",
+        "options": [
+          "To replace traditional file permissions",
+          "To encrypt files",
+          "To enforce access control based on security policies",
+          "To manage user passwords"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SELinux contexts provide mandatory access control by enforcing security policies at the kernel level, restricting what actions processes can perform regardless of traditional permissions."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["linux security", "user management", "access control", "system administration", "security monitoring"]
+  }
+}

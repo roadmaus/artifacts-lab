@@ -1,0 +1,112 @@
+{
+  "id": "foundations-of-cybersecurity",
+  "title": "Foundations of Cybersecurity",
+  "description": "Master the essential concepts, frameworks, and principles of modern cybersecurity. Learn to identify threats, assess risks, and implement effective security controls while developing core analytical and problem-solving skills crucial for a security analyst role.",
+  "icon": "Shield",
+  "difficulty": "Beginner",
+  "subtopics": [
+    {
+      "id": "security-fundamentals",
+      "title": "Security Fundamentals and Core Concepts",
+      "description": "Understanding the fundamental principles of cybersecurity and the CIA triad",
+      "icon": "KeyRound"
+    },
+    {
+      "id": "security-domains",
+      "title": "The Eight Security Domains",
+      "description": "Deep dive into the eight critical domains of information security",
+      "icon": "Grid"
+    },
+    {
+      "id": "security-frameworks",
+      "title": "Security Frameworks and Controls",
+      "description": "Understanding security frameworks, compliance standards, and control types",
+      "icon": "Layout"
+    },
+    {
+      "id": "threat-landscape",
+      "title": "Modern Threat Landscape",
+      "description": "Analysis of current cyber threats, attack vectors, and business impact",
+      "icon": "Target"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Cybersecurity Foundations Assessment",
+    "description": "Validate your understanding of core cybersecurity concepts and principles",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which of the following best describes the primary goal of confidentiality in the CIA triad?",
+        "options": [
+          "Ensuring information is only accessible to authorized parties",
+          "Maintaining system uptime and availability",
+          "Protecting against data corruption",
+          "Implementing access controls"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Confidentiality ensures that sensitive information is only accessible by authorized parties. While access controls are a mechanism to achieve confidentiality, they are not the primary goal itself."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "A zero-day vulnerability is:",
+        "options": [
+          "A vulnerability that only affects systems at midnight",
+          "A known vulnerability that has been patched",
+          "A vulnerability unknown to the software vendor with no available patch",
+          "A vulnerability that takes zero days to exploit"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A zero-day vulnerability is a previously unknown flaw in software that attackers can exploit before the vendor becomes aware and creates a patch."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary difference between a threat and a vulnerability?",
+        "options": [
+          "Threats are always external while vulnerabilities are internal",
+          "A threat is a potential danger while a vulnerability is a weakness that can be exploited",
+          "Vulnerabilities only apply to software while threats apply to hardware",
+          "Threats can be patched but vulnerabilities cannot"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A threat is a potential danger that could harm a system, while a vulnerability is a specific weakness that could be exploited by a threat to cause harm."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "Which security domain focuses on protecting physical assets and controlling physical access?",
+        "options": [
+          "Asset Security",
+          "Physical Security",
+          "Access Management",
+          "Security Operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Physical Security is the domain responsible for protecting tangible assets and controlling physical access to facilities and resources."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "What is the FIRST step in implementing a security framework?",
+        "options": [
+          "Deploy security tools",
+          "Assess current security posture",
+          "Train employees",
+          "Write security policies"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Before implementing any security framework, organizations must first assess their current security posture to understand their existing controls, gaps, and needs."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-01",
+    "language": "English",
+    "tags": ["cybersecurity", "information security", "security fundamentals", "security domains", "security frameworks"]
+  }
+}

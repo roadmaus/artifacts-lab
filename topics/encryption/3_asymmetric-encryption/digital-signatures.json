@@ -1,0 +1,171 @@
+{
+  "id": "digital-signatures",
+  "parentTopic": "asymmetric-encryption",
+  "title": "Digital Signatures",
+  "description": "Learn how asymmetric cryptography enables digital signatures for authentication, non-repudiation, and integrity verification in electronic documents and communications.",
+  "icon": "PenTool",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "1.5 hours",
+  "content": [
+    {
+      "title": "Fundamentals of Digital Signatures",
+      "icon": "FileSignature",
+      "sections": [
+        {
+          "subtitle": "Core Concepts",
+          "description": "Understanding the basic principles and properties of digital signatures.",
+          "points": [
+            "Digital signatures provide authentication, integrity, and non-repudiation",
+            "Uses private key for signing and public key for verification",
+            "Cannot be copied or reused for other documents",
+            "Mathematically binds the signer to the document"
+          ]
+        },
+        {
+          "subtitle": "Properties and Guarantees",
+          "description": "Essential security properties provided by digital signatures.",
+          "points": [
+            "Authentication: Proves the identity of the signer",
+            "Integrity: Detects any changes to the signed document",
+            "Non-repudiation: Signer cannot deny signing later",
+            "Time-independence: Signature remains valid over time"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Signature Creation and Verification",
+      "icon": "Check",
+      "sections": [
+        {
+          "subtitle": "Creating Digital Signatures",
+          "description": "Step-by-step process of generating a digital signature.",
+          "points": [
+            "Generate hash (digest) of the original document",
+            "Encrypt hash with signer's private key",
+            "Attach signature to document",
+            "Include signer's public key or certificate"
+          ],
+          "codeExample": "from cryptography.hazmat.primitives import hashes\nfrom cryptography.hazmat.primitives.asymmetric import padding, rsa\n\ndef create_signature(message, private_key):\n    # Create message digest\n    digest = hashes.Hash(hashes.SHA256())\n    digest.update(message.encode())\n    message_hash = digest.finalize()\n    \n    # Sign the digest\n    signature = private_key.sign(\n        message_hash,\n        padding.PSS(\n            mgf=padding.MGF1(hashes.SHA256()),\n            salt_length=padding.PSS.MAX_LENGTH\n        ),\n        hashes.SHA256()\n    )\n    return signature"
+        },
+        {
+          "subtitle": "Verifying Signatures",
+          "description": "Process of verifying a digital signature's authenticity.",
+          "points": [
+            "Obtain signer's public key",
+            "Decrypt signature using public key to get original hash",
+            "Generate hash of received document",
+            "Compare hashes to verify integrity"
+          ],
+          "codeExample": "def verify_signature(message, signature, public_key):\n    try:\n        # Generate message hash\n        digest = hashes.Hash(hashes.SHA256())\n        digest.update(message.encode())\n        message_hash = digest.finalize()\n        \n        # Verify the signature\n        public_key.verify(\n            signature,\n            message_hash,\n            padding.PSS(\n                mgf=padding.MGF1(hashes.SHA256()),\n                salt_length=padding.PSS.MAX_LENGTH\n            ),\n            hashes.SHA256()\n        )\n        return True\n    except:\n        return False"
+        }
+      ]
+    },
+    {
+      "title": "Digital Signature Algorithms",
+      "icon": "Code",
+      "sections": [
+        {
+          "subtitle": "RSA-based Signatures",
+          "description": "Using RSA for digital signatures.",
+          "points": [
+            "Based on RSA encryption/decryption operations",
+            "Widely supported and compatible",
+            "Requires larger key sizes for security",
+            "Uses padding schemes like PSS for security"
+          ]
+        },
+        {
+          "subtitle": "Alternative Algorithms",
+          "description": "Other popular digital signature schemes.",
+          "points": [
+            "ECDSA: Elliptic Curve Digital Signature Algorithm",
+            "EdDSA: Edwards-curve Digital Signature Algorithm",
+            "DSA: Digital Signature Algorithm (legacy)",
+            "Quantum-resistant signature schemes"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Practical Applications",
+      "icon": "Activity",
+      "sections": [
+        {
+          "subtitle": "Document Signing",
+          "description": "Using digital signatures for electronic documents.",
+          "points": [
+            "PDF document signing",
+            "Email signing (S/MIME)",
+            "Code signing for software distribution",
+            "Contract signing and verification"
+          ],
+          "codeExample": "def sign_pdf_document(pdf_path, certificate, private_key):\n    # Example of PDF signing process\n    from endesive import pdf\n    \n    date = datetime.now()\n    signature = pdf.cms.sign(\n        pdf_path,\n        'signature',\n        certificate,\n        private_key,\n        'sha256',\n        'Document signed by Example Corp',\n        location='San Francisco',\n        date=date\n    )\n    return signature"
+        },
+        {
+          "subtitle": "PKI Integration",
+          "description": "Working with Public Key Infrastructure.",
+          "points": [
+            "Certificate Authorities (CAs) and trust chains",
+            "X.509 certificate format and usage",
+            "Certificate revocation and validation",
+            "Time-stamping services"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Digital Signatures Quiz",
+    "description": "Test your understanding of digital signatures and their applications.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which of these is NOT a property provided by digital signatures?",
+        "options": [
+          "Message encryption",
+          "Authentication",
+          "Integrity",
+          "Non-repudiation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Digital signatures provide authentication, integrity, and non-repudiation, but they do not provide message encryption. Encryption must be handled separately if message confidentiality is required."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Why is hashing used in the digital signature process?",
+        "options": [
+          "To create a fixed-size representation of the message that can be efficiently signed",
+          "To encrypt the entire message",
+          "To compress the message for faster transmission",
+          "To verify the sender's identity"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Hashing creates a fixed-size digest of the message, which is then signed instead of the entire message. This is more efficient and provides the same security guarantees."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What key is used to create a digital signature?",
+        "options": [
+          "The signer's private key",
+          "The recipient's public key",
+          "The signer's public key",
+          "A shared symmetric key"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Digital signatures are created using the signer's private key, ensuring that only the owner of the private key could have created the signature. Anyone can verify the signature using the signer's public key."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "digital-signatures", "security", "PKI", "authentication"]
+  }
+}

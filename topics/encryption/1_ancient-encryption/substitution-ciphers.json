@@ -1,0 +1,124 @@
+{
+  "id": "substitution-ciphers",
+  "parentTopic": "ancient-encryption",
+  "title": "Classical Substitution Ciphers",
+  "description": "Master the fundamental techniques of substitution ciphers, including the Caesar cipher, Atbash cipher, and simple substitution methods that formed the foundation of cryptography.",
+  "icon": "Replace",
+  "difficulty": "Beginner",
+  "estimatedDuration": "1.5 hours",
+  "content": [
+    {
+      "title": "Introduction to Substitution Ciphers",
+      "icon": "BookOpen",
+      "sections": [
+        {
+          "subtitle": "Basic Concepts",
+          "description": "Understand the core principles of substitution ciphers and their historical significance",
+          "points": [
+            "A substitution cipher replaces each letter in the plaintext with a different letter or symbol",
+            "These were the first systematic methods of encryption in history",
+            "Despite their simplicity, they were effective for centuries",
+            "Vulnerability to frequency analysis led to their eventual obsolescence"
+          ]
+        },
+        {
+          "subtitle": "Historical Context",
+          "description": "Learn about the historical development and usage of substitution ciphers",
+          "points": [
+            "Used extensively in military communications across ancient civilizations",
+            "Evolved from simple symbol replacement to more complex systems",
+            "Remained the primary encryption method until the Renaissance",
+            "Many variations were developed to increase security"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Caesar Cipher",
+      "icon": "CircleOff",
+      "sections": [
+        {
+          "subtitle": "Understanding the Shift",
+          "description": "Learn how the Caesar cipher performs letter shifting",
+          "points": [
+            "Each letter is shifted a fixed number of positions in the alphabet",
+            "Traditional Caesar cipher uses a shift of 3 positions",
+            "The shift creates a simple mapping between plaintext and ciphertext",
+            "The alphabet is treated as circular, wrapping from Z back to A"
+          ],
+          "codeExample": "caesar-cipher"
+        }
+      ]
+    },
+    {
+      "title": "The Atbash Cipher",
+      "icon": "FlipHorizontal",
+      "sections": [
+        {
+          "subtitle": "Mirror Substitution",
+          "description": "Explore the unique properties of the Atbash cipher",
+          "points": [
+            "Letters are substituted with their mirror position in the alphabet",
+            "A becomes Z, B becomes Y, and so on",
+            "No key is needed - the cipher is its own inverse",
+            "Originally used in Hebrew texts, later adapted for other alphabets"
+          ],
+          "codeExample": "atbash-cipher"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Classical Substitution Ciphers Quiz",
+    "description": "Test your understanding of basic substitution ciphers and their implementations",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What happens when you apply the Caesar cipher twice with a shift of 3?",
+        "options": [
+          "The text is shifted 6 positions forward",
+          "The text returns to its original form",
+          "The text becomes unreadable",
+          "The shift direction reverses"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Caesar cipher shifts are additive. Two shifts of 3 positions result in a total shift of 6 positions forward in the alphabet."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Why is the Atbash cipher considered a special case of substitution ciphers?",
+        "options": [
+          "It is reciprocal - encoding and decoding use the same process",
+          "It requires a numerical key",
+          "It only works with consonants",
+          "It uses multiple alphabets"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Atbash cipher is special because it's reciprocal - applying the cipher twice returns the original text, and the same process is used for both encryption and decryption."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which weakness makes substitution ciphers vulnerable to cryptanalysis?",
+        "options": [
+          "Letter frequency patterns remain unchanged",
+          "They only work with capital letters",
+          "The key must be a prime number",
+          "They cannot encrypt punctuation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Simple substitution ciphers maintain the frequency patterns of letters in the original text, making them vulnerable to statistical analysis."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "caesar-cipher", "atbash-cipher", "classical-encryption"]
+  }
+}

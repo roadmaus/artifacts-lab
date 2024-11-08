@@ -1,0 +1,125 @@
+{
+  "id": "mechanical-devices",
+  "parentTopic": "ancient-encryption",
+  "title": "Early Mechanical Encryption",
+  "description": "Discover the ingenious mechanical devices used for encryption throughout history, from the ancient Spartan scytale to the complex cipher disks of the 19th century.",
+  "icon": "Cog",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2 hours",
+  "content": [
+    {
+      "title": "Ancient Physical Encryption Tools",
+      "icon": "Scroll",
+      "sections": [
+        {
+          "subtitle": "The Spartan Scytale",
+          "description": "Learn about one of the earliest military encryption devices",
+          "points": [
+            "Cylindrical rod used as a transposition cipher tool",
+            "Required exact diameter match for decryption",
+            "Message became scrambled when unwrapped",
+            "First known use of a physical tool for encryption"
+          ],
+          "codeExample": "scytale-cipher"
+        }
+      ]
+    },
+    {
+      "title": "Cipher Disks",
+      "icon": "CircleDot",
+      "sections": [
+        {
+          "subtitle": "Alberti's Cipher Disk",
+          "description": "Explore the first mechanical polyalphabetic cipher device",
+          "points": [
+            "Invented by Leon Battista Alberti in 1467",
+            "Two concentric rotating disks with alphabets",
+            "Could change encryption alphabet during message",
+            "Introduced the concept of polyalphabetic substitution"
+          ]
+        },
+        {
+          "subtitle": "The Confederate Cipher Disk",
+          "description": "Understanding Civil War era encryption technology",
+          "points": [
+            "Used during the American Civil War",
+            "Based on Vigenère cipher principles",
+            "Portable and faster than manual encryption",
+            "Multiple rotating disks for different substitutions"
+          ],
+          "codeExample": "cipher-disks"
+        }
+      ]
+    },
+    {
+      "title": "Jefferson's Wheel Cipher",
+      "icon": "Disc",
+      "sections": [
+        {
+          "subtitle": "Understanding the Mechanics",
+          "description": "Learn about Thomas Jefferson's innovative encryption device",
+          "points": [
+            "Created by Thomas Jefferson in the 1790s",
+            "Used 36 wheels with scrambled alphabets",
+            "Could generate complex polyalphabetic substitutions",
+            "Required precise physical alignment for decryption"
+          ],
+          "codeExample": "jefferson-wheel"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Mechanical Encryption Devices Quiz",
+    "description": "Test your knowledge of historical encryption devices and their mechanisms",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What made the scytale unique among ancient encryption methods?",
+        "options": [
+          "It required a physical object for both encryption and decryption",
+          "It used multiple alphabets",
+          "It only worked with Greek letters",
+          "It needed sunlight to operate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The scytale was unique because it required a physical rod of the exact same diameter for both encryption and decryption, making it one of the first encryption methods to rely on a physical tool."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Why was Alberti's cipher disk considered revolutionary?",
+        "options": [
+          "It allowed for changing encryption alphabets mid-message",
+          "It was made of gold",
+          "It could encrypt numbers",
+          "It worked underwater"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Alberti's cipher disk was revolutionary because it introduced the concept of changing encryption alphabets within a single message, leading to the development of polyalphabetic ciphers."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What was the main advantage of Jefferson's wheel cipher?",
+        "options": [
+          "It could create complex substitutions quickly",
+          "It was very small",
+          "It worked at night",
+          "It was inexpensive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Jefferson's wheel cipher could quickly generate complex polyalphabetic substitutions that would have been time-consuming to create by hand, making it both secure and practical for its time."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "mechanical-encryption", "historical-devices", "civil-war"]
+  }
+}

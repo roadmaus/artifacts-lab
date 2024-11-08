@@ -1,0 +1,210 @@
+{
+  "id": "cis-controls",
+  "parentTopic": "cybersecurity-frameworks",
+  "title": "CIS Controls",
+  "description": "Comprehensive guide to the CIS Critical Security Controls, including Implementation Groups, control categories, and practical implementation guidance.",
+  "icon": "List",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2.5 hours",
+  "content": [
+    {
+      "title": "CIS Controls Foundation",
+      "icon": "Building2",
+      "sections": [
+        {
+          "subtitle": "Understanding CIS Controls",
+          "description": "Introduction to CIS Controls and their evolution",
+          "points": [
+            "Prioritized set of actions to protect organizations and data",
+            "Developed by global IT security experts",
+            "Regular updates to address emerging threats",
+            "Based on real-world attack patterns",
+            "Mapped to major compliance frameworks"
+          ]
+        },
+        {
+          "subtitle": "Implementation Groups (IGs)",
+          "description": "Understanding the three Implementation Groups",
+          "points": [
+            "IG1: Basic cyber hygiene for small organizations",
+            "IG2: Additional controls for moderately resourced organizations",
+            "IG3: Comprehensive controls for highly resourced organizations",
+            "Progressive implementation approach",
+            "Resource-based categorization"
+          ],
+          "codeExample": "// Example IG Selection Logic\nfunction determineImplementationGroup(org) {\n  const criteria = {\n    dataComplexity: org.dataComplexity,  // low, medium, high\n    resourceLevel: org.resources,         // limited, moderate, substantial\n    staffExpertise: org.expertise         // basic, intermediate, advanced\n  };\n\n  if (criteria.resourceLevel === 'limited') {\n    return 'IG1';\n  } else if (criteria.resourceLevel === 'moderate') {\n    return 'IG2';\n  } else {\n    return 'IG3';\n  }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Control Categories",
+      "icon": "Layers",
+      "sections": [
+        {
+          "subtitle": "1. Inventory and Control of Enterprise Assets",
+          "description": "Managing hardware assets",
+          "points": [
+            "Active discovery tools",
+            "Asset inventory database",
+            "Unauthorized asset detection",
+            "Regular inventory updates",
+            "Asset lifecycle management"
+          ]
+        },
+        {
+          "subtitle": "2. Inventory and Control of Software Assets",
+          "description": "Managing software assets",
+          "points": [
+            "Software inventory tools",
+            "Authorized software list",
+            "Software installation control",
+            "License compliance tracking",
+            "Regular software updates"
+          ]
+        },
+        {
+          "subtitle": "3. Data Protection",
+          "description": "Securing sensitive information",
+          "points": [
+            "Data classification",
+            "Data access control",
+            "Encryption requirements",
+            "Data disposal procedures",
+            "Data leakage prevention"
+          ]
+        },
+        {
+          "subtitle": "4. Secure Configuration of Enterprise Assets and Software",
+          "description": "Maintaining secure configurations",
+          "points": [
+            "Secure baseline configurations",
+            "Configuration management",
+            "Security hardening guidelines",
+            "Regular compliance checks",
+            "Automated configuration assessment"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation Strategy",
+      "icon": "GitMerge",
+      "sections": [
+        {
+          "subtitle": "Basic Controls (IG1)",
+          "description": "Essential security controls for all organizations",
+          "points": [
+            "Inventory of authorized devices",
+            "Basic access control",
+            "Data backup and recovery",
+            "Malware defenses",
+            "Basic network security"
+          ]
+        },
+        {
+          "subtitle": "Foundational Controls (IG2)",
+          "description": "Additional controls for enhanced security",
+          "points": [
+            "Vulnerability assessment",
+            "Incident response capability",
+            "Network monitoring",
+            "Security awareness training",
+            "Penetration testing"
+          ]
+        },
+        {
+          "subtitle": "Organizational Controls (IG3)",
+          "description": "Advanced controls for mature organizations",
+          "points": [
+            "Advanced threat detection",
+            "Security architecture review",
+            "Red team exercises",
+            "Continuous monitoring",
+            "Automated response capabilities"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Measurement and Metrics",
+      "icon": "LineChart",
+      "sections": [
+        {
+          "subtitle": "Control Assessment",
+          "description": "Measuring control effectiveness",
+          "points": [
+            "Define measurement criteria",
+            "Establish baseline metrics",
+            "Regular assessment schedule",
+            "Compliance tracking",
+            "Gap analysis procedures"
+          ]
+        },
+        {
+          "subtitle": "Continuous Improvement",
+          "description": "Maintaining and enhancing controls",
+          "points": [
+            "Regular control reviews",
+            "Update based on threats",
+            "Feedback incorporation",
+            "Performance optimization",
+            "Documentation updates"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "CIS Controls Assessment",
+    "description": "Test your understanding of CIS Controls and implementation groups",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which Implementation Group (IG) is most appropriate for a small organization with limited resources?",
+        "options": [
+          "IG3",
+          "IG1",
+          "IG2",
+          "None of the above"
+        ],
+        "correctAnswer": 1,
+        "explanation": "IG1 is designed for small organizations with limited resources, providing essential cyber hygiene controls that offer maximum security benefit with minimal resource investment."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which control category focuses on maintaining an up-to-date list of all authorized and unauthorized software?",
+        "options": [
+          "Data Protection",
+          "Secure Configuration",
+          "Inventory and Control of Software Assets",
+          "Access Control Management"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Inventory and Control of Software Assets category focuses on managing authorized software and preventing unauthorized software from being installed."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is a key characteristic of Organizational Controls (IG3)?",
+        "options": [
+          "Basic malware defenses",
+          "Simple access control",
+          "Advanced threat detection",
+          "Standard backup procedures"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Organizational Controls (IG3) include advanced capabilities like sophisticated threat detection, suitable for organizations with substantial resources and security expertise."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cis-controls", "security-controls", "implementation-groups", "cybersecurity", "best-practices"]
+  }
+}

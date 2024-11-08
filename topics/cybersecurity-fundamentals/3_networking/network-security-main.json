@@ -1,0 +1,112 @@
+{
+  "id": "networks-and-security",
+  "title": "Networks and Network Security",
+  "description": "Master the fundamentals of network architecture, protocols, and security. Learn how to design secure networks, implement proper controls, and protect against common network-based attacks while developing practical skills in network security administration.",
+  "icon": "Network",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "network-fundamentals",
+      "title": "Network Architecture and Data Transmission",
+      "description": "Understanding network types, topology, and data transmission principles",
+      "icon": "Share2"
+    },
+    {
+      "id": "network-protocols",
+      "title": "Network Protocols and Communication",
+      "description": "Deep dive into common network protocols and their security implications",
+      "icon": "Files"
+    },
+    {
+      "id": "cloud-computing",
+      "title": "Cloud Computing and Network Virtualization",
+      "description": "Exploring cloud architectures, services, and security considerations",
+      "icon": "Cloud"
+    },
+    {
+      "id": "network-security",
+      "title": "Network Security Implementation",
+      "description": "Implementing security controls, firewalls, and intrusion prevention",
+      "icon": "Shield"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Network Security Fundamentals Assessment",
+    "description": "Validate your understanding of network security concepts and implementation",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which network topology provides the highest level of redundancy?",
+        "options": [
+          "Bus topology",
+          "Mesh topology",
+          "Star topology",
+          "Ring topology"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Mesh topology provides the highest redundancy by connecting each node to multiple other nodes, ensuring multiple paths for data transmission and reducing single points of failure."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary security advantage of network segmentation?",
+        "options": [
+          "Increased network speed",
+          "Better data backup options",
+          "Containment of security breaches",
+          "Reduced power consumption"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Network segmentation helps contain security breaches by limiting an attacker's ability to move laterally through the network, effectively isolating compromised segments."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which feature of TLS provides protection against man-in-the-middle attacks?",
+        "options": [
+          "Certificate validation",
+          "Data compression",
+          "Session resumption",
+          "Keepalive messages"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Certificate validation in TLS helps prevent man-in-the-middle attacks by verifying the identity of the server through digital certificates and trusted certificate authorities."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "In a defense-in-depth strategy, where should a DMZ be placed?",
+        "options": [
+          "Between internal networks",
+          "Behind the internal firewall",
+          "Between external and internal networks",
+          "Within the internal network"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A DMZ should be placed between external and internal networks to create a buffer zone for public-facing services while protecting internal resources."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "What is the main purpose of NAT in network security?",
+        "options": [
+          "Encrypt network traffic",
+          "Hide internal IP addresses",
+          "Speed up network connections",
+          "Filter malicious packets"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Network Address Translation (NAT) primarily helps security by hiding internal IP addresses from external networks, making it harder for attackers to map internal network structure."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["network security", "cybersecurity", "networking", "firewalls", "protocols", "cloud computing"]
+  }
+}

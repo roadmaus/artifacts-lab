@@ -1,0 +1,148 @@
+{
+  "id": "sha1-hash",
+  "parentTopic": "hashing-algorithms",
+  "title": "SHA-1 Algorithm",
+  "description": "Explore the Secure Hash Algorithm 1 (SHA-1), its improvements over MD5, implementation details, and current security status.",
+  "icon": "ShieldAlert",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2 hours",
+  "content": [
+    {
+      "title": "Introduction to SHA-1",
+      "icon": "Info",
+      "sections": [
+        {
+          "subtitle": "Overview and History",
+          "description": "SHA-1 was designed by the NSA and published by NIST in 1995 as part of the Digital Signature Standard (DSS).",
+          "points": [
+            "Produces a 160-bit (20-byte) hash value",
+            "Designed as a more secure alternative to MD5",
+            "Widely used in protocols like TLS/SSL and Git",
+            "No longer considered cryptographically secure since 2017"
+          ]
+        },
+        {
+          "subtitle": "Technical Specifications",
+          "description": "Core technical aspects of the SHA-1 algorithm.",
+          "points": [
+            "Input: Messages up to 2^64 - 1 bits",
+            "Output: Fixed 160-bit hash value",
+            "Block Size: 512 bits",
+            "Word Size: 32 bits",
+            "Uses 80 rounds of operations"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithm Implementation",
+      "icon": "Code",
+      "sections": [
+        {
+          "subtitle": "Initialization and Constants",
+          "description": "SHA-1 uses specific initial values and constants for processing.",
+          "points": [
+            "Five initial state variables (h0 to h4)",
+            "Uses nonlinear functions for each round",
+            "Implements different constant values per round"
+          ],
+          "codeExample": "# Initial hash values\nh0 = 0x67452301\nh1 = 0xEFCDAB89\nh2 = 0x98BADCFE\nh3 = 0x10325476\nh4 = 0xC3D2E1F0"
+        },
+        {
+          "subtitle": "Core Processing",
+          "description": "Main processing steps of the SHA-1 algorithm.",
+          "points": [
+            "Message padding similar to MD5",
+            "Message schedule generation",
+            "Compression function with 80 rounds"
+          ],
+          "codeExample": "def sha1_round(a, b, c, d, e, f, k, w):\n    temp = rotate_left(a, 5) + f + e + k + w\n    e = d\n    d = c\n    c = rotate_left(b, 30)\n    b = a\n    a = temp\n    return a, b, c, d, e"
+        }
+      ]
+    },
+    {
+      "title": "Security Analysis",
+      "icon": "AlertTriangle",
+      "sections": [
+        {
+          "subtitle": "Vulnerabilities",
+          "description": "Known security weaknesses and practical attacks against SHA-1.",
+          "points": [
+            "Theoretical weaknesses identified in 2005",
+            "First practical collision demonstrated in 2017",
+            "SHAttered attack by CWI and Google",
+            "Practical chosen-prefix collisions in 2020"
+          ]
+        },
+        {
+          "subtitle": "Current Status and Migration",
+          "description": "Current usage recommendations and migration strategies.",
+          "points": [
+            "Deprecated for all security-critical applications",
+            "Still used in legacy systems and Git (with mitigations)",
+            "Should be replaced with SHA-256 or newer",
+            "Browser vendors mark SHA-1 certificates as insecure"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "SHA-1 Comprehension Check",
+    "description": "Verify your understanding of SHA-1's design, implementation, and security status.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the key improvement of SHA-1 over MD5?",
+        "options": [
+          "Larger hash output size",
+          "Faster processing speed",
+          "Smaller memory footprint",
+          "Simpler implementation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SHA-1 produces a 160-bit hash value, compared to MD5's 128-bit output, providing better resistance against birthday attacks."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "When was the first practical collision for SHA-1 demonstrated?",
+        "options": [
+          "2017",
+          "2005",
+          "2020",
+          "2015"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The first practical collision for SHA-1 was demonstrated in 2017 through the SHAttered attack by CWI and Google."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "How many rounds does SHA-1's compression function use?",
+        "options": [
+          "80 rounds",
+          "64 rounds",
+          "20 rounds",
+          "40 rounds"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SHA-1 uses 80 rounds in its compression function, which is more than MD5's 64 rounds but was still proven insufficient for long-term security."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": [
+      "cryptography",
+      "hash-functions",
+      "deprecated-algorithms",
+      "security-standards"
+    ]
+  }
+}

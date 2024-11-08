@@ -1,0 +1,124 @@
+{
+  "id": "security-investigation-tools",
+  "parentTopic": "detection-and-response",
+  "title": "Security Investigation and SIEM",
+  "description": "Master the use of Security Information and Event Management (SIEM) platforms and forensic tools for effective security investigations. Learn advanced log analysis, artifact examination, and threat hunting techniques while developing practical investigation skills.",
+  "icon": "Search",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "6 hours",
+  "content": [
+    {
+      "title": "SIEM Implementation and Management",
+      "icon": "Database",
+      "sections": [
+        {
+          "subtitle": "Log Collection and Normalization",
+          "description": "Implementing effective log collection strategies and normalization techniques for comprehensive security monitoring.",
+          "points": [
+            "Log Source Integration: Successful SIEM deployment requires comprehensive log source integration strategy. Key components include: Log source identification and prioritization, parser development for custom sources, and validation of log integrity. Critical considerations include: Network bandwidth requirements, storage capacity planning, and retention policy implementation. Teams must address: Log format standardization, timestamp normalization, and field mapping across different sources. Implementation focuses on: Agent vs. agentless collection, encrypted transmission, and backup collection methods.",
+            "Data Normalization Techniques: Effective log analysis requires standardized data formats and field normalization. This involves: Field extraction rules development, lookup table implementation, and taxonomy standardization. Key processes include: IP address normalization, username standardization, and event categorization mapping. Teams must implement: Custom field extraction, multi-format parsing, and correlation field preparation. Focus areas include: Regular expression optimization, parsing performance, and field attribution accuracy.",
+            "Data Quality Management: Maintaining high-quality log data is crucial for accurate analysis. This includes: Implementing data quality checks, monitoring collection status, and managing parsing failures. Critical tasks include: Missing field detection, format validation, and error handling procedures. Teams should focus on: Data completeness verification, accuracy monitoring, and collection gap detection. Implementation requires: Quality metrics definition, monitoring dashboards, and automated alerting for collection issues."
+          ],
+          "codeExample": "log-collection-workflow-visual.tsx"
+        },
+        {
+          "subtitle": "Query Development and Optimization",
+          "description": "Creating and optimizing SIEM queries for effective threat detection and investigation.",
+          "points": [
+            "Search Query Construction: Effective SIEM usage requires mastery of search language and query optimization. This includes: Understanding query syntax, using advanced operators, and implementing subsearches efficiently. Key concepts include: Field selection optimization, wildcarding best practices, and temporal query design. Focus areas include: Boolean logic implementation, regular expression usage, and result filtering techniques. Teams must consider: Query performance impact, result set management, and cross-source correlation requirements.",
+            "Correlation Rule Development: Creating effective correlation rules for automated threat detection. This involves: Defining correlation logic, implementing aggregation functions, and managing rule dependencies. Critical aspects include: Threshold definition, suppression logic, and alert routing configuration. Teams must understand: Time window selection, event sequencing, and condition grouping. Implementation focuses on: Rule testing methodology, performance impact assessment, and maintenance procedures.",
+            "Performance Optimization: Maintaining SIEM query performance while ensuring detection effectiveness. This includes: Query optimization techniques, index utilization strategies, and resource usage management. Key considerations include: Search time ranges, field extraction timing, and lookup optimization. Teams should focus on: Cache utilization, concurrent search limits, and distributed search configuration. Implementation requires: Performance baseline establishment, monitoring frameworks, and optimization workflows."
+          ],
+          "codeExample": "query-optimization-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Forensic Analysis and Artifact Examination",
+      "icon": "Microscope",
+      "sections": [
+        {
+          "subtitle": "Digital Evidence Collection",
+          "description": "Implementing proper digital evidence collection and handling procedures for security investigations.",
+          "points": [
+            "Evidence Collection Methodology: Proper digital evidence collection requires systematic approach and documentation. This includes: Identifying relevant data sources, establishing collection priorities, and maintaining evidence integrity. Critical procedures include: Write blocking implementation, hash verification, and chain of custody documentation. Teams must understand: Volatile data collection, disk imaging techniques, and memory capture procedures. Focus areas include: Live system analysis, remote collection capabilities, and triage-based collection strategies.",
+            "Memory Analysis Techniques: Memory forensics provides crucial insights into system compromise. This involves: Memory acquisition procedures, artifact identification, and malware detection techniques. Key concepts include: Process analysis, memory mapping, and rootkit detection. Teams should focus on: Command line reconstruction, network connection analysis, and persistence mechanism identification. Implementation requires: Tool selection, analysis workflow development, and finding documentation standards.",
+            "Timeline Analysis: Reconstructing incident timelines through artifact correlation. This includes: Timeline creation methodology, artifact timestamp analysis, and event sequence reconstruction. Critical aspects include: Time zone handling, timestamp normalization, and correlation accuracy. Teams must implement: Super timeline creation, cross-source correlation, and visualization techniques. Focus areas include: Artifact selection, temporal gap analysis, and narrative development."
+          ],
+          "codeExample": "evidence-collection-workflow-visual.tsx"
+        },
+        {
+          "subtitle": "Malware Analysis and Threat Hunting",
+          "description": "Conducting effective malware analysis and proactive threat hunting operations.",
+          "points": [
+            "Static Analysis Procedures: Understanding malware behavior through static analysis techniques. This includes: File format analysis, string extraction, and code structure examination. Key components include: Header analysis, import table examination, and resource inspection. Teams must understand: Packing detection, obfuscation identification, and indicator extraction. Implementation focuses on: Automated analysis workflows, classification systems, and reporting standards.",
+            "Dynamic Analysis Implementation: Observing malware behavior through controlled execution. This involves: Safe environment preparation, behavior monitoring, and network interaction analysis. Critical aspects include: Sandbox configuration, anti-analysis detection, and artifact collection. Teams should focus on: System change monitoring, network traffic analysis, and persistence mechanism identification. Implementation requires: Tool chain development, analysis documentation, and indicator extraction procedures.",
+            "Threat Hunting Methodology: Implementing proactive threat detection through systematic hunting. This includes: Hypothesis development, data source identification, and hunting procedure documentation. Key concepts include: TTP-based hunting, indicator utility assessment, and finding classification. Teams must implement: Hunting program management, success metrics, and knowledge management systems. Focus areas include: Hunt planning, tool selection, and results documentation."
+          ],
+          "codeExample": "threat-hunting-workflow-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Security Investigation Tools Assessment",
+    "description": "Validate your understanding of SIEM platforms, forensic analysis, and threat hunting techniques.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the most critical consideration when implementing log source integration in a SIEM?",
+        "options": [
+          "Log source prioritization and validation",
+          "The color scheme of the dashboard",
+          "The number of available licenses",
+          "The operating system version"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Log source prioritization and validation are crucial as they ensure that critical security data is properly collected and validated for accuracy, which forms the foundation for effective security monitoring and investigation."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "During memory analysis, what should be captured first when investigating a live system?",
+        "options": [
+          "Hard drive image",
+          "System memory dump",
+          "Network configuration",
+          "System logs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "System memory should be captured first as it contains volatile data that will be lost upon system shutdown. This data can provide crucial information about active processes, network connections, and potential malware."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of correlation rules in SIEM implementation?",
+        "options": [
+          "To reduce storage requirements",
+          "To create pretty dashboards",
+          "To automate threat detection across multiple log sources",
+          "To organize log files"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Correlation rules in SIEM systems automate threat detection by analyzing patterns and relationships across multiple log sources, enabling real-time identification of security incidents based on predefined conditions."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": [
+      "SIEM",
+      "forensic analysis",
+      "threat hunting",
+      "log analysis",
+      "malware analysis",
+      "digital forensics",
+      "security investigation"
+    ]
+  }
+}

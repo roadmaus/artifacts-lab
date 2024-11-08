@@ -1,0 +1,149 @@
+{
+  "id": "sha3-hash",
+  "parentTopic": "hashing-algorithms",
+  "title": "SHA-3 Algorithm",
+  "description": "Explore SHA-3 (Keccak), the latest member of the Secure Hash Algorithm family, featuring a revolutionary sponge construction design.",
+  "icon": "Shield",
+  "difficulty": "Advanced",
+  "estimatedDuration": "3 hours",
+  "content": [
+    {
+      "title": "SHA-3 Introduction",
+      "icon": "Info",
+      "sections": [
+        {
+          "subtitle": "Background and Selection",
+          "description": "SHA-3 emerged from the NIST hash function competition (2007-2012), with Keccak selected as the winner.",
+          "points": [
+            "First standardized hash function with sponge construction",
+            "Designed by Guido Bertoni, Joan Daemen, Michaël Peeters, and Gilles Van Assche",
+            "Standardized by NIST in 2015",
+            "Not meant to replace SHA-2, but provide an alternative"
+          ]
+        },
+        {
+          "subtitle": "Technical Foundation",
+          "description": "Core concepts that differentiate SHA-3 from previous hash functions.",
+          "points": [
+            "Based on sponge construction instead of Merkle-Damgård",
+            "Supports variable output lengths",
+            "State size of 1600 bits",
+            "Configurable security levels"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithm Structure",
+      "icon": "Code",
+      "sections": [
+        {
+          "subtitle": "Sponge Construction",
+          "description": "The innovative design approach used in SHA-3.",
+          "points": [
+            "Absorption phase for input processing",
+            "Squeezing phase for output generation",
+            "Permutation function (Keccak-f)",
+            "Configurable rate and capacity"
+          ],
+          "codeExample": "def keccak_round(state, round_constant):\n    # Theta step\n    C = [reduce(lambda x, y: x ^ y, row) for row in state]\n    D = [C[(i - 1) % 5] ^ rot(C[(i + 1) % 5], 1) for i in range(5)]\n    state = [[state[x][y] ^ D[x] for y in range(5)] for x in range(5)]\n    # Remaining steps: rho, pi, chi, iota\n    return state"
+        },
+        {
+          "subtitle": "Implementation Variants",
+          "description": "Different standardized versions of SHA-3.",
+          "points": [
+            "SHA3-224: 224-bit output for legacy compatibility",
+            "SHA3-256: 256-bit output for general use",
+            "SHA3-384: 384-bit output for higher security",
+            "SHA3-512: 512-bit output for maximum security",
+            "SHAKE128 and SHAKE256: Extendable output functions"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Security and Performance",
+      "icon": "Lock",
+      "sections": [
+        {
+          "subtitle": "Security Features",
+          "description": "Key security properties and advantages of SHA-3.",
+          "points": [
+            "Resistance to length extension attacks",
+            "Side-channel attack resistance",
+            "Quantum computing considerations",
+            "Proven security margins"
+          ]
+        },
+        {
+          "subtitle": "Performance Characteristics",
+          "description": "Performance aspects and implementation considerations.",
+          "points": [
+            "Efficient hardware implementation",
+            "Software performance comparisons",
+            "Parallelization capabilities",
+            "Memory requirements and optimization"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "SHA-3 Advanced Concepts",
+    "description": "Test your understanding of SHA-3's unique features and implementation details.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the key architectural difference between SHA-3 and its predecessors?",
+        "options": [
+          "Sponge construction",
+          "Merkle-Damgård construction",
+          "Davies-Meyer construction",
+          "Feistel network"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SHA-3 uses the sponge construction, a fundamentally different approach from the Merkle-Damgård construction used in SHA-1 and SHA-2."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which variant of SHA-3 offers an extendable output function?",
+        "options": [
+          "SHAKE128",
+          "SHA3-256",
+          "SHA3-512",
+          "SHA3-384"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SHAKE128 and SHAKE256 are extendable output functions (XOFs) that can produce hash outputs of any desired length."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the state size used in SHA-3?",
+        "options": [
+          "1600 bits",
+          "1024 bits",
+          "512 bits",
+          "2048 bits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SHA-3 uses a state size of 1600 bits, which provides a good balance between security and performance."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": [
+      "cryptography",
+      "hash-functions",
+      "modern-algorithms",
+      "sponge-construction"
+    ]
+  }
+}

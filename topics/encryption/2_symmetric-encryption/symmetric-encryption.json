@@ -1,0 +1,112 @@
+{
+  "id": "symmetric-encryption",
+  "title": "Symmetric Encryption",
+  "description": "Learn about symmetric encryption, its algorithms, and how to implement secure data encryption using shared secret keys. Understand the fundamental concepts of cryptography and explore popular symmetric encryption methods.",
+  "icon": "Lock",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "symmetric-basics",
+      "title": "Fundamentals of Symmetric Encryption",
+      "description": "Understanding the basic concepts, advantages, and limitations of symmetric encryption",
+      "icon": "Key"
+    },
+    {
+      "id": "common-algorithms",
+      "title": "Common Symmetric Algorithms",
+      "description": "Explore AES, DES, 3DES, and other widely-used symmetric encryption algorithms",
+      "icon": "Cog"
+    },
+    {
+      "id": "key-management",
+      "title": "Key Management and Distribution",
+      "description": "Best practices for managing and distributing symmetric encryption keys",
+      "icon": "KeyRound"
+    },
+    {
+      "id": "practical-applications-symmetric",
+      "title": "Practical Applications",
+      "description": "Real-world applications and implementation considerations",
+      "icon": "Shield"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Symmetric Encryption Fundamentals Quiz",
+    "description": "Test your understanding of symmetric encryption concepts",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the main characteristic of symmetric encryption?",
+        "options": [
+          "Uses the same key for encryption and decryption",
+          "Uses different keys for encryption and decryption",
+          "Doesn't require any keys",
+          "Only works for text data"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Symmetric encryption uses the same secret key for both encrypting and decrypting data, which is why it's called 'symmetric'."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which of the following is NOT a symmetric encryption algorithm?",
+        "options": [
+          "RSA",
+          "AES",
+          "DES",
+          "Blowfish"
+        ],
+        "correctAnswer": 0,
+        "explanation": "RSA is an asymmetric encryption algorithm, while AES, DES, and Blowfish are all symmetric encryption algorithms."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the standard key size for AES-256?",
+        "options": [
+          "256 bits",
+          "128 bits",
+          "512 bits",
+          "64 bits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "AES-256 uses a 256-bit key size, which provides a very high level of security."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "What is the main advantage of symmetric encryption?",
+        "options": [
+          "Fast performance and efficiency",
+          "No need for key management",
+          "Public key distribution",
+          "Infinite key length"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Symmetric encryption is generally faster and more efficient than asymmetric encryption, making it suitable for encrypting large amounts of data."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "What is the primary challenge in symmetric encryption?",
+        "options": [
+          "Secure key distribution",
+          "Slow encryption speed",
+          "Limited message size",
+          "Complex algorithms"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main challenge in symmetric encryption is securely distributing the shared secret key to all parties who need it."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["security", "cryptography", "encryption", "cybersecurity"]
+  }
+}

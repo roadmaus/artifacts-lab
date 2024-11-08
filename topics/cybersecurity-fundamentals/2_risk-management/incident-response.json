@@ -1,0 +1,126 @@
+{
+  "id": "incident-response",
+  "parentTopic": "security-risk-management",
+  "title": "Incident Response and Recovery",
+  "description": "Master the comprehensive incident response lifecycle, from preparation through recovery and lessons learned. Learn to implement effective incident response procedures, conduct investigations, and ensure business continuity while developing practical skills in incident handling and recovery operations.",
+  "icon": "Zap",
+  "difficulty": "Beginner",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Incident Response Lifecycle",
+      "icon": "RefreshCw",
+      "sections": [
+        {
+          "subtitle": "Preparation and Planning",
+          "description": "Establish effective incident response capabilities through comprehensive planning and preparation.",
+          "points": [
+            "Incident Response Plan Development requires defining clear procedures, roles, and responsibilities. This includes creating detailed playbooks for different incident types (malware, data breach, DDoS), establishing communication channels, and defining escalation procedures. Plans should align with organizational risk assessment and business impact analysis. For example, a healthcare organization's plan might prioritize incidents affecting patient care systems and include specific procedures for HIPAA breach notification requirements.",
+            "Team Structure and Training focuses on building and maintaining incident response capabilities. This includes defining roles (incident commander, technical lead, communications liaison), establishing on-call rotations, and conducting regular training exercises. Teams need access to appropriate tools and technologies for incident investigation and response. For instance, a financial institution might maintain dedicated forensics workstations with specialized software and establish relationships with external incident response providers for surge support.",
+            "Response Technology Stack includes tools for incident detection, investigation, and containment. This encompasses forensics tools, malware analysis platforms, and incident tracking systems. Organizations should maintain secured communications channels for incident coordination and evidence handling procedures. Modern incident response platforms often integrate with SIEM systems and provide automated playbook execution capabilities. Teams should regularly validate tool effectiveness through tabletop exercises and technical drills."
+          ],
+          "codeExample": "incident-response-planning-visual.tsx"
+        },
+        {
+          "subtitle": "Detection and Analysis",
+          "description": "Learn effective techniques for incident detection, triage, and initial response.",
+          "points": [
+            "Initial Triage Procedures establish systematic approaches to incident verification and severity assessment. This includes gathering initial indicators, performing preliminary impact analysis, and determining response priorities. Teams should use standardized incident classification frameworks and severity matrices. For example, a retail organization might classify point-of-sale system compromises as critical incidents requiring immediate response, while isolated workstation infections receive lower priority.",
+            "Investigation Methodology provides structured approaches to incident analysis. This includes evidence collection procedures, analysis techniques, and documentation requirements. Teams should establish clear chains of custody and maintain detailed investigation logs. Modern incident response involves analyzing diverse data sources including network traffic, system logs, and threat intelligence. For instance, investigating a potential data breach might involve correlating network flow data, access logs, and file system activities to trace data movement.",
+            "Scope Determination requires identifying affected systems, data, and users. This includes mapping attack progression, identifying compromise indicators, and determining potential business impact. Organizations should maintain updated asset inventories and network diagrams to support rapid scope assessment. For example, investigating a compromised user account requires analyzing all systems and data accessed by that account during the suspected compromise period."
+          ],
+          "codeExample": "incident-investigation-visual.tsx"
+        },
+        {
+          "subtitle": "Containment and Eradication",
+          "description": "Implement effective strategies for containing incidents and eliminating threats.",
+          "points": [
+            "Containment Strategies balance threat mitigation with business continuity requirements. This includes implementing short-term containment actions (network isolation, account suspension) and long-term solutions (system hardening, security control upgrades). Teams should consider business impact when selecting containment approaches. For instance, containing a ransomware outbreak might involve rapidly disconnecting affected systems while maintaining critical business services through redundant systems.",
+            "Evidence Preservation ensures proper handling of incident artifacts for potential legal proceedings. This includes creating forensic copies, maintaining chain of custody documentation, and securing evidence storage. Organizations should establish relationships with legal counsel and law enforcement contacts. Modern forensics often involves cloud systems and mobile devices, requiring specialized preservation techniques. For example, preserving evidence from cloud-based email systems requires coordination with service providers and appropriate legal documentation.",
+            "Threat Elimination focuses on removing malicious artifacts and attack vectors. This includes malware removal, vulnerability remediation, and security control enhancement. Teams should verify threat elimination through thorough testing and monitoring. For instance, eradicating an advanced persistent threat might require coordinated removal of all malicious footholds, followed by enhanced monitoring for reinfection attempts."
+          ],
+          "codeExample": "incident-containment-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Recovery and Lessons Learned",
+      "icon": "RotateCw",
+      "sections": [
+        {
+          "subtitle": "System Recovery and Validation",
+          "description": "Implement secure recovery procedures and ensure system integrity.",
+          "points": [
+            "Recovery Planning involves defining procedures for restoring systems and data to normal operations. This includes prioritizing recovery targets, validating backup integrity, and implementing security improvements during restoration. Organizations should maintain updated recovery procedures and regularly test backup systems. For example, recovering from a ransomware incident might involve restoring from clean backups while implementing additional controls to prevent reinfection.",
+            "Security Validation ensures recovered systems meet security requirements. This includes vulnerability scanning, penetration testing, and security control verification. Organizations should implement enhanced monitoring during the recovery period. Modern recovery often involves automated deployment tools and security baseline enforcement. For instance, recovering compromised servers might utilize automated deployment templates that enforce security configurations and patch levels.",
+            "Business Continuity Integration aligns recovery activities with business requirements. This includes coordinating with business units, managing communication with stakeholders, and tracking recovery metrics. Organizations should maintain documented recovery time objectives (RTO) and recovery point objectives (RPO). For example, recovering critical financial systems might require point-in-time recovery capabilities to minimize data loss while meeting regulatory requirements."
+          ],
+          "codeExample": "system-recovery-visual.tsx"
+        },
+        {
+          "subtitle": "Post-Incident Activities",
+          "description": "Learn to conduct effective post-incident analysis and program improvement.",
+          "points": [
+            "Incident Documentation requires comprehensive recording of incident details, response actions, and outcomes. This includes technical details, timeline reconstruction, and impact assessment. Organizations should maintain standardized documentation templates and secure repositories for incident records. For example, documenting a web application breach might include attack vectors, compromised data, response actions, and implemented security improvements.",
+            "Lessons Learned Process involves systematic analysis of incident handling effectiveness. This includes reviewing response timing, decision effectiveness, and control adequacy. Teams should conduct formal after-action reviews and track improvement recommendations. Modern incident response platforms often provide analytics capabilities to identify patterns and improvement opportunities. For instance, analyzing multiple phishing incidents might reveal common user behaviors that can be addressed through targeted training.",
+            "Program Enhancement implements improvements based on incident analysis. This includes updating incident response procedures, enhancing detection capabilities, and strengthening preventive controls. Organizations should maintain a continuous improvement cycle for their incident response program. For example, lessons from a successful attack might lead to implementing new detection rules, updating security training, and enhancing network segmentation."
+          ],
+          "codeExample": "post-incident-analysis-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Incident Response and Recovery Assessment",
+    "description": "Test your understanding of incident response procedures and recovery strategies.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of maintaining chain of custody during incident response?",
+        "options": [
+          "To speed up system recovery",
+          "To ensure evidence admissibility",
+          "To improve team coordination",
+          "To reduce storage costs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Chain of custody documentation ensures the integrity and admissibility of evidence in legal proceedings by tracking all access and handling of incident-related artifacts."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "When should system recovery procedures be tested?",
+        "options": [
+          "Only after an incident occurs",
+          "Regularly as part of preparation",
+          "When required by auditors",
+          "After system updates"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Regular testing of recovery procedures is essential to ensure their effectiveness and identify potential issues before an actual incident occurs."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What should be the first step in containing a ransomware incident?",
+        "options": [
+          "Paying the ransom",
+          "Restoring from backups",
+          "Isolating affected systems",
+          "Updating antivirus software"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The first step in containing a ransomware incident should be isolating affected systems to prevent further spread of the infection while maintaining critical business operations."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["incident response", "disaster recovery", "business continuity", "forensics", "incident handling", "security incidents"]
+  }
+}

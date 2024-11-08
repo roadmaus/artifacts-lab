@@ -1,0 +1,148 @@
+{
+  "id": "sha256-hash",
+  "parentTopic": "hashing-algorithms",
+  "title": "SHA-256 Algorithm",
+  "description": "Master the SHA-256 hash function, part of the SHA-2 family, which remains one of the most widely used and secure cryptographic hash functions.",
+  "icon": "ShieldCheck",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2.5 hours",
+  "content": [
+    {
+      "title": "SHA-256 Fundamentals",
+      "icon": "Info",
+      "sections": [
+        {
+          "subtitle": "Overview and Context",
+          "description": "SHA-256 is part of the SHA-2 family, designed by the NSA and published by NIST in 2001.",
+          "points": [
+            "Produces a 256-bit (32-byte) hash value",
+            "Built on the Merkle-Damgård construction",
+            "Widely used in modern security applications",
+            "No practical attacks known to date"
+          ]
+        },
+        {
+          "subtitle": "Technical Specifications",
+          "description": "Core specifications that define SHA-256's structure.",
+          "points": [
+            "Input: Messages up to 2^64 - 1 bits",
+            "Output: Fixed 256-bit hash value",
+            "Block Size: 512 bits",
+            "Word Size: 32 bits",
+            "64 rounds of processing"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation Details",
+      "icon": "Code",
+      "sections": [
+        {
+          "subtitle": "Initialization Values",
+          "description": "SHA-256 uses specific initial hash values derived from prime numbers.",
+          "points": [
+            "Eight initial hash values (h0 to h7)",
+            "64 round constants based on cube roots",
+            "Complex message scheduling"
+          ],
+          "codeExample": "# Initial hash values (first 32 bits of fractional parts of square roots of first 8 primes)\nh0 = 0x6a09e667\nh1 = 0xbb67ae85\nh2 = 0x3c6ef372\nh3 = 0xa54ff53a\nh4 = 0x510e527f\nh5 = 0x9b05688c\nh6 = 0x1f83d9ab\nh7 = 0x5be0cd19"
+        },
+        {
+          "subtitle": "Round Processing",
+          "description": "The main compression function operations.",
+          "points": [
+            "Message schedule array expansion",
+            "Eight working variables",
+            "Complex round operations with rotations"
+          ],
+          "codeExample": "def sha256_round(a, b, c, d, e, f, g, h, k, w):\n    ch = (e & f) ^ (~e & g)\n    maj = (a & b) ^ (a & c) ^ (b & c)\n    s0 = rotate_right(a, 2) ^ rotate_right(a, 13) ^ rotate_right(a, 22)\n    s1 = rotate_right(e, 6) ^ rotate_right(e, 11) ^ rotate_right(e, 25)\n    temp1 = h + s1 + ch + k + w\n    temp2 = s0 + maj\n    return (temp1 + temp2) & 0xffffffff, a, b, c, (d + temp1) & 0xffffffff, e, f, g"
+        }
+      ]
+    },
+    {
+      "title": "Security and Applications",
+      "icon": "Lock",
+      "sections": [
+        {
+          "subtitle": "Security Strength",
+          "description": "Current security status and resistance to attacks.",
+          "points": [
+            "Collision resistance: 2^128 operations",
+            "Preimage resistance: 2^256 operations",
+            "No known practical attacks",
+            "Quantum resistance considerations"
+          ]
+        },
+        {
+          "subtitle": "Modern Applications",
+          "description": "Common uses of SHA-256 in current systems.",
+          "points": [
+            "Digital signatures and certificates",
+            "Blockchain and cryptocurrency systems",
+            "Software integrity verification",
+            "Message authentication codes (HMAC)"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "SHA-256 Knowledge Check",
+    "description": "Test your understanding of SHA-256's design, implementation, and applications.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the output size of SHA-256?",
+        "options": [
+          "256 bits",
+          "256 bytes",
+          "512 bits",
+          "128 bits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SHA-256 produces a 256-bit (32-byte) hash value, providing strong security against collision and preimage attacks."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which of these is NOT a primary application of SHA-256?",
+        "options": [
+          "Password storage without salt",
+          "Digital signatures",
+          "Blockchain mining",
+          "File integrity verification"
+        ],
+        "correctAnswer": 0,
+        "explanation": "While SHA-256 is cryptographically secure, it should not be used alone for password storage. Password hashing requires specialized algorithms like bcrypt or Argon2."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "How many rounds does SHA-256 use in its compression function?",
+        "options": [
+          "64",
+          "80",
+          "32",
+          "128"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SHA-256 uses 64 rounds in its compression function, providing a good balance between security and performance."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": [
+      "cryptography",
+      "hash-functions",
+      "security-standards",
+      "blockchain"
+    ]
+  }
+}

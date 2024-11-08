@@ -1,0 +1,116 @@
+{
+  "id": "threat-analysis",
+  "parentTopic": "assets-threats-vulnerabilities",
+  "title": "Threat Analysis and Modeling",
+  "description": "Master systematic approaches to identifying, analyzing, and modeling security threats. Learn to use industry-standard frameworks to assess potential attacks, understand adversary tactics, and develop effective mitigation strategies.",
+  "icon": "Target",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "8 hours",
+  "content": [
+    {
+      "title": "Threat Intelligence and Analysis",
+      "icon": "Search",
+      "sections": [
+        {
+          "subtitle": "Threat Intelligence Fundamentals",
+          "description": "Understanding the collection, analysis, and application of threat intelligence in security programs.",
+          "points": [
+            "Threat Intelligence Categories encompass: (1) Strategic: broad trends affecting business decisions (2) Tactical: specific attack patterns and IOCs (3) Operational: details about specific incoming attacks (4) Technical: specific malware signatures and vulnerabilities. Each category serves different organizational needs and timeframes. Example: Strategic intelligence guiding security investment decisions while tactical intelligence updates firewall rules.",
+            "Intelligence Collection Methods utilize multiple sources: (1) Open-Source Intelligence (OSINT) from public databases and forums (2) Commercial threat feeds providing real-time attack data (3) Information Sharing Communities like ISACs (4) Internal security tools and monitoring systems. Collection strategies must address: data quality, relevance, timeliness, and actionability. Integration requires automated processing and standardized formats (STIX/TAXII).",
+            "Threat Actor Profiling analyzes: motivation (financial, political, espionage), capabilities (tools, skills, resources), patterns (timing, targeting, tactics), and infrastructure. Profiling helps predict: likely targets, attack methods, and required defenses. Example: APT groups typically using specific malware families and infrastructure patterns that can be detected and blocked."
+          ],
+          "codeExample": "threat-intelligence-dashboard-visual.tsx"
+        },
+        {
+          "subtitle": "Attack Surface Analysis",
+          "description": "Systematic evaluation of potential attack vectors and exposure points.",
+          "points": [
+            "Attack Surface Mapping includes: (1) External Exposure: Internet-facing systems, cloud services, remote access points (2) Internal Exposure: network segments, trust relationships, privileged accounts (3) Physical Exposure: facility access, hardware security, environmental controls. Mapping requires: continuous discovery, vulnerability assessment, and configuration analysis. Example: Cloud infrastructure requiring analysis of API endpoints, IAM configurations, and network security groups.",
+            "Attack Vector Analysis examines potential paths: network-based attacks, social engineering, physical access, supply chain compromise, and insider threats. Each vector requires specific controls and monitoring approaches. Analysis considers: ease of exploitation, potential impact, and detection capabilities. Regular testing validates protection effectiveness through penetration testing and red team exercises.",
+            "Attack Tree Development models potential attack scenarios using structured analysis: (1) Root node represents attacker goal (2) AND/OR logic shows required steps (3) Leaf nodes indicate specific actions. Trees help identify: critical paths, common dependencies, and optimal defenses. Example: Creating an attack tree for unauthorized data access showing multiple possible paths and required capabilities."
+          ],
+          "codeExample": "attack-surface-map-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Threat Modeling Methodologies",
+      "icon": "GitBranch",
+      "sections": [
+        {
+          "subtitle": "Structured Threat Modeling",
+          "description": "Application of systematic threat modeling frameworks and methodologies.",
+          "points": [
+            "STRIDE Methodology categorizes threats as: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. Application involves: system decomposition, threat identification, and control mapping. Each category requires specific mitigations and validation methods. Example: Analyzing web application security using STRIDE to identify authentication bypasses, data manipulation risks, and logging requirements.",
+            "PASTA Framework (Process for Attack Simulation and Threat Analysis) implements seven stages: (1) Define Objectives (2) Define Technical Scope (3) Decompose Application (4) Analyze Threats (5) Identify Vulnerabilities (6) Enumerate Attacks (7) Analyze Risk Impact. Framework ensures comprehensive analysis considering business context and technical details. Output drives security requirements and controls.",
+            "MITRE ATT&CK Framework provides: comprehensive tactics and techniques matrix, real-world attack patterns, and mitigation strategies. Implementation involves: mapping defenses to techniques, identifying coverage gaps, and prioritizing improvements. Framework enables: threat hunting, incident response, and red team planning. Regular updates maintain effectiveness against evolving threats."
+          ],
+          "codeExample": "threat-modeling-workflow-visual.tsx"
+        },
+        {
+          "subtitle": "Risk Quantification",
+          "description": "Methods for measuring and expressing threat-based risks in quantifiable terms.",
+          "points": [
+            "FAIR (Factor Analysis of Information Risk) Model quantifies risk through: threat event frequency, vulnerability, and loss magnitude. Analysis considers: primary and secondary loss factors, control strength, and threat capability. Model enables: cost-benefit analysis, risk prioritization, and investment decisions. Example: Calculating potential loss exposure from ransomware attacks based on historical data and control effectiveness.",
+            "Threat Scoring Systems use standardized metrics: CVSS for vulnerabilities, risk matrices for scenarios, and custom scoring for specific threats. Scoring considers: technical impact, business impact, and likelihood factors. Systems enable: consistent evaluation, prioritization, and tracking. Regular calibration ensures scoring accuracy and relevance.",
+            "Key Risk Indicators (KRIs) monitor threat levels through: security events, control effectiveness, and environmental factors. Indicators require: clear thresholds, monitoring procedures, and response plans. Example: Monitoring phishing attempt frequency, successful compromises, and user reporting rates to assess social engineering risk."
+          ],
+          "codeExample": "risk-quantification-dashboard-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Threat Analysis and Modeling Assessment",
+    "description": "Validate your understanding of threat analysis methodologies, modeling frameworks, and risk quantification approaches.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "When using the STRIDE methodology, which category best fits unauthorized system access using stolen credentials?",
+        "options": [
+          "Elevation of Privilege",
+          "Spoofing",
+          "Information Disclosure",
+          "Tampering"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Spoofing involves impersonating another user or system, which directly applies to using stolen credentials for unauthorized access."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of developing attack trees?",
+        "options": [
+          "To list all system vulnerabilities",
+          "To model possible attack paths",
+          "To calculate security budgets",
+          "To identify asset owners"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Attack trees model the various paths an attacker might take to achieve their goal, helping identify critical paths and necessary defenses."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which type of threat intelligence is most useful for immediate incident response?",
+        "options": [
+          "Operational",
+          "Strategic",
+          "Historical",
+          "Theoretical"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Operational threat intelligence provides details about specific incoming attacks, making it most valuable for immediate incident response activities."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["threat analysis", "threat modeling", "risk assessment", "attack surface", "threat intelligence"]
+  }
+}

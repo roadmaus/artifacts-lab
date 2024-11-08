@@ -1,0 +1,112 @@
+{
+  "id": "security-assessment-tools",
+  "parentTopic": "network-security-testing",
+  "title": "Security Assessment Tools",
+  "description": "Master essential network security testing tools and methodologies used in professional wireless security assessments. Learn proper tool configuration, usage scenarios, and interpretation of results for effective security testing.",
+  "icon": "Tool",
+  "difficulty": "Beginner",
+  "estimatedDuration": "6 hours",
+  "content": [
+    {
+      "title": "Network Analysis Tools",
+      "icon": "Search",
+      "sections": [
+        {
+          "subtitle": "Wireless Network Discovery Tools",
+          "description": "Understanding and implementing tools for wireless network discovery and initial reconnaissance.",
+          "points": [
+            "Network Discovery Fundamentals: Professional security testing begins with thorough network discovery. Key tools like airodump-ng provide comprehensive network information including: BSSID (Access Point MAC), Signal strength indicators (RXQ and PWR), Data rates and encryption types, Client associations and probe requests. Understanding these metrics is crucial for target identification and assessment planning. Real-world example: Using signal strength metrics (PWR/RXQ) to optimize antenna positioning for better packet capture.",
+
+            "Monitor Mode Configuration: Proper tool configuration starts with enabling monitor mode on wireless interfaces. The process includes: Driver compatibility verification, Interface configuration using airmon-ng, Channel and frequency band selection, Interference mitigation techniques. Monitor mode is essential for capturing all wireless frames, not just those destined for your interface. Example workflow: Using airmon-ng to check for interfering processes, stopping them, and creating a monitor mode interface.",
+
+            "Advanced Discovery Features: Modern discovery tools provide detailed network insights including: Supported data rates indicating network capabilities (11n, 11ac, etc.), WPS status and configuration, Hidden network detection through probe responses, Client behavior analysis through probe requests. These features help build a comprehensive picture of the target network environment. Example: Identifying vulnerable WPS implementations through discovery tool information."
+          ],
+          "codeExample": "network-discovery-dashboard-visual.tsx"
+        },
+        {
+          "subtitle": "Packet Capture Tools",
+          "description": "Implementation and usage of specialized packet capture tools for security assessment.",
+          "points": [
+            "Capture Tool Configuration: Effective packet capture requires proper tool configuration. Essential settings include: Channel selection and hopping parameters, BSSID filtering for targeted capture, Frame type filtering options, Output file format selection. Understanding these configuration options ensures efficient and focused data collection. Example: Configuring targeted capture with 'airodump-ng -c [channel] --bssid [target_mac] -w [filename] [interface]'.",
+
+            "Real-time Analysis Features: Modern capture tools provide real-time analysis capabilities including: Data packet counting and IV collection tracking, Client connection monitoring, Encryption type detection and verification, Signal strength tracking and optimization. These features help analysts make real-time decisions during assessment. Example: Using real-time IV counting to determine progress in WEP key recovery attempts.",
+
+            "Output Management: Professional tools offer various output formats and management features including: Multiple output format support (PCAP, CAP, IVS), GPS logging capabilities for site surveys, CSV output for client and AP tracking, Logging and session management. Proper output management is crucial for documentation and analysis. Example: Using GPS logging to create wireless network coverage maps during site assessments."
+          ],
+          "codeExample": "packet-capture-interface-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Security Testing Tools",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Authentication Testing Tools",
+          "description": "Tools and techniques for testing network authentication mechanisms.",
+          "points": [
+            "Authentication Test Suite: Professional tools provide comprehensive authentication testing capabilities including: Fake authentication testing for AP responses, MAC filtering bypass detection, Shared key authentication analysis, WPA/WPA2 handshake capture. These tools help identify authentication mechanism weaknesses. Example: Using aireplay-ng for fake authentication to test AP security policies.",
+
+            "Injection Testing Tools: Packet injection capabilities are crucial for active testing. Key features include: Driver compatibility testing, Packet crafting and injection, Rate limiting and transmission control, Success rate monitoring. Understanding injection capabilities and limitations is essential for effective testing. Example: Using injection tests to verify hardware and driver capabilities before assessment.",
+
+            "Client Analysis Tools: Tools for analyzing client behavior and security include: Probe request analysis, Connection pattern monitoring, Deauthentication testing capabilities, Client blacklisting detection. Client analysis helps identify potential vulnerabilities in network access policies. Example: Analyzing client probe requests to identify potential rogue access point vulnerabilities."
+          ],
+          "codeExample": "authentication-test-suite-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Security Assessment Tools Assessment",
+    "description": "Test your understanding of security testing tools and their proper implementation",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "When configuring packet capture for a specific network, which parameter is most important for focused data collection?",
+        "options": [
+          "Interface name",
+          "BSSID filtering",
+          "Output filename",
+          "Monitor mode"
+        ],
+        "correctAnswer": 1,
+        "explanation": "BSSID filtering ensures capture is focused on the target network, making data collection more efficient by excluding irrelevant traffic from other networks."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of injection testing before a security assessment?",
+        "options": [
+          "To test network speed",
+          "To verify hardware and driver capabilities",
+          "To capture handshakes",
+          "To create network maps"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Injection testing verifies that your hardware and drivers support the packet injection capabilities necessary for active security testing techniques."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which real-time analysis feature is most important when attempting WEP key recovery?",
+        "options": [
+          "Signal strength tracking",
+          "GPS logging",
+          "IV collection counting",
+          "Client monitoring"
+        ],
+        "correctAnswer": 2,
+        "explanation": "IV (Initialization Vector) collection counting is crucial for WEP key recovery as it indicates progress toward gathering enough unique IVs for successful key cracking."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-07",
+    "language": "English",
+    "tags": ["security tools", "network analysis", "packet capture", "security testing", "wireless security", "authentication testing"]
+  }
+}

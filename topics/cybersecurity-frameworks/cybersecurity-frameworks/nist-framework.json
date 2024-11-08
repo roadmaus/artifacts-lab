@@ -1,0 +1,173 @@
+{
+  "id": "nist-framework",
+  "parentTopic": "cybersecurity-frameworks",
+  "title": "NIST Cybersecurity Framework",
+  "description": "Comprehensive exploration of the NIST Cybersecurity Framework (CSF), its core functions, implementation tiers, and practical application in organizations.",
+  "icon": "GridFour",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2.5 hours",
+  "content": [
+    {
+      "title": "Framework Foundation",
+      "icon": "Building",
+      "sections": [
+        {
+          "subtitle": "NIST CSF Overview",
+          "description": "Introduction to the NIST Cybersecurity Framework and its development",
+          "points": [
+            "Voluntary framework developed by NIST in response to Executive Order 13636",
+            "Designed to improve critical infrastructure cybersecurity",
+            "Technology-neutral and scalable for organizations of all sizes",
+            "Regularly updated to address emerging threats and practices"
+          ]
+        },
+        {
+          "subtitle": "Framework Components",
+          "description": "Understanding the three main components of the NIST CSF",
+          "points": [
+            "Framework Core: Set of cybersecurity activities and outcomes",
+            "Implementation Tiers: Context of how an organization views cybersecurity risk",
+            "Framework Profiles: Alignment of standards, guidelines, and practices",
+            "Integration with existing risk management processes"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Core Functions",
+      "icon": "LayersThree",
+      "sections": [
+        {
+          "subtitle": "Identify Function",
+          "description": "Understanding the systems, assets, data, and capabilities",
+          "points": [
+            "Asset Management: Inventory of systems and data",
+            "Business Environment: Organization's mission and objectives",
+            "Risk Assessment: Understanding cybersecurity risks",
+            "Risk Management Strategy: Risk tolerance and priorities"
+          ],
+          "codeExample": "// Example Asset Management Implementation\nconst assetCategories = {\n  hardware: ['servers', 'endpoints', 'network devices'],\n  software: ['operating systems', 'applications', 'databases'],\n  data: ['customer data', 'intellectual property', 'configurations']\n};"
+        },
+        {
+          "subtitle": "Protect Function",
+          "description": "Implementing safeguards to ensure delivery of services",
+          "points": [
+            "Access Control: Managing identity and authentication",
+            "Awareness and Training: Security training programs",
+            "Data Security: Protection of information",
+            "Protective Technology: Technical security solutions"
+          ]
+        },
+        {
+          "subtitle": "Detect Function",
+          "description": "Identifying cybersecurity events",
+          "points": [
+            "Anomalies and Events: Detecting unusual activity",
+            "Security Continuous Monitoring: Ongoing security assessment",
+            "Detection Processes: Maintaining detection effectiveness",
+            "Integration with security tools and systems"
+          ]
+        },
+        {
+          "subtitle": "Respond Function",
+          "description": "Taking action regarding detected events",
+          "points": [
+            "Response Planning: Executing response processes",
+            "Communications: Coordination with stakeholders",
+            "Analysis: Understanding impact and improving procedures",
+            "Mitigation: Preventing expansion of events"
+          ]
+        },
+        {
+          "subtitle": "Recover Function",
+          "description": "Maintaining resilience and restoration plans",
+          "points": [
+            "Recovery Planning: Executing recovery processes",
+            "Improvements: Incorporating lessons learned",
+            "Communications: Coordinating restoration activities",
+            "Managing public relations and reputation"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "icon": "Workflow",
+      "sections": [
+        {
+          "subtitle": "Implementation Tiers",
+          "description": "Understanding the four implementation tiers",
+          "points": [
+            "Tier 1 - Partial: Ad-hoc and reactive processes",
+            "Tier 2 - Risk Informed: Risk management approved but not organization-wide",
+            "Tier 3 - Repeatable: Formal policies and regular updates",
+            "Tier 4 - Adaptive: Continuous improvement and adaptation"
+          ]
+        },
+        {
+          "subtitle": "Creating Framework Profiles",
+          "description": "Developing current and target profiles",
+          "points": [
+            "Assessment of current cybersecurity state",
+            "Definition of target cybersecurity state",
+            "Gap analysis between current and target states",
+            "Action plan development and prioritization"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "NIST CSF Mastery Check",
+    "description": "Test your understanding of the NIST Cybersecurity Framework",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which NIST CSF core function focuses on developing and implementing appropriate safeguards?",
+        "options": [
+          "Detect",
+          "Identify",
+          "Protect",
+          "Respond"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Protect function focuses on developing and implementing appropriate safeguards to ensure delivery of critical infrastructure services."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What characterizes a Tier 4 (Adaptive) implementation in the NIST CSF?",
+        "options": [
+          "Ad-hoc and reactive cybersecurity practices",
+          "Risk-informed management approval",
+          "Organization-wide policies and procedures",
+          "Continuous improvement and real-time adaptation"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Tier 4 (Adaptive) represents the most mature implementation, characterized by continuous improvement and real-time adaptation to emerging threats and changes in the environment."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which component of the NIST CSF helps organizations align their security practices with business requirements?",
+        "options": [
+          "Framework Profiles",
+          "Core Functions",
+          "Implementation Tiers",
+          "Security Controls"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Framework Profiles help organizations align their cybersecurity activities with their business requirements, risk tolerance, and resources."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["nist", "cybersecurity", "framework", "risk-management", "security-controls"]
+  }
+}

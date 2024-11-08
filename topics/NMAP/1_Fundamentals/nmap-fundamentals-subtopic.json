@@ -1,0 +1,112 @@
+{
+  "id": "nmap-fundamentals",
+  "parentTopic": "nmap-network-enumeration",
+  "title": "NMAP Fundamentals",
+  "description": "Master the essential concepts and techniques of NMAP scanning, from basic installation to advanced syntax usage. Learn how different scan types interact with network protocols, understand target specification methods, and develop a strong foundation in network enumeration principles.",
+  "icon": "Terminal",
+  "difficulty": "Beginner",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Understanding Network Enumeration",
+      "icon": "Network",
+      "sections": [
+        {
+          "subtitle": "Fundamentals of Network Reconnaissance",
+          "description": "Explore the core concepts of network enumeration and its critical role in security assessment and network management.",
+          "points": [
+            "Network enumeration serves as the foundation for security assessments and network maintenance. Key Components: Host discovery, port scanning, service identification, and OS fingerprinting. Importance in Security: Enables asset inventory, vulnerability assessment, and security baseline establishment. Legal Considerations: Must operate within scope and authorization to avoid legal issues. Real-world Impact: Security teams use enumeration to detect rogue devices, unauthorized services, and potential entry points.",
+            "Information gathering techniques fall into two categories - Active and Passive Enumeration. Active Methods: Direct interaction with targets through scanning and probing, providing real-time data but risking detection. Passive Methods: Gathering information without direct target interaction, using DNS records, WHOIS data, and public sources. Risk Assessment: Active scanning can impact network performance and trigger security alerts, requiring careful planning and execution. Best Practice: Begin with passive techniques before progressing to active scanning.",
+            "NMAP's role in the enumeration process encompasses multiple phases: Initial Network Mapping: Identifying live hosts and network topology. Service Discovery: Determining running services and versions. Security Assessment: Identifying potential vulnerabilities and misconfigurations. Documentation: Generating comprehensive reports for analysis and remediation. Integration: Working alongside other security tools like Wireshark for traffic analysis and Metasploit for exploitation testing. Performance Considerations: Understanding how scan types and options affect network load and detection probability."
+          ],
+          "codeExample": "network-enumeration-workflow"
+        }
+      ]
+    },
+    {
+      "title": "NMAP Installation and Configuration",
+      "icon": "Settings",
+      "sections": [
+        {
+          "subtitle": "Setup and Initial Configuration",
+          "description": "Learn how to properly install and configure NMAP across different operating systems while understanding essential configuration options.",
+          "points": [
+            "Installation methods vary by platform, each with specific considerations and requirements. Linux Installation: Package managers (apt/yum) provide official builds with 'apt install nmap' or 'yum install nmap'. Windows Installation: Binary installer from nmap.org, including optional Zenmap GUI. macOS Installation: Available through Homebrew package manager or native installer. Post-Installation Tasks: Updating script database, configuring permissions, and verifying installation. Additional Components: NSE scripts, service fingerprints, and OS detection database.",
+            "NMAP configuration involves understanding critical files and settings that affect scanning behavior. Configuration Files: nmap-services, nmap-protocols, nmap-mac-prefixes, and nmap-service-probes. Custom Service Definitions: Adding or modifying service fingerprints for accurate detection. Performance Tuning: Adjusting timing templates, parallel scanning settings, and DNS resolution options. Security Considerations: Running with appropriate privileges, managing output files, and handling sensitive data.",
+            "Essential preliminary setup includes establishing a secure testing environment and baseline configurations. Network Setup: Isolated testing networks, virtual environments, and target systems. Permission Requirements: Understanding privilege levels needed for different scan types. Documentation: Setting up logging and output formats for proper record-keeping. Compliance: Ensuring configurations meet security policies and regulatory requirements. Testing Methodology: Creating standard operating procedures for consistent scanning practices."
+          ],
+          "codeExample": "nmap-installation-setup"
+        }
+      ]
+    },
+    {
+      "title": "Basic Scanning Techniques",
+      "icon": "Scan",
+      "sections": [
+        {
+          "subtitle": "Core Scanning Methodologies",
+          "description": "Master the fundamental scanning techniques that form the basis of all NMAP operations.",
+          "points": [
+            "TCP Connect Scan (-sT) represents the most basic and complete scanning method. Technical Operation: Performs full three-way TCP handshake (SYN, SYN-ACK, ACK). Use Cases: Default scan type for unprivileged users, reliable but easily detected. Advantages: Highly accurate, works through most proxies and NAT. Limitations: Slower than SYN scans, more likely to be logged. Impact Assessment: Can trigger application logs and security alerts. Best Practices: Use when stealth is not a concern or when running unprivileged.",
+            "SYN Scan (-sS) provides a stealthier alternative to full TCP connects. Technical Details: Sends SYN packet, analyzes response, never completes handshake. Security Implications: Often called 'half-open' scanning, may evade basic logging. Performance Benefits: Faster than connect scans, less network overhead. Systems Impact: Requires root/administrator privileges, may leave incomplete connections. Detection Considerations: Still visible to advanced IDS/IPS systems. Usage Guidelines: Preferred method for initial enumeration when stealth is important.",
+            "UDP Scan (-sU) identifies often-overlooked UDP services and vulnerabilities. Implementation: Sends UDP packets to target ports, analyzes responses including ICMP errors. Common Services: DNS (53), SNMP (161/162), DHCP (67/68), VPN protocols. Technical Challenges: Slower than TCP scans due to UDP protocol behavior. Response Interpretation: Understanding ICMP port unreachable messages versus no response. Optimization Techniques: Combining with TCP scans, using --top-ports option for efficiency. Security Implications: UDP scanning often reveals overlooked attack vectors."
+          ],
+          "codeExample": "scan-types-comparison"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "NMAP Fundamentals Assessment",
+    "description": "Validate your understanding of NMAP basics, installation, and scanning techniques",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "When performing a TCP Connect scan, what indicates a port is open?",
+        "options": [
+          "A RST packet is received",
+          "No response is received",
+          "A successful three-way handshake",
+          "An ICMP error message"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A successful three-way handshake (SYN, SYN-ACK, ACK) definitively indicates an open port during a TCP Connect scan. This is why TCP Connect scans are highly accurate but easily detected."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which NMAP scan type requires root/administrator privileges?",
+        "options": [
+          "SYN scan (-sS)",
+          "TCP Connect scan (-sT)",
+          "Version detection (-sV)",
+          "Regular ping (-sn)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SYN scans (-sS) require root/administrator privileges because they need raw socket access to send custom-crafted packets and analyze responses without completing the TCP handshake."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary difference between active and passive enumeration?",
+        "options": [
+          "Active is faster than passive",
+          "Passive requires special tools",
+          "Active directly interacts with targets",
+          "Passive only works on Linux"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The primary difference is that active enumeration directly interacts with target systems through scanning and probing, while passive enumeration gathers information without direct interaction, using public sources and network observation."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-07",
+    "language": "English",
+    "tags": ["nmap", "network scanning", "enumeration", "port scanning", "network security", "tcp scanning", "udp scanning"]
+  }
+}

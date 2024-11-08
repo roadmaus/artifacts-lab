@@ -1,0 +1,97 @@
+{
+  "id": "threat-detection-concepts",
+  "parentTopic": "cybersecurity-frameworks",
+  "title": "Threat Detection Core Concepts",
+  "description": "Understanding fundamental concepts in threat detection, including the Pyramid of Pain and its relationship to various security frameworks.",
+  "icon": "Target",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "1.5 hours",
+  "content": [
+    {
+      "title": "Pyramid of Pain",
+      "icon": "Triangle",
+      "sections": [
+        {
+          "subtitle": "Understanding the Pyramid of Pain",
+          "description": "Interactive exploration of different threat indicators and their impact on adversaries",
+          "points": [
+            "Hierarchical classification of threat indicators",
+            "Relationship between indicator types and adversary effort",
+            "Integration with MITRE ATT&CK framework",
+            "Practical application in threat hunting"
+          ],
+          "codeExample": "pyramid-of-pain" 
+        }
+      ]
+    },
+    {
+      "title": "Framework Integration",
+      "icon": "GitMerge",
+      "sections": [
+        {
+          "subtitle": "Applying Concepts Across Frameworks",
+          "description": "How the Pyramid of Pain relates to various security frameworks",
+          "points": [
+            "Mapping to MITRE ATT&CK techniques",
+            "Integration with NIST CSF detection capabilities",
+            "Supporting CIS Controls implementation",
+            "Enhancing threat hunting programs"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Threat Detection Concepts Assessment",
+    "description": "Test your understanding of the Pyramid of Pain and related concepts",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which level of the Pyramid of Pain represents the most difficult indicators for adversaries to change?",
+        "options": [
+          "Hash Values",
+          "IP Addresses",
+          "Tools",
+          "TTPs"
+        ],
+        "correctAnswer": 3,
+        "explanation": "TTPs (Tactics, Techniques, and Procedures) represent the highest level of the pyramid and are the most difficult for adversaries to change, as they require fundamentally altering their methodology."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Why are Hash Values considered 'Trivial' in the Pyramid of Pain?",
+        "options": [
+          "They are not important for detection",
+          "They are easy for attackers to modify",
+          "They are difficult to collect",
+          "They require special tools to generate"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hash Values are considered trivial because attackers can easily modify them by making minor changes to their files, making them unreliable as long-term indicators."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which detection method is most effective for identifying adversary TTPs?",
+        "options": [
+          "Hash databases",
+          "IP blocking",
+          "Behavior analytics",
+          "File scanning"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Behavior analytics is most effective for identifying TTPs as it focuses on patterns of behavior rather than specific indicators, making it harder for adversaries to evade detection."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["threat-detection", "pyramid-of-pain", "indicators", "ttps", "threat-hunting"]
+  }
+}

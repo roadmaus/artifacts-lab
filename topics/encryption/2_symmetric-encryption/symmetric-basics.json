@@ -1,0 +1,145 @@
+{
+  "id": "symmetric-basics",
+  "parentTopic": "symmetric-encryption",
+  "title": "Fundamentals of Symmetric Encryption",
+  "description": "Learn the core concepts, components, and principles of symmetric encryption, including key concepts like shared secret keys, block ciphers, and stream ciphers.",
+  "icon": "Key",
+  "difficulty": "Beginner",
+  "estimatedDuration": "1.5 hours",
+  "content": [
+    {
+      "title": "Introduction to Symmetric Encryption",
+      "icon": "BookOpen",
+      "sections": [
+        {
+          "subtitle": "What is Symmetric Encryption?",
+          "description": "Symmetric encryption is a type of encryption where the same key is used for both encryption and decryption of data.",
+          "points": [
+            "Both sender and receiver use an identical secret key",
+            "The key must be kept confidential by all parties",
+            "Also known as secret-key encryption or shared-key encryption",
+            "Widely used for securing data at rest and in transit"
+          ]
+        },
+        {
+          "subtitle": "Historical Context",
+          "description": "Understanding the evolution of symmetric encryption from ancient times to modern digital security.",
+          "points": [
+            "Ancient ciphers like Caesar cipher were symmetric",
+            "World War II's Enigma machine used symmetric encryption",
+            "Development of DES in 1970s marked the beginning of modern symmetric encryption",
+            "AES became the global standard in 2001"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Core Components",
+      "icon": "Components",
+      "sections": [
+        {
+          "subtitle": "Essential Elements",
+          "description": "The fundamental components that make up a symmetric encryption system.",
+          "points": [
+            "Plaintext: The original, readable message",
+            "Encryption Algorithm: The method to transform plaintext",
+            "Secret Key: The shared key used for encryption/decryption",
+            "Ciphertext: The encrypted, unreadable output",
+            "Decryption Algorithm: The reverse transformation process"
+          ],
+          "codeExample": "symmetric-encryption-demo"
+        },
+        {
+          "subtitle": "Types of Symmetric Ciphers",
+          "description": "Understanding the two main categories of symmetric encryption.",
+          "points": [
+            "Block Ciphers: Process fixed-size blocks of data",
+            "Stream Ciphers: Process data one bit or byte at a time",
+            "Different use cases for each type",
+            "Common modes of operation for block ciphers"
+          ],
+          "codeExample": "block-vs-stream"
+        }
+      ]
+    },
+    {
+      "title": "Key Characteristics",
+      "icon": "FileLock",
+      "sections": [
+        {
+          "subtitle": "Advantages",
+          "description": "Understanding the benefits of symmetric encryption.",
+          "points": [
+            "Fast performance and computational efficiency",
+            "Suitable for large amounts of data",
+            "Simple concept and implementation",
+            "Strong security when properly implemented"
+          ]
+        },
+        {
+          "subtitle": "Limitations",
+          "description": "Key challenges and drawbacks of symmetric encryption.",
+          "points": [
+            "Secure key distribution is challenging",
+            "Number of keys grows quadratically with users",
+            "Key management becomes complex in large systems",
+            "Not suitable for certain use cases like digital signatures"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Symmetric Encryption Basics Quiz",
+    "description": "Test your understanding of symmetric encryption fundamentals",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which of the following best describes symmetric encryption?",
+        "options": [
+          "A system where the same key is used for encryption and decryption",
+          "A system where different keys are used for encryption and decryption",
+          "A system that doesn't require any keys",
+          "A system that only works with text data"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Symmetric encryption uses the same key for both encryption and decryption processes, which is its defining characteristic."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which of these is NOT a core component of symmetric encryption?",
+        "options": [
+          "Public key",
+          "Plaintext",
+          "Secret key",
+          "Ciphertext"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Public keys are used in asymmetric encryption, not symmetric encryption. Symmetric encryption uses a single shared secret key."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What are the two main types of symmetric ciphers?",
+        "options": [
+          "Block ciphers and stream ciphers",
+          "Public ciphers and private ciphers",
+          "Fast ciphers and slow ciphers",
+          "Text ciphers and binary ciphers"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Symmetric ciphers are categorized into block ciphers (which process fixed-size blocks of data) and stream ciphers (which process data one bit or byte at a time)."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "encryption", "security-basics", "cipher-types"]
+  }
+}

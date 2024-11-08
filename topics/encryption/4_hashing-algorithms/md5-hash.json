@@ -1,0 +1,148 @@
+{
+  "id": "md5-hash",
+  "parentTopic": "hashing-algorithms",
+  "title": "MD5 Algorithm",
+  "description": "Understand the Message Digest 5 (MD5) algorithm, its implementation, vulnerabilities, and historical significance in cryptography.",
+  "icon": "Shield",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2 hours",
+  "content": [
+    {
+      "title": "Introduction to MD5",
+      "icon": "Info",
+      "sections": [
+        {
+          "subtitle": "Overview and History",
+          "description": "MD5 is a cryptographic hash function designed by Ronald Rivest in 1991 as a successor to MD4.",
+          "points": [
+            "Produces a 128-bit (16-byte) hash value",
+            "Originally designed for digital signature applications",
+            "Widely used historically but now considered cryptographically broken",
+            "Important to study for understanding hash function evolution"
+          ]
+        },
+        {
+          "subtitle": "Core Specifications",
+          "description": "Technical specifications that define the MD5 algorithm structure.",
+          "points": [
+            "Input: Accepts messages of arbitrary length",
+            "Output: Fixed 128-bit hash value",
+            "Block Size: 512 bits",
+            "Word Size: 32 bits",
+            "Uses 4 rounds with 16 operations each"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithm Implementation",
+      "icon": "Code",
+      "sections": [
+        {
+          "subtitle": "Initial State and Constants",
+          "description": "MD5 begins with specific initialization values and uses predefined constants.",
+          "points": [
+            "Four initial state variables (A, B, C, D)",
+            "Uses 64 constant values (K[0] to K[63])",
+            "Implements specific shift amounts for each operation"
+          ],
+          "codeExample": "# Initial state values (little-endian)\nA = 0x67452301\nB = 0xEFCDAB89\nC = 0x98BADCFE\nD = 0x10325476"
+        },
+        {
+          "subtitle": "Core Functions",
+          "description": "The main operations used in MD5 processing.",
+          "points": [
+            "Uses four different round functions (F, G, H, I)",
+            "Implements left rotation operations",
+            "Processes message in 512-bit blocks"
+          ],
+          "codeExample": "def F(x, y, z): return (x & y) | (~x & z)\ndef G(x, y, z): return (x & z) | (y & ~z)\ndef H(x, y, z): return x ^ y ^ z\ndef I(x, y, z): return y ^ (x | ~z)"
+        }
+      ]
+    },
+    {
+      "title": "Security Considerations",
+      "icon": "AlertTriangle",
+      "sections": [
+        {
+          "subtitle": "Known Vulnerabilities",
+          "description": "Critical security weaknesses that led to MD5's deprecation.",
+          "points": [
+            "Collision attacks discovered in 1996",
+            "Wang's efficient collision attack published in 2004",
+            "Chosen-prefix collisions demonstrated in 2006",
+            "Flame malware exploited MD5 weaknesses in 2012"
+          ]
+        },
+        {
+          "subtitle": "Migration Recommendations",
+          "description": "Guidelines for moving away from MD5 to secure alternatives.",
+          "points": [
+            "Use SHA-256 or SHA-3 for file integrity checks",
+            "Implement Argon2id or bcrypt for password hashing",
+            "Never use MD5 for new security-critical applications",
+            "Consider MD5 only for non-cryptographic checksums"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "MD5 Understanding Check",
+    "description": "Test your knowledge of the MD5 algorithm, its implementation, and security implications.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the output size of the MD5 hash function?",
+        "options": [
+          "128 bits",
+          "256 bits",
+          "512 bits",
+          "64 bits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "MD5 produces a 128-bit (16-byte) hash value, regardless of the input size."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which year marked the publication of Wang's efficient collision attack on MD5?",
+        "options": [
+          "2004",
+          "1996",
+          "2012",
+          "2006"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Wang's breakthrough collision attack was published in 2004, significantly impacting MD5's cryptographic security."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What operation does the F function perform in MD5?",
+        "options": [
+          "(x AND y) OR (NOT x AND z)",
+          "x XOR y XOR z",
+          "y XOR (x OR NOT z)",
+          "(x AND z) OR (y AND NOT z)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The F function performs a conditional operation: if x then y else z, implemented as (x AND y) OR (NOT x AND z)."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": [
+      "cryptography",
+      "hash-functions",
+      "legacy-algorithms",
+      "security-vulnerabilities"
+    ]
+  }
+}

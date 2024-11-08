@@ -1,0 +1,128 @@
+{
+  "id": "network-security",
+  "parentTopic": "networks-and-security",
+  "title": "Network Security Implementation",
+  "description": "Master the practical implementation of network security controls, including firewall configuration, intrusion detection/prevention, network monitoring, and security hardening. Learn hands-on approaches to protecting network infrastructure against modern threats.",
+  "icon": "Shield",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "8 hours",
+  "content": [
+    {
+      "title": "Firewall Implementation and Management",
+      "icon": "Wall",
+      "sections": [
+        {
+          "subtitle": "Advanced Firewall Configuration",
+          "description": "Comprehensive guide to implementing and managing next-generation firewalls",
+          "points": [
+            "Next-Generation Firewall Architecture: Modern NGFW capabilities extend beyond traditional packet filtering: Deep packet inspection (DPI) for application awareness, TLS inspection for encrypted traffic analysis, and user identity awareness for granular control. Implementation considerations include: Processing capacity planning, SSL/TLS inspection requirements, and high availability design. Example: Deploying Palo Alto Networks PA-Series with App-ID and User-ID integration for application-aware security controls.",
+            "Zone-Based Security Design: Implementing security zones with explicit trust relationships: DMZ configuration for public-facing services, internal segmentation for sensitive assets, and management networks for administrative access. Critical controls include: Anti-spoofing rules, explicit deny policies, and logging configuration. Best practice: Implementing zero-trust architecture with micro-segmentation and default-deny policies between all zones.",
+            "Advanced Threat Protection: Integration of threat intelligence and advanced security features: IPS signatures, malware analysis, DNS security, and automated response actions. Configuration includes: Custom IPS policies based on asset criticality, file blocking policies for malware prevention, and automated blocking of known-bad IPs. Example: Configuring Cisco Firepower with Security Intelligence feeds and custom network analysis policies for enhanced threat detection."
+          ],
+          "codeExample": "firewall-config-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Network Intrusion Detection and Prevention",
+      "icon": "AlertCircle",
+      "sections": [
+        {
+          "subtitle": "IDS/IPS Deployment and Tuning",
+          "description": "Implementing effective network-based threat detection and prevention",
+          "points": [
+            "Sensor Placement and Architecture: Strategic IDS/IPS deployment for comprehensive visibility: Network tap vs span port considerations, inline vs passive monitoring, and coverage requirements. Deployment strategy includes: North-south traffic monitoring, east-west visibility in data centers, and encrypted traffic handling. Example: Implementing Suricata IDS in passive mode for initial baselining, then transitioning to inline IPS with custom rule sets.",
+            "Signature Management and Tuning: Effective rule management for optimal detection: Custom signature development, false positive reduction, and performance optimization. Tuning process includes: Baseline traffic analysis, rule optimization based on environment, and regular signature updates. Best practice: Implementing custom rules for business-specific applications while maintaining core ruleset coverage.",
+            "Response Automation and Orchestration: Integration with security orchestration platforms: Automated incident response, threat hunting capabilities, and security tool integration. Implementation includes: SOAR platform integration, automated blocking actions, and incident workflow automation. Example: Using Splunk Phantom for automated response to IDS alerts, including threat intelligence enrichment and automated containment actions."
+          ],
+          "codeExample": "ids-deployment-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Network Monitoring and Security Analytics",
+      "icon": "LineChart",
+      "sections": [
+        {
+          "subtitle": "Security Monitoring Infrastructure",
+          "description": "Building comprehensive network security monitoring capabilities",
+          "points": [
+            "Network Traffic Analysis: Implementation of advanced traffic analysis tools: NetFlow collection and analysis, packet capture systems, and behavioral analytics. Monitoring components include: Flow collectors, full packet capture appliances, and network behavior analysis tools. Example: Deploying Zeek (formerly Bro) for protocol analysis combined with Elasticsearch for log analytics.",
+            "Security Information and Event Management (SIEM): Centralized security monitoring and correlation: Log collection strategy, correlation rules development, and alert prioritization. Implementation includes: Log source integration, custom detection rules, and incident response playbooks. Best practice: Implementing ELK Stack with custom dashboards for security operations and automated alerting based on correlation rules.",
+            "Performance Monitoring and Capacity Planning: Integration of performance metrics with security monitoring: Bandwidth utilization tracking, latency monitoring, and capacity trending. Tools include: SNMP monitoring, network performance management systems, and predictive analytics. Example: Using PRTG Network Monitor with custom sensors for security-relevant performance metrics and threshold-based alerting."
+          ],
+          "codeExample": "security-monitoring-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Security Hardening and Compliance",
+      "icon": "Lock",
+      "sections": [
+        {
+          "subtitle": "Network Infrastructure Hardening",
+          "description": "Implementing security baselines and compliance controls",
+          "points": [
+            "Device Hardening Standards: Comprehensive security baseline implementation: Operating system hardening, service minimization, and secure configuration management. Controls include: Password policies, remote access restrictions, and logging configuration. Example: Implementing CIS Benchmarks for network devices with automated compliance checking using Ansible.",
+            "Secure Network Services: Hardening critical network services: DNS security controls, DHCP snooping, dynamic ARP inspection, and secure administrative access. Implementation includes: DNSSEC deployment, DHCP security features, and encrypted management protocols. Best practice: Using SecureCRT for encrypted console access with multi-factor authentication and detailed logging.",
+            "Compliance Monitoring and Reporting: Automated compliance checking and reporting: Configuration compliance monitoring, security control validation, and audit trail maintenance. Tools include: Network Configuration Manager, compliance scanning tools, and automated reporting systems. Example: Using Nessus for regular compliance scans against custom policies based on industry standards like NIST and ISO."
+          ],
+          "codeExample": "hardening-compliance-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Network Security Implementation Assessment",
+    "description": "Test your understanding of practical network security implementation",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "When implementing IDS sensors, what is the main advantage of using network taps over SPAN ports?",
+        "options": [
+          "Lower cost",
+          "Easier configuration",
+          "No packet drops",
+          "Faster deployment"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Network taps provide guaranteed packet delivery without drops, unlike SPAN ports which can drop packets during high traffic conditions or when oversubscribed."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of DHCP snooping in network security?",
+        "options": [
+          "Improve DHCP performance",
+          "Prevent rogue DHCP servers",
+          "Enable DHCP relay",
+          "Reduce broadcast traffic"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DHCP snooping prevents rogue DHCP server attacks by allowing DHCP responses only from authorized servers, protecting clients from receiving invalid network configuration."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "In a next-generation firewall, what is the main benefit of User-ID technology?",
+        "options": [
+          "Faster packet processing",
+          "Identity-based policies",
+          "Better load balancing",
+          "Simplified configuration"
+        ],
+        "correctAnswer": 1,
+        "explanation": "User-ID technology enables identity-based security policies by mapping IP addresses to user identities, allowing more granular access control based on user identity rather than just IP addresses."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["network security", "firewall", "IDS", "IPS", "security monitoring", "hardening", "compliance"]
+  }
+}

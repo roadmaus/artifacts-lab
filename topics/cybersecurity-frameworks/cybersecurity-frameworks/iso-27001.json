@@ -1,0 +1,201 @@
+{
+  "id": "iso-27001",
+  "parentTopic": "cybersecurity-frameworks",
+  "title": "ISO 27001 Standard",
+  "description": "Comprehensive guide to the ISO/IEC 27001 standard, including its Information Security Management System (ISMS) requirements, implementation, and certification process.",
+  "icon": "CheckCircle",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "3 hours",
+  "content": [
+    {
+      "title": "ISO 27001 Fundamentals",
+      "icon": "BookOpen",
+      "sections": [
+        {
+          "subtitle": "Understanding ISO 27001",
+          "description": "Introduction to ISO 27001 and its role in information security",
+          "points": [
+            "International standard for Information Security Management Systems (ISMS)",
+            "Risk-based approach to information security",
+            "Process-oriented rather than technology-specific",
+            "Focus on protecting confidentiality, integrity, and availability of information"
+          ]
+        },
+        {
+          "subtitle": "ISMS Components",
+          "description": "Core components of an Information Security Management System",
+          "points": [
+            "Information security policies and procedures",
+            "Risk assessment and treatment methodology",
+            "Security controls and their objectives",
+            "Monitoring and measurement processes",
+            "Continuous improvement mechanisms"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PDCA Cycle in ISO 27001",
+      "icon": "RefreshCcw",
+      "sections": [
+        {
+          "subtitle": "Plan Phase",
+          "description": "Establishing the ISMS foundation",
+          "points": [
+            "Define ISMS scope and boundaries",
+            "Develop information security policy",
+            "Conduct risk assessment",
+            "Create risk treatment plan",
+            "Select applicable controls"
+          ],
+          "codeExample": "// Example Risk Assessment Matrix\nconst riskMatrix = {\n  likelihood: ['rare', 'unlikely', 'possible', 'likely', 'almost_certain'],\n  impact: ['negligible', 'minor', 'moderate', 'major', 'severe'],\n  calculateRiskLevel: (likelihood, impact) => {\n    // Risk calculation logic\n    return riskLevel;\n  }\n};"
+        },
+        {
+          "subtitle": "Do Phase",
+          "description": "Implementing and operating the ISMS",
+          "points": [
+            "Execute risk treatment plan",
+            "Implement selected controls",
+            "Train staff and raise awareness",
+            "Manage operations and resources",
+            "Implement incident handling procedures"
+          ]
+        },
+        {
+          "subtitle": "Check Phase",
+          "description": "Monitoring and reviewing the ISMS",
+          "points": [
+            "Execute monitoring procedures",
+            "Conduct regular internal audits",
+            "Perform management reviews",
+            "Verify control effectiveness",
+            "Measure security performance"
+          ]
+        },
+        {
+          "subtitle": "Act Phase",
+          "description": "Maintaining and improving the ISMS",
+          "points": [
+            "Implement identified improvements",
+            "Apply corrective actions",
+            "Communicate changes to stakeholders",
+            "Update security documentation",
+            "Validate effectiveness of changes"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Annex A Controls",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Control Categories",
+          "description": "Overview of ISO 27001 Annex A control categories",
+          "points": [
+            "A.5: Information security policies",
+            "A.6: Organization of information security",
+            "A.7: Human resource security",
+            "A.8: Asset management",
+            "A.9: Access control",
+            "A.10: Cryptography",
+            "A.11: Physical and environmental security",
+            "A.12: Operations security"
+          ]
+        },
+        {
+          "subtitle": "Control Implementation",
+          "description": "Guidelines for implementing security controls",
+          "points": [
+            "Select controls based on risk assessment",
+            "Document applicability and justification",
+            "Create Statement of Applicability (SoA)",
+            "Define measurement metrics",
+            "Regular review and updates"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Certification Process",
+      "icon": "Award",
+      "sections": [
+        {
+          "subtitle": "Preparation for Certification",
+          "description": "Steps to prepare for ISO 27001 certification",
+          "points": [
+            "Complete ISMS documentation",
+            "Conduct internal audits",
+            "Perform management review",
+            "Address non-conformities",
+            "Select certification body"
+          ]
+        },
+        {
+          "subtitle": "Audit Stages",
+          "description": "Understanding the certification audit process",
+          "points": [
+            "Stage 1: Documentation review and readiness assessment",
+            "Stage 2: Detailed compliance audit",
+            "Addressing audit findings",
+            "Certification decision",
+            "Surveillance audits"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "ISO 27001 Knowledge Check",
+    "description": "Test your understanding of ISO 27001 requirements and implementation",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What document lists all the controls selected for implementation and justifies inclusions and exclusions?",
+        "options": [
+          "Risk Assessment Report",
+          "Statement of Applicability",
+          "Security Policy",
+          "Internal Audit Report"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Statement of Applicability (SoA) documents all controls selected for implementation and provides justification for both included and excluded controls from Annex A."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which phase of the PDCA cycle involves implementing security controls and training staff?",
+        "options": [
+          "Plan",
+          "Do",
+          "Check",
+          "Act"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Do phase involves implementing and operating the ISMS, including implementing selected controls and conducting staff training."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary focus of ISO 27001?",
+        "options": [
+          "Technical security controls",
+          "Incident response procedures",
+          "Information Security Management System",
+          "Network security"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ISO 27001's primary focus is on establishing, implementing, maintaining, and continually improving an Information Security Management System (ISMS)."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["iso27001", "isms", "security-controls", "certification", "compliance"]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "id": "polyalphabetic-ciphers",
+  "parentTopic": "ancient-encryption",
+  "title": "Polyalphabetic Ciphers",
+  "description": "Explore the revolutionary development of polyalphabetic ciphers, focusing on the Vigenère cipher and other methods that marked a significant advancement in encryption technology.",
+  "icon": "Library",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2 hours",
+  "content": [
+    {
+      "title": "Evolution Beyond Simple Substitution",
+      "icon": "GitBranch",
+      "sections": [
+        {
+          "subtitle": "The Need for Stronger Encryption",
+          "description": "Understanding why polyalphabetic ciphers were developed",
+          "points": [
+            "Simple substitution ciphers were vulnerable to frequency analysis",
+            "Multiple substitution alphabets made encryption more secure",
+            "Development spanned several centuries of cryptographic innovation",
+            "Created the foundation for modern symmetric encryption"
+          ]
+        },
+        {
+          "subtitle": "Key Innovations",
+          "description": "Core concepts that made polyalphabetic ciphers revolutionary",
+          "points": [
+            "Use of multiple cipher alphabets in a single message",
+            "Introduction of keywords to control substitution patterns",
+            "Variable substitution based on letter position",
+            "Combining multiple encryption techniques"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The Vigenère Cipher",
+      "icon": "Key",
+      "sections": [
+        {
+          "subtitle": "Understanding the Tableau",
+          "description": "Learn how the Vigenère tableau enables encryption",
+          "points": [
+            "26x26 grid contains all possible Caesar shift combinations",
+            "Keyword determines which shifts to use",
+            "Each letter can be encrypted differently based on its position",
+            "Repeating keyword pattern adds complexity to the encryption"
+          ],
+          "codeExample": "vigenere-cipher"
+        },
+        {
+          "subtitle": "Historical Impact",
+          "description": "The significance of the Vigenère cipher in history",
+          "points": [
+            "Known as 'le chiffre indéchiffrable' (the indecipherable cipher)",
+            "Remained unbroken for three centuries",
+            "Used extensively in diplomatic and military communications",
+            "Eventually broken by Charles Babbage and Friedrich Kasiski"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Advanced Variations",
+      "icon": "GitMerge",
+      "sections": [
+        {
+          "subtitle": "Autokey Cipher",
+          "description": "Exploring the autokey variation of polyalphabetic substitution",
+          "points": [
+            "Uses the message itself as part of the encryption key",
+            "Eliminates the weakness of repeating key patterns",
+            "Requires only a short primer key to initiate encryption",
+            "Provides stronger security than basic Vigenère cipher"
+          ],
+          "codeExample": "autokey-cipher"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Polyalphabetic Ciphers Quiz",
+    "description": "Test your knowledge of advanced historical encryption methods",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Why was the Vigenère cipher considered stronger than previous methods?",
+        "options": [
+          "It used multiple substitution alphabets",
+          "It encrypted longer messages",
+          "It used numbers instead of letters",
+          "It was faster to implement"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Vigenère cipher's strength came from using multiple substitution alphabets, making frequency analysis much more difficult."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What key innovation did the Autokey cipher introduce?",
+        "options": [
+          "Using the message as part of the key",
+          "Adding numbers to the cipher",
+          "Reversing the alphabet",
+          "Doubling the encryption"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Autokey cipher used the plaintext message itself as part of the encryption key, eliminating the vulnerability of repeating key patterns."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What finally led to the breaking of the Vigenère cipher?",
+        "options": [
+          "Recognition of repeating patterns",
+          "Computer analysis",
+          "Inside information",
+          "Mathematical errors"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The recognition of repeating patterns in long messages (Kasiski examination) eventually led to methods for breaking the Vigenère cipher."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "vigenere-cipher", "autokey-cipher", "advanced-encryption"]
+  }
+}

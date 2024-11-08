@@ -1,0 +1,118 @@
+{
+  "id": "incident-response-lifecycle",
+  "parentTopic": "detection-and-response",
+  "title": "Incident Response Lifecycle",
+  "description": "Master the fundamental phases and principles of the incident response lifecycle, from initial preparation through post-incident analysis. Learn to develop effective response strategies, create comprehensive playbooks, and establish clear procedures for handling security incidents.",
+  "icon": "Repeat",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Core Incident Response Phases",
+      "icon": "CircleDot",
+      "sections": [
+        {
+          "subtitle": "Preparation and Planning",
+          "description": "Understanding the critical elements of incident response preparation and establishing effective response capabilities.",
+          "points": [
+            "Preparation Phase Framework: The foundation of effective incident response begins with comprehensive preparation. This includes developing incident response plans, establishing team structures, and defining clear escalation procedures. Key components include: Creating detailed response playbooks for common incident types, defining roles and responsibilities within the IR team, and establishing communication channels. Organizations must also maintain updated network diagrams, asset inventories, and baseline system configurations to support rapid incident analysis.",
+            "Resource Management and Tool Implementation: Successful incident response requires proper resource allocation and tool deployment. Essential resources include: Dedicated incident response team members, forensic workstations, network monitoring tools, and secure communication systems. Organizations should maintain licenses for key security tools, establish backup communication methods, and ensure access to external expertise when needed. Regular testing and updates of these resources ensure readiness for actual incidents.",
+            "Training and Documentation Requirements: Continuous team training and updated documentation are crucial for incident response effectiveness. This involves: Regular tabletop exercises simulating various incident scenarios, technical training on security tools and investigation techniques, and documentation of response procedures. Teams should maintain updated contact lists, escalation procedures, and technical documentation for critical systems and applications."
+          ],
+          "codeExample": "incident-preparation-framework-visual.tsx"
+        },
+        {
+          "subtitle": "Detection and Initial Response",
+          "description": "Implementing effective incident detection mechanisms and establishing initial response procedures.",
+          "points": [
+            "Detection Mechanisms and Alert Triage: Effective incident detection requires multiple detection layers and proper alert handling procedures. Key components include: Network-based detection systems (IDS/IPS), endpoint detection and response (EDR) solutions, and SIEM platforms for log correlation. Teams must establish clear alert severity levels, response timeframes, and triage procedures. This includes defining what constitutes a security incident versus a normal operational issue, and establishing clear escalation triggers.",
+            "Initial Assessment Procedures: The first response to a potential incident is critical for successful resolution. This involves: Rapid initial investigation to validate alerts, preliminary impact assessment, and immediate containment decisions. Teams should follow structured analysis procedures including: Checking for false positives, identifying affected systems and data, and determining the potential scope of the incident. Initial findings must be properly documented to support further investigation.",
+            "Communication Protocols: Clear communication procedures ensure effective incident response coordination. This includes: Establishing notification chains for different incident types, maintaining secure communication channels, and defining external communication policies. Teams must know when and how to involve different stakeholders, including: Technical teams, management, legal counsel, and external parties such as law enforcement or regulators."
+          ],
+          "codeExample": "detection-workflow-visual.tsx"
+        },
+        {
+          "subtitle": "Containment and Eradication",
+          "description": "Implementing effective containment strategies and thorough threat eradication procedures.",
+          "points": [
+            "Containment Strategy Development: Proper incident containment requires balanced decision-making between stopping the threat and maintaining business operations. Key considerations include: Short-term vs. long-term containment options, business impact analysis, and evidence preservation requirements. Teams must evaluate containment methods such as: Network segmentation, system isolation, account deactivation, and temporary security controls. Each containment decision should be documented with clear justification and risk assessment.",
+            "Evidence Handling and Investigation: Proper evidence handling is crucial for incident investigation and potential legal proceedings. This includes: Following chain of custody procedures, proper evidence collection methods, and secure storage of digital evidence. Teams must understand various evidence types including: System logs, network captures, memory dumps, and disk images. Documentation should include detailed timeline creation, system state analysis, and indicator extraction.",
+            "Eradication Process Implementation: Complete threat removal requires systematic approach and thorough verification. This involves: Identifying all affected systems and accounts, removing malware and unauthorized changes, and closing security gaps. Teams must verify the effectiveness of eradication efforts through: System scanning, log analysis, and security control testing. Post-eradication activities include: System hardening, patch management, and security control updates."
+          ],
+          "codeExample": "containment-strategy-visual.tsx"
+        },
+        {
+          "subtitle": "Recovery and Lessons Learned",
+          "description": "Establishing effective system recovery procedures and implementing continuous improvement processes.",
+          "points": [
+            "System Recovery Planning: Successful recovery requires careful planning and systematic implementation. Key components include: System restoration procedures, data recovery methods, and service restoration prioritization. Teams must consider: Backup restoration procedures, system hardening requirements, and business continuity needs. Recovery plans should include: Testing procedures, verification methods, and performance monitoring to ensure successful restoration.",
+            "Post-Incident Analysis: Comprehensive post-incident analysis drives continuous improvement. This includes: Detailed incident documentation, timeline analysis, and root cause identification. Teams should analyze: Attack vectors used, security control effectiveness, and response team performance. Findings should be used to: Update security controls, enhance detection capabilities, and improve response procedures.",
+            "Continuous Improvement Implementation: Lessons learned must be translated into concrete improvements. This involves: Updating incident response plans, enhancing security controls, and implementing new detection capabilities. Organizations should: Review and update playbooks, enhance team training, and improve security awareness programs. Regular testing and validation ensure the effectiveness of implemented improvements."
+          ],
+          "codeExample": "recovery-workflow-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Incident Response Lifecycle Assessment",
+    "description": "Test your understanding of incident response phases, procedures, and best practices.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "During incident containment, what is the primary consideration when choosing between short-term and long-term containment strategies?",
+        "options": [
+          "The cost of implementation",
+          "The balance between threat mitigation and business continuity",
+          "The time required for deployment",
+          "The amount of system resources needed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When selecting containment strategies, the key consideration is finding the right balance between effectively mitigating the threat and maintaining essential business operations. This requires careful evaluation of both security requirements and operational impact."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the most important aspect of evidence handling during incident response?",
+        "options": [
+          "Maintaining chain of custody",
+          "Making multiple copies",
+          "Analyzing it immediately",
+          "Storing it offline"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Maintaining proper chain of custody is crucial for evidence handling as it ensures the integrity and admissibility of evidence in potential legal proceedings by documenting who handled the evidence and when."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which element of the preparation phase is most critical for effective incident response?",
+        "options": [
+          "Having the latest security tools",
+          "Establishing clear procedures and playbooks",
+          "Maintaining system backups",
+          "Having a large response team"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Clear procedures and playbooks are the most critical element as they provide structured guidance for consistent and effective response, regardless of team size or available tools. They ensure that all team members understand their roles and responsibilities during an incident."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": [
+      "incident response",
+      "security incidents",
+      "incident handling",
+      "incident management",
+      "security operations",
+      "incident preparation",
+      "incident recovery"
+    ]
+  }
+}

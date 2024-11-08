@@ -1,0 +1,124 @@
+{
+  "id": "incident-management",
+  "parentTopic": "detection-and-response",
+  "title": "Response and Recovery Management",
+  "description": "Master the critical aspects of incident response execution and system recovery. Learn to implement effective containment strategies, conduct systematic eradication procedures, and manage recovery operations while maintaining business continuity and documenting lessons learned.",
+  "icon": "ShieldCheck",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "5 hours",
+  "content": [
+    {
+      "title": "Incident Response Execution",
+      "icon": "Siren",
+      "sections": [
+        {
+          "subtitle": "Tactical Response Operations",
+          "description": "Implementing effective tactical response procedures during active security incidents.",
+          "points": [
+            "Initial Response Coordination: Effective incident response requires immediate coordinated action across teams. This includes: Establishing incident command structure, activating response teams, and initiating communication protocols. Critical components include: Initial impact assessment, stakeholder notification, and response prioritization. Teams must implement: Resource allocation procedures, escalation workflows, and documentation processes. Key focus areas include: Response team activation, communication channel establishment, and initial containment decisions. Consideration must be given to: Legal requirements, regulatory obligations, and business impact assessment.",
+            "Dynamic Risk Assessment: Continuous risk evaluation during incident response is crucial for effective decision-making. This involves: Real-time threat assessment, impact analysis updates, and response strategy adjustment. Key aspects include: Asset criticality evaluation, threat capability assessment, and business continuity impact. Teams must understand: Attack vector analysis, damage potential estimation, and mitigation effectiveness measurement. Implementation focuses on: Risk scoring methodologies, impact matrices, and decision support frameworks.",
+            "Cross-Team Coordination: Complex incidents require effective coordination across multiple teams and departments. This includes: Establishing clear roles and responsibilities, maintaining communication flows, and managing resource conflicts. Critical aspects include: Technical team coordination, management updates, and external party engagement. Teams must implement: Information sharing protocols, decision-making frameworks, and progress tracking systems. Focus areas include: Stakeholder management, expertise utilization, and conflict resolution procedures."
+          ],
+          "codeExample": "response-coordination-visual.tsx"
+        },
+        {
+          "subtitle": "Containment Strategy Implementation",
+          "description": "Executing and managing incident containment procedures effectively.",
+          "points": [
+            "Containment Method Selection: Choosing appropriate containment strategies based on incident characteristics. This includes: Evaluating containment options, assessing business impact, and implementing staged containment. Key considerations include: Network segmentation requirements, system isolation procedures, and access control modifications. Teams must understand: Containment effectiveness measurement, business continuity requirements, and recovery implications. Implementation focuses on: Technical control deployment, communication management, and containment verification.",
+            "Evidence Preservation: Maintaining evidence integrity during containment activities. This involves: Implementing forensic preservation procedures, maintaining chain of custody, and documenting containment actions. Critical aspects include: Live system preservation, volatile data collection, and artifact handling procedures. Teams must implement: Evidence collection workflows, documentation standards, and storage procedures. Focus areas include: Digital evidence handling, physical evidence management, and documentation requirements.",
+            "Business Impact Management: Balancing security requirements with business operations during containment. This includes: Service impact assessment, stakeholder communication, and continuity planning. Key aspects include: Critical service identification, workaround development, and impact minimization strategies. Teams must implement: Service monitoring, impact tracking, and restoration planning. Focus areas include: Business relationship management, service level maintenance, and recovery prioritization."
+          ],
+          "codeExample": "containment-workflow-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Recovery Operations",
+      "icon": "RefreshCw",
+      "sections": [
+        {
+          "subtitle": "System Restoration and Validation",
+          "description": "Implementing systematic recovery procedures and validation processes.",
+          "points": [
+            "Recovery Planning and Execution: Systematic approach to system and service restoration. This involves: Developing detailed recovery plans, establishing restoration priorities, and implementing verification procedures. Critical components include: System rebuilding procedures, data restoration processes, and service recovery workflows. Teams must understand: Recovery point objectives, recovery time objectives, and service dependencies. Implementation focuses on: Clean system deployment, secure configuration implementation, and patch management.",
+            "Security Control Implementation: Enhancing security controls during recovery operations. This includes: Security baseline implementation, control enhancement identification, and vulnerability remediation. Key aspects include: Access control review, monitoring system deployment, and security tool configuration. Teams must implement: Security testing procedures, control validation methods, and documentation updates. Focus areas include: Defense-in-depth implementation, security hardening, and configuration management.",
+            "Operational Validation: Comprehensive testing and validation of restored systems and services. This involves: Functionality testing procedures, security validation methods, and performance verification. Critical aspects include: User acceptance testing, security control validation, and monitoring system verification. Teams must implement: Test plan execution, results documentation, and issue remediation procedures. Focus areas include: Service level verification, security effectiveness testing, and performance validation."
+          ],
+          "codeExample": "recovery-validation-visual.tsx"
+        },
+        {
+          "subtitle": "Long-term Improvement Implementation",
+          "description": "Establishing continuous improvement processes based on incident learnings.",
+          "points": [
+            "Incident Analysis and Documentation: Comprehensive review and documentation of incident response activities. This includes: Timeline reconstruction, response effectiveness assessment, and root cause analysis. Key components include: Attack vector analysis, control failure identification, and response gap assessment. Teams must implement: Documentation standards, analysis frameworks, and recommendation development procedures. Focus areas include: Lesson identification, improvement opportunity analysis, and knowledge base development.",
+            "Security Enhancement Planning: Developing strategic improvements based on incident learnings. This involves: Control enhancement identification, architectural improvement planning, and process refinement. Critical aspects include: Risk assessment updates, control framework evaluation, and implementation prioritization. Teams must implement: Project planning procedures, resource allocation methods, and progress tracking systems. Focus areas include: Security roadmap development, resource requirement planning, and implementation timeline management.",
+            "Operational Resilience Enhancement: Strengthening overall security posture and response capabilities. This includes: Response plan updates, team capability enhancement, and tool effectiveness improvement. Key aspects include: Training program development, exercise planning, and documentation updates. Teams must implement: Capability assessment methods, improvement tracking systems, and validation procedures. Focus areas include: Response team development, tool optimization, and process refinement."
+          ],
+          "codeExample": "improvement-planning-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Response and Recovery Management Assessment",
+    "description": "Validate your understanding of incident response execution and recovery management principles.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary consideration when selecting a containment strategy during an active incident?",
+        "options": [
+          "Team availability",
+          "Tool capabilities",
+          "Balance of security effectiveness and business impact",
+          "Documentation requirements"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The primary consideration in containment strategy selection must be finding the right balance between effective security measures and minimizing business impact, ensuring threats are contained while maintaining critical operations."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "During system recovery, what should be completed before restoring normal operations?",
+        "options": [
+          "Comprehensive security validation",
+          "User notification",
+          "Budget approval",
+          "Team debriefing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Comprehensive security validation must be completed before restoring normal operations to ensure all security controls are properly implemented and effective, preventing reinfection or continued compromise."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the most important outcome of the incident analysis phase?",
+        "options": [
+          "Finding someone to blame",
+          "Actionable improvements for security posture",
+          "Completing required paperwork",
+          "Scheduling team meetings"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The most important outcome of incident analysis is identifying and developing actionable improvements to enhance the organization's security posture and prevent similar incidents in the future."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": [
+      "incident response",
+      "system recovery",
+      "security operations",
+      "incident management",
+      "business continuity",
+      "response execution",
+      "security enhancement"
+    ]
+  }
+}

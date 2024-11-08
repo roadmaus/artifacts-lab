@@ -1,0 +1,112 @@
+{
+  "id": "security-fundamentals",
+  "parentTopic": "foundations-of-cybersecurity",
+  "title": "Security Fundamentals and Core Concepts",
+  "description": "Master the foundational principles of cybersecurity, including the CIA triad, basic terminology, and core security concepts that form the basis of all security operations.",
+  "icon": "KeyRound",
+  "difficulty": "Beginner",
+  "estimatedDuration": "3 hours",
+  "content": [
+    {
+      "title": "The CIA Triad",
+      "icon": "Triangle",
+      "sections": [
+        {
+          "subtitle": "Understanding the CIA Triad",
+          "description": "The CIA triad represents the three fundamental objectives of information security: Confidentiality, Integrity, and Availability. This framework serves as the foundation for developing security policies and evaluating security measures.",
+          "points": [
+            "Confidentiality ensures that sensitive information is only accessible to authorized parties. This involves encryption, access controls, and proper data classification. Examples include: protecting customer data, trade secrets, and intellectual property through mechanisms like encryption at rest and in transit, role-based access control (RBAC), and proper data handling procedures.",
+            "Integrity maintains the accuracy and completeness of data throughout its lifecycle. This includes preventing unauthorized modifications and ensuring data consistency. Key mechanisms include: cryptographic hashing, digital signatures, checksums, and version control systems. For example, using SHA-256 for file integrity checking and implementing change control procedures.",
+            "Availability ensures that systems and data are accessible when needed. This involves system redundancy, disaster recovery, and proper capacity planning. Examples include: implementing high-availability clusters, load balancers, backup systems, and adequate bandwidth provisioning to maintain 99.999% uptime for critical systems."
+          ],
+          "codeExample": "cia-triad-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Core Security Concepts",
+      "icon": "Database",
+      "sections": [
+        {
+          "subtitle": "Authentication and Authorization",
+          "description": "Understanding the fundamental differences between proving identity (authentication) and granting access rights (authorization), and how they work together to secure systems.",
+          "points": [
+            "Authentication (AuthN) verifies the identity of users or systems through various factors: Something you know (passwords, PINs), Something you have (security tokens, smart cards), Something you are (biometrics). Modern systems often implement Multi-Factor Authentication (MFA) combining multiple factors for stronger security.",
+            "Authorization (AuthZ) determines what authenticated users can access or do within a system. This involves access control models like: Discretionary Access Control (DAC), Mandatory Access Control (MAC), Role-Based Access Control (RBAC), and Attribute-Based Access Control (ABAC). Example: An employee might authenticate using their credentials and MFA, but their role determines which databases they can access.",
+            "Principle of Least Privilege (PoLP) dictates that users and processes should only have the minimum permissions necessary to perform their tasks. This reduces the attack surface and potential impact of compromised accounts. Example: A marketing employee shouldn't have access to HR databases, even if they can authenticate to the system."
+          ],
+          "codeExample": "auth-flow-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Threat Landscape",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Understanding Threats, Vulnerabilities, and Risks",
+          "description": "Learn to differentiate between threats, vulnerabilities, and risks, and understand how they interact in the context of cybersecurity.",
+          "points": [
+            "Threats are potential dangers that could exploit vulnerabilities. Categories include: Natural (earthquakes, floods), Human (insider threats, hackers), and Environmental (power failures, HVAC issues). Understanding threat actors, their motivations (financial gain, espionage, hacktivism), and their capabilities is crucial for threat modeling.",
+            "Vulnerabilities are weaknesses that can be exploited by threats. Types include: Technical (software bugs, misconfigurations), Physical (unsecured doors, exposed cables), and Human (lack of training, social engineering susceptibility). The CVE (Common Vulnerabilities and Exposures) system provides standardized vulnerability identification.",
+            "Risk is the potential for loss or damage when a threat exploits a vulnerability. Risk assessment involves: Identifying assets, threats, and vulnerabilities; Determining likelihood and impact; Calculating risk levels (Risk = Likelihood × Impact). Example: A known SQL injection vulnerability (vulnerability) could be exploited by hackers (threat) to steal customer data, with a high likelihood and severe impact resulting in high risk."
+          ],
+          "codeExample": "threat-model-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Security Fundamentals Assessment",
+    "description": "Test your understanding of core security concepts, the CIA triad, and basic security terminology.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "In the context of the CIA triad, which component would be most affected by a DDoS attack?",
+        "options": [
+          "Availability",
+          "Integrity",
+          "Authentication",
+          "Confidentiality"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A Distributed Denial of Service (DDoS) attack primarily affects system availability by overwhelming resources and preventing legitimate users from accessing services."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What best describes the relationship between authentication and authorization?",
+        "options": [
+          "They are the same thing",
+          "Authorization must occur before authentication",
+          "Authentication verifies identity while authorization grants access rights",
+          "They operate independently and are not related"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Authentication proves who someone is, while authorization determines what they are allowed to do after they've been authenticated."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which of the following best illustrates the Principle of Least Privilege?",
+        "options": [
+          "Granting admin access to all IT staff",
+          "Giving users exactly the permissions they need for their job",
+          "Using strong passwords for all accounts",
+          "Implementing two-factor authentication"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Principle of Least Privilege means users should only have the minimum permissions necessary to perform their job functions, reducing potential security risks."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-01",
+    "language": "English",
+    "tags": ["CIA triad", "authentication", "authorization", "security basics", "threat landscape"]
+  }
+}

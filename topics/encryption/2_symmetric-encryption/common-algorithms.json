@@ -1,0 +1,158 @@
+{
+  "id": "common-algorithms",
+  "parentTopic": "symmetric-encryption",
+  "title": "Common Symmetric Algorithms",
+  "description": "Deep dive into widely-used symmetric encryption algorithms including AES, DES, 3DES, and others. Learn about their structures, strengths, and practical applications.",
+  "icon": "Cog",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "2 hours",
+  "content": [
+    {
+      "title": "Advanced Encryption Standard (AES)",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "AES Overview",
+          "description": "Understanding the most widely used symmetric encryption algorithm in the world.",
+          "points": [
+            "Replaced DES as the federal standard in 2001",
+            "Supports key sizes of 128, 192, and 256 bits",
+            "Based on the Rijndael cipher",
+            "Uses substitution-permutation network"
+          ]
+        },
+        {
+          "subtitle": "AES Implementation",
+          "description": "Key components and stages of the AES algorithm.",
+          "points": [
+            "Processes data in 128-bit blocks",
+            "Performs multiple rounds based on key size (10, 12, or 14 rounds)",
+            "Each round includes SubBytes, ShiftRows, MixColumns, and AddRoundKey",
+            "Final round skips MixColumns transformation"
+          ],
+          "codeExample": "aes-visualization"
+        }
+      ]
+    },
+    {
+      "title": "Data Encryption Standard (DES) and Triple DES",
+      "icon": "History",
+      "sections": [
+        {
+          "subtitle": "DES Background",
+          "description": "Understanding the historical significance and limitations of DES.",
+          "points": [
+            "Developed by IBM in the 1970s",
+            "Uses 56-bit key size (considered insecure today)",
+            "Processes data in 64-bit blocks",
+            "Based on Feistel network structure"
+          ],
+          "codeExample": "des-visualization"
+        },
+        {
+          "subtitle": "Triple DES (3DES)",
+          "description": "Evolution of DES to address security concerns.",
+          "points": [
+            "Applies DES algorithm three times",
+            "Uses either two or three different keys",
+            "Effective key length of 112 or 168 bits",
+            "Still used in legacy systems but being phased out"
+          ],
+          "codeExample": "triple-des-visualization"
+        }
+      ]
+    },
+    {
+      "title": "Other Important Algorithms",
+      "icon": "Layout",
+      "sections": [
+        {
+          "subtitle": "Blowfish and Twofish",
+          "description": "Alternative symmetric encryption algorithms with unique features.",
+          "points": [
+            "Blowfish: Fast, free alternative to DES",
+            "Blowfish uses variable key length (32-448 bits)",
+            "Twofish: AES finalist with 128-256 bit keys",
+            "Both use Feistel network structure"
+          ],
+          "codeExample": "blowfish-visualization"
+        },
+        {
+          "subtitle": "ChaCha20",
+          "description": "Modern stream cipher gaining popularity.",
+          "points": [
+            "Designed by Daniel J. Bernstein",
+            "Often paired with Poly1305 authenticator",
+            "Used in TLS by Google and CloudFlare",
+            "Particularly efficient in software implementations"
+          ],
+          "codeExample": "chacha20-visualization"
+        },
+        {
+          "subtitle": "RC4 (Historical)",
+          "description": "Understanding a historically significant stream cipher.",
+          "points": [
+            "Simple and fast stream cipher",
+            "Variable key length",
+            "Now considered cryptographically broken",
+            "Important to understand for legacy systems"
+          ],
+          "codeExample": "rc4-visualization"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Symmetric Algorithms Quiz",
+    "description": "Test your knowledge of common symmetric encryption algorithms",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the block size used by AES?",
+        "options": [
+          "128 bits",
+          "256 bits",
+          "64 bits",
+          "512 bits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "AES always uses a 128-bit block size, regardless of the key size (which can be 128, 192, or 256 bits)."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Why was Triple DES developed?",
+        "options": [
+          "To increase the security of regular DES",
+          "To decrease encryption time",
+          "To reduce key size",
+          "To simplify the algorithm"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Triple DES was developed to increase security by applying the DES algorithm three times, effectively increasing the key length without creating a completely new algorithm."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which of these is a stream cipher?",
+        "options": [
+          "ChaCha20",
+          "AES",
+          "DES",
+          "Twofish"
+        ],
+        "correctAnswer": 0,
+        "explanation": "ChaCha20 is a stream cipher, while AES, DES, and Twofish are all block ciphers."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "encryption", "algorithms", "AES", "DES"]
+  }
+}

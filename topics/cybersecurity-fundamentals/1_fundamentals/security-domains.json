@@ -1,0 +1,128 @@
+{
+  "id": "security-domains",
+  "parentTopic": "foundations-of-cybersecurity",
+  "title": "The Eight Security Domains",
+  "description": "A comprehensive exploration of the eight critical domains of information security as defined by ISC². Understanding these domains is crucial for developing a holistic security program and preparing for security certifications.",
+  "icon": "Grid",
+  "difficulty": "Beginner",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Security and Risk Management",
+      "icon": "ShieldAlert",
+      "sections": [
+        {
+          "subtitle": "Governance and Risk Management Frameworks",
+          "description": "This domain focuses on the foundational aspects of security governance, risk management, and compliance. It encompasses the strategic and operational aspects of security management.",
+          "points": [
+            "Security Governance involves defining security strategy, establishing policies, and ensuring alignment with business objectives. Key components include: Security steering committees, policy frameworks, and metrics for measuring security effectiveness. Example: Implementing NIST Cybersecurity Framework to structure security programs and measure maturity.",
+            "Risk Management frameworks (ISO 31000, FAIR) provide structured approaches to identifying, assessing, and mitigating risks. Process includes: Risk identification, assessment, treatment, and monitoring. Example: Using quantitative risk analysis to determine potential financial impact of security breaches and prioritize security investments.",
+            "Compliance Management ensures adherence to regulatory requirements (GDPR, HIPAA, PCI DSS) and industry standards. Activities include: Regular audits, compliance monitoring, and maintaining documentation. Example: Implementing controls required by HIPAA for protecting healthcare data, including encryption and access logging."
+          ],
+          "codeExample": "risk-management-framework-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Asset Security and Data Protection",
+      "icon": "Database",
+      "sections": [
+        {
+          "subtitle": "Information and Asset Management",
+          "description": "The Asset Security domain focuses on protecting data throughout its lifecycle and managing all organizational assets effectively.",
+          "points": [
+            "Data Classification is crucial for determining appropriate security controls. Levels typically include: Public, Internal, Confidential, and Restricted. Each level requires specific handling procedures and controls. Example: Classified data requiring encryption both at rest and in transit, with strict access controls and audit logging.",
+            "Asset Management involves maintaining inventories of all information assets, including: Hardware, software, data, and intellectual property. Critical activities include: Asset identification, ownership assignment, and lifecycle management. Example: Using CMDB (Configuration Management Database) to track all IT assets and their relationships.",
+            "Data Privacy considerations include: Data minimization, purpose limitation, and data subject rights. Privacy by Design principles should be incorporated into all processes handling personal data. Example: Implementing data masking for development environments and ensuring proper data disposal methods."
+          ],
+          "codeExample": "data-lifecycle-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Security Architecture and Engineering",
+      "icon": "Layout",
+      "sections": [
+        {
+          "subtitle": "Security Design Principles",
+          "description": "This domain covers the technical aspects of security implementation, including security models, system architectures, and cryptography.",
+          "points": [
+            "Security Models provide frameworks for implementing security controls. Key models include: Bell-LaPadula (confidentiality), Biba (integrity), and Clark-Wilson (transaction integrity). Example: Using Bell-LaPadula model in military systems to prevent unauthorized access to classified information.",
+            "Cryptography fundamentals include: Symmetric vs asymmetric encryption, hashing algorithms, and digital signatures. Understanding key management and cryptographic protocols is crucial. Example: Implementing TLS 1.3 for secure communications and using HSMs (Hardware Security Modules) for key protection.",
+            "Secure Architecture principles include: Defense in depth, segregation of duties, and fail-secure defaults. Network security components include: Firewalls, IDS/IPS, and VPNs. Example: Implementing a zero-trust architecture with micro-segmentation and continuous authentication."
+          ],
+          "codeExample": "security-architecture-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Identity and Access Management",
+      "icon": "Key",
+      "sections": [
+        {
+          "subtitle": "IAM Framework Implementation",
+          "description": "Identity and Access Management focuses on ensuring proper user authentication, authorization, and accountability.",
+          "points": [
+            "Identity Management encompasses: User lifecycle management, identity proofing, and federation. Modern systems often use identity providers (IdP) and federation protocols like SAML and OAuth. Example: Implementing Azure AD for centralized identity management with SSO capabilities.",
+            "Access Management includes: Role-based access control (RBAC), attribute-based access control (ABAC), and privileged access management (PAM). Zero Trust principles emphasize 'never trust, always verify'. Example: Using just-in-time access for administrative privileges with detailed audit logging.",
+            "Identity Governance ensures proper oversight of identity and access management processes. Key aspects include: Access reviews, separation of duties enforcement, and compliance reporting. Example: Quarterly access reviews for critical systems with automated workflows for approval and revocation."
+          ],
+          "codeExample": "iam-framework-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Security Domains Assessment",
+    "description": "Test your understanding of the eight security domains and their key components.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which security model is specifically designed to protect data confidentiality?",
+        "options": [
+          "Clark-Wilson",
+          "Bell-LaPadula",
+          "Biba",
+          "Take-Grant"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Bell-LaPadula model is designed to enforce confidentiality by implementing 'no read up' and 'no write down' policies, making it ideal for military and government systems."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of data classification?",
+        "options": [
+          "To organize data alphabetically",
+          "To determine appropriate security controls",
+          "To improve database performance",
+          "To comply with GDPR"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Data classification helps organizations determine and implement appropriate security controls based on the sensitivity and importance of different types of data."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "In Identity and Access Management, what is the purpose of Privileged Access Management (PAM)?",
+        "options": [
+          "To manage privileged account access and reduce risk",
+          "To ensure all users have administrative access",
+          "To eliminate the need for passwords",
+          "To manage printer access"
+        ],
+        "correctAnswer": 0,
+        "explanation": "PAM solutions help organizations control, monitor, and secure access to privileged accounts, reducing the risk of privileged credential abuse."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-01",
+    "language": "English",
+    "tags": ["security domains", "risk management", "asset security", "security architecture", "IAM"]
+  }
+}

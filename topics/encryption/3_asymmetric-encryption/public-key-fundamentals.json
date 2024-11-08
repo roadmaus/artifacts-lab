@@ -1,0 +1,263 @@
+{
+  "id": "public-key-fundamentals",
+  "parentTopic": "asymmetric-encryption",
+  "title": "Public Key Fundamentals",
+  "description": "Master the foundational concepts of public key cryptography, including key pairs, mathematical principles, and secure key management.",
+  "icon": "Key",
+  "difficulty": "Beginner",
+  "estimatedDuration": "1.5 hours",
+  "content": [
+    {
+      "title": "Understanding Key Pairs",
+      "icon": "KeyRound",
+      "sections": [
+        {
+          "subtitle": "What is a Key Pair?",
+          "description": "Deep dive into the cryptographic key pairs and their mathematical relationship in asymmetric encryption.",
+          "points": [
+            "A key pair consists of mathematically linked cryptographic keys based on the properties of trapdoor functions",
+            "Public key (e,n) and private key (d,n) are generated using prime factorization principles",
+            "The relationship between keys is based on modular multiplicative inverses where e·d ≡ 1 (mod φ(n))",
+            "Data encrypted with the public key creates ciphertext that can only be decrypted with the private key (c = m^e mod n)",
+            "The reverse operation allows for digital signatures where private key signatures can be verified with the public key",
+            "Key pairs leverage the computational hardness of the integer factorization problem",
+            "The security of the system relies on the practical impossibility of deriving d from e and n"
+          ],
+          "codeExample": "key-pair-visualization"
+        },
+        {
+          "subtitle": "Key Properties",
+          "description": "Advanced characteristics and mathematical properties that ensure cryptographic security.",
+          "points": [
+            "The one-way function property ensures computational infeasibility of private key derivation (based on integer factorization)",
+            "Keys exhibit multiplicative homomorphic properties: E(x)·E(y) = E(x·y) mod n",
+            "Key pairs are generated using coprime numbers and satisfy the Euler totient function requirements",
+            "Bit length of keys determines the work factor required for cryptanalysis attempts",
+            "Keys must satisfy the properties of the RSA algorithm: gcd(e, φ(n)) = 1 and d·e ≡ 1 (mod φ(n))",
+            "Public exponent e is typically chosen as 65537 (2¹⁶ + 1) for efficiency while maintaining security",
+            "Private key operations use Chinese Remainder Theorem (CRT) for performance optimization"
+          ],
+          "codeExample": "key-properties"
+        }
+      ]
+    },
+    {
+      "title": "Mathematical Foundations",
+      "icon": "Calculator",
+      "sections": [
+        {
+          "subtitle": "Prime Numbers in Cryptography",
+          "description": "Advanced concepts in prime number theory and their cryptographic applications.",
+          "points": [
+            "Prime numbers p and q must be strong primes satisfying additional properties: p-1 and p+1 have large prime factors",
+            "Implementation of Miller-Rabin primality testing for efficient prime number verification",
+            "Safe primes (where p = 2q + 1, where q is also prime) provide additional security properties",
+            "The security parameter λ(n) (Carmichael function) must be kept secret and is calculated as lcm(p-1, q-1)",
+            "Prime number generation involves random number generation with entropy sourcing",
+            "Techniques for generating probable primes using sieving methods and primality tests",
+            "Protection against special number field sieve (SNFS) attacks through prime selection",
+            "Considerations for quantum-resistant prime selection methods"
+          ],
+          "codeExample": "prime-number-generation-visualization"
+        },
+        {
+          "subtitle": "Modular Arithmetic",
+          "description": "Complex mathematical operations and theorems underlying public key operations.",
+          "points": [
+            "Extended Euclidean algorithm for finding modular multiplicative inverses",
+            "Chinese Remainder Theorem (CRT) optimization: d_p = d mod (p-1), d_q = d mod (q-1)",
+            "Montgomery multiplication for efficient modular operations",
+            "Euler's theorem and its application: m^φ(n) ≡ 1 (mod n) for coprime m and n",
+            "Fermat's little theorem for primality testing and key generation",
+            "Implementation of Barrett reduction for efficient modular arithmetic",
+            "Karatsuba multiplication for large number operations",
+            "Side-channel attack prevention in modular exponentiation implementations"
+          ],
+          "codeExample": "modular-arithmetic-visualization"
+        }
+      ]
+    },
+    {
+      "title": "Key Generation Process",
+      "icon": "Cog",
+      "sections": [
+        {
+          "subtitle": "Generating Secure Keys",
+          "description": "Detailed cryptographic key generation process with security considerations.",
+          "points": [
+            "Generate strong primes p and q using entropy-based random number generation",
+            "Verify primality using multiple rounds of Miller-Rabin testing (typically 64 rounds)",
+            "Calculate modulus n = p × q and protect against factorization attacks",
+            "Compute φ(n) = (p-1)(q-1) and λ(n) = lcm(p-1, q-1)",
+            "Select public exponent e ensuring gcd(e, φ(n)) = 1 and e > log₂(n)²",
+            "Calculate private exponent d = e⁻¹ mod φ(n) using Extended Euclidean Algorithm",
+            "Generate CRT parameters: d_p, d_q, q_inv for optimized private key operations",
+            "Implement secure memory handling and key storage procedures",
+            "Verify key pair correctness through test encryptions and signatures"
+          ],
+          "codeExample": "key-generation-process"
+        },
+        {
+          "subtitle": "Key Length Considerations",
+          "description": "Advanced analysis of key length selection and security implications.",
+          "points": [
+            "2048-bit RSA provides approximately 112 bits of security strength",
+            "3072-bit keys recommended for long-term security (equivalent to 128-bit symmetric security)",
+            "Performance impact analysis: key size vs. operation speed (quadratic relationship)",
+            "Quantum computer impact: Shor's algorithm reduces security exponentially",
+            "Time-memory trade-off considerations for different key sizes",
+            "Hardware acceleration capabilities for different key lengths",
+            "Future-proofing considerations: migration paths to larger key sizes",
+            "Key size recommendations based on NIST SP 800-57 guidelines",
+            "Performance benchmarking methodologies for different key sizes"
+          ],
+          "codeExample": "key-length-visualization"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Public Key Fundamentals Quiz",
+    "description": "Test your understanding of public key pairs, mathematical foundations, and advanced cryptographic concepts.",
+    "totalQuestions": 10,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "In RSA key generation, why is the selection of strong primes important?",
+        "options": [
+          "Strong primes ensure p-1 and p+1 have large prime factors, protecting against specific factorization attacks",
+          "Strong primes make encryption faster",
+          "Strong primes reduce the key size required",
+          "Strong primes simplify the key generation process"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Strong primes are crucial for security as they protect against specialized factorization methods like Pollard's p-1 algorithm and Williams' p+1 algorithm."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the significance of the Chinese Remainder Theorem (CRT) in RSA operations?",
+        "options": [
+          "It provides a significant performance improvement for private key operations by working with smaller numbers",
+          "It makes the public key smaller",
+          "It improves the security of the encryption",
+          "It simplifies key generation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "CRT allows RSA decryption to be performed separately modulo p and q, then combined, resulting in up to 4x faster operations."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Why is e = 65537 (2¹⁶ + 1) commonly chosen as the public exponent?",
+        "options": [
+          "It provides a good balance between security and performance due to its binary representation",
+          "It's the largest possible value for e",
+          "It makes the private key smaller",
+          "It's required by the RSA standard"
+        ],
+        "correctAnswer": 0,
+        "explanation": "65537 is a Fermat prime with a sparse binary representation (only two 1s), making exponentiation efficient while maintaining security."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "What is the relationship between λ(n) and φ(n) in RSA?",
+        "options": [
+          "λ(n) is the least common multiple of (p-1) and (q-1), while φ(n) is their product",
+          "They are always equal",
+          "λ(n) is always larger than φ(n)",
+          "φ(n) is always larger than λ(n)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ(n) (Carmichael function) and φ(n) (Euler totient function) are related but different. λ(n) = lcm(p-1, q-1) while φ(n) = (p-1)(q-1)."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "What is the impact of Shor's algorithm on RSA security?",
+        "options": [
+          "It can break RSA in polynomial time on a quantum computer",
+          "It only affects the public key",
+          "It makes RSA more secure",
+          "It has no impact on RSA security"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Shor's algorithm, when implemented on a sufficiently powerful quantum computer, can efficiently factor large numbers, breaking RSA's security assumption."
+      },
+      {
+        "id": 6,
+        "type": "multiple-choice",
+        "question": "What is the purpose of Montgomery multiplication in RSA implementations?",
+        "options": [
+          "To perform efficient modular multiplication without expensive division operations",
+          "To generate stronger prime numbers",
+          "To reduce key size",
+          "To improve encryption speed only"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Montgomery multiplication transforms numbers into a special representation where modular multiplication can be performed more efficiently without division."
+      },
+      {
+        "id": 7,
+        "type": "multiple-choice",
+        "question": "Why are side-channel attacks particularly concerning for RSA private key operations?",
+        "options": [
+          "Private key operations can leak timing information that reveals the key bits",
+          "They only affect public key operations",
+          "They require physical access to the device",
+          "They are only theoretical attacks"
+        ],
+        "correctAnswer": 0,
+        "explanation": "RSA private key operations involve secret values, and variations in execution time or power consumption can leak information about these values."
+      },
+      {
+        "id": 8,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of the Miller-Rabin primality test in RSA?",
+        "options": [
+          "To efficiently verify that generated numbers are probably prime with high confidence",
+          "To generate prime numbers directly",
+          "To verify key pairs are correct",
+          "To speed up encryption"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Miller-Rabin is a probabilistic primality test that can quickly verify if a number is prime with a very high degree of confidence."
+      },
+      {
+        "id": 9,
+        "type": "multiple-choice",
+        "question": "What security strength does a 3072-bit RSA key provide?",
+        "options": [
+          "Approximately 128 bits of symmetric security",
+          "3072 bits of security",
+          "256 bits of security",
+          "64 bits of security"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A 3072-bit RSA key provides approximately 128 bits of security, equivalent to a 128-bit symmetric key, based on the best known classical factoring algorithms."
+      },
+      {
+        "id": 10,
+        "type": "multiple-choice",
+        "question": "What is the significance of the Extended Euclidean Algorithm in RSA?",
+        "options": [
+          "It's used to compute the modular multiplicative inverse for private key generation",
+          "It's used to generate prime numbers",
+          "It's used to encrypt messages",
+          "It's used to verify signatures"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Extended Euclidean Algorithm is crucial for finding the modular multiplicative inverse of e modulo φ(n), which becomes the private exponent d."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "public-key", "mathematics", "key-generation", "prime-numbers"]
+  }
+}

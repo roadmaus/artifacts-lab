@@ -1,0 +1,153 @@
+{
+  "id": "frameworks-overview",
+  "parentTopic": "cybersecurity-frameworks",
+  "title": "Cybersecurity Frameworks Overview",
+  "description": "A comprehensive introduction to cybersecurity frameworks, their purposes, and how they help organizations establish and maintain robust security programs.",
+  "icon": "Layout",
+  "difficulty": "Beginner",
+  "estimatedDuration": "1.5 hours",
+  "content": [
+    {
+      "title": "Understanding Cybersecurity Frameworks",
+      "icon": "BookOpen",
+      "sections": [
+        {
+          "subtitle": "What are Cybersecurity Frameworks?",
+          "description": "Introduction to the concept and importance of cybersecurity frameworks in modern organizations",
+          "points": [
+            "Structured sets of guidelines, standards, and best practices",
+            "Help organizations establish and mature their security programs",
+            "Provide common language for security across organizations",
+            "Enable consistent approach to managing security risks"
+          ]
+        },
+        {
+          "subtitle": "Key Benefits of Using Frameworks",
+          "description": "Understanding the advantages of implementing cybersecurity frameworks",
+          "points": [
+            "Standardized approach to security management",
+            "Improved risk identification and management",
+            "Enhanced communication with stakeholders",
+            "Easier compliance with regulatory requirements",
+            "Better resource allocation and prioritization"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Types of Frameworks",
+      "icon": "GitFork",
+      "sections": [
+        {
+          "subtitle": "Control-based Frameworks",
+          "description": "Frameworks that focus on specific security controls and their implementation",
+          "points": [
+            "CIS Controls: Prioritized set of actions to protect organizations",
+            "NIST SP 800-53: Comprehensive security control catalog",
+            "ISO 27001: Information security management system controls"
+          ]
+        },
+        {
+          "subtitle": "Risk-based Frameworks",
+          "description": "Frameworks that emphasize risk management and assessment",
+          "points": [
+            "NIST CSF: Focus on critical infrastructure protection",
+            "FAIR: Factor Analysis of Information Risk",
+            "ISO 31000: Risk management principles and guidelines"
+          ]
+        },
+        {
+          "subtitle": "Program-based Frameworks",
+          "description": "Frameworks for overall security program management",
+          "points": [
+            "COBIT: IT governance and management",
+            "ISF Standard of Good Practice: Comprehensive security program guidance",
+            "HITRUST CSF: Healthcare-specific security framework"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Framework Selection",
+      "icon": "FileCheck",
+      "sections": [
+        {
+          "subtitle": "Selection Criteria",
+          "description": "Key factors to consider when choosing a cybersecurity framework",
+          "points": [
+            "Industry requirements and regulations",
+            "Organization size and complexity",
+            "Available resources and expertise",
+            "Specific security objectives",
+            "Integration with existing processes"
+          ]
+        },
+        {
+          "subtitle": "Implementation Considerations",
+          "description": "Important aspects to consider during framework implementation",
+          "points": [
+            "Start with a clear scope and objectives",
+            "Assess current security maturity level",
+            "Plan for phased implementation",
+            "Ensure stakeholder buy-in and support",
+            "Consider framework compatibility and overlap"
+          ],
+          "codeExample": "// Example Framework Selection Decision Tree\nif (industry === 'healthcare') {\n  return ['HITRUST CSF', 'NIST CSF'];\n} else if (processes_credit_cards) {\n  return ['PCI DSS'].concat(baseFrameworks);\n} else if (size === 'small') {\n  return ['CIS Controls IG1'];\n}"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Cybersecurity Frameworks Fundamentals",
+    "description": "Test your understanding of cybersecurity framework basics and selection criteria",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of a cybersecurity framework?",
+        "options": [
+          "To provide structured guidance for security programs",
+          "To replace existing security controls",
+          "To eliminate all security risks",
+          "To reduce security spending"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Cybersecurity frameworks provide structured guidance and best practices to help organizations establish and maintain effective security programs."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which type of framework would be most appropriate for an organization primarily concerned with risk management?",
+        "options": [
+          "Program-based framework",
+          "Risk-based framework",
+          "Compliance-based framework",
+          "Control-based framework"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Risk-based frameworks, such as NIST CSF or FAIR, are specifically designed to help organizations manage and assess security risks."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "When selecting a framework, what should be considered first?",
+        "options": [
+          "Implementation cost",
+          "Industry requirements and regulations",
+          "Framework popularity",
+          "Technical complexity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Industry requirements and regulations should be the primary consideration as they may mandate specific frameworks or controls that must be implemented."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cybersecurity", "frameworks", "overview", "security-basics", "risk-management"]
+  }
+}

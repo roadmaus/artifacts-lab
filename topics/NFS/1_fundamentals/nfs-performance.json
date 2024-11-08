@@ -1,0 +1,115 @@
+{
+  "id": "nfs-performance",
+  "parentTopic": "linux-nfs-fundamentals",
+  "title": "NFS Performance Optimization",
+  "description": "Master the techniques for optimizing NFS performance in Linux environments. Learn about network tuning, storage optimization, caching strategies, and system configurations that impact NFS performance.",
+  "icon": "Gauge",
+  "difficulty": "Advanced",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Network Configuration Optimization",
+      "icon": "Network",
+      "sections": [
+        {
+          "subtitle": "Transport Protocol and Network Settings",
+          "description": "Understanding and optimizing network-related parameters that affect NFS performance.",
+          "points": [
+            "TCP vs UDP Considerations: TCP provides better performance for most modern networks, especially over WAN or unreliable connections. TCP handles network congestion better and supports larger transfer sizes (up to 1MB compared to UDP's 32KB limit). Key configuration: 'mount -o tcp' enables TCP transport. TCP is mandatory for NFSv4 but optional for v2/v3.",
+            "Network Buffer Tuning: Socket buffer sizes significantly impact performance. Adjust via sysctl parameters: net.core.rmem_max, net.core.wmem_max for maximum buffer sizes, and net.ipv4.tcp_rmem, net.ipv4.tcp_wmem for TCP-specific tuning. Example values for 10GbE: 'net.core.rmem_max = 16777216' and 'net.core.wmem_max = 16777216'.",
+            "MTU and Network Interface Settings: Proper MTU configuration prevents fragmentation issues. For jumbo frames, ensure consistent MTU settings across client, server, and network infrastructure. Enable flow control on network interfaces: 'ethtool -A eth0 rx on tx on'. Monitor network errors using 'netstat -s' to identify fragmentation or congestion issues.",
+            "Connection Multiplexing: NFSv4 reduces network overhead by multiplexing operations over a single connection. Earlier versions require separate connections for different services (mount, lock, status). Configure sufficient connection tracking in firewalls: 'nf_conntrack_max' and related parameters when using stateful packet inspection."
+          ],
+          "codeExample": "nfs-network-optimization-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Storage and Cache Optimization",
+      "icon": "Database",
+      "sections": [
+        {
+          "subtitle": "Storage Configuration and Cache Management",
+          "description": "Optimizing storage settings and cache behavior for improved NFS performance.",
+          "points": [
+            "Read/Write Buffer Sizes: Optimize rsize/wsize mount options based on workload and network characteristics. Modern networks benefit from larger sizes (e.g., 'rsize=262144,wsize=262144'). However, larger sizes may degrade performance on unreliable networks due to retransmission overhead. Monitor performance using 'nfsstat -c' to determine optimal values.",
+            "Cache Tuning Strategies: Balance cache consistency vs performance through mount options. 'actimeo' sets overall cache timeout, while 'acregmin/acregmax' provide fine-grained control. For heavily shared files, reduce cache times or use 'noac'. For read-mostly workloads, increase cache duration: 'acregmax=600,acregmin=60'.",
+            "Directory Entry Caching: Control directory entry caching through 'acdirmin/acdirmax' options. Longer cache times improve ls performance but may delay visibility of changes. For dynamic directories, use shorter times: 'acdirmin=30,acdirmax=300'. Monitor cache effectiveness using 'nfsstat' directory operation statistics.",
+            "Storage Layout: Optimize server's storage configuration for NFS workload. Use separate physical devices for NFS data and metadata/journals. Enable write-back caching on RAID controllers but ensure battery backup. XFS or ext4 with properly tuned journal locations provide good NFS server performance."
+          ],
+          "codeExample": "nfs-storage-optimization-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "System Resource Management",
+      "icon": "Cpu",
+      "sections": [
+        {
+          "subtitle": "Server and Client Resource Optimization",
+          "description": "Managing system resources effectively for optimal NFS performance.",
+          "points": [
+            "NFS Daemon Configuration: Tune number of NFS server threads based on workload: 'rpc.nfsd thread_count'. Monitor '/proc/net/rpc/nfsd' histogram to determine optimal thread count. Example: For high-concurrency workloads on modern hardware, start with 'thread_count = 8 * cpu_cores'. Adjust based on monitoring data.",
+            "Memory Management: Configure vm.dirty_ratio and vm.dirty_background_ratio for write-heavy workloads. Lower values reduce memory pressure but may impact write performance. Example settings for NFS server: 'vm.dirty_ratio=20' and 'vm.dirty_background_ratio=10'. Monitor dirty pages using '/proc/vmstat'.",
+            "I/O Scheduler Selection: Choose appropriate I/O scheduler for NFS workload. For enterprise storage with good controllers, 'deadline' or 'noop' often perform better than 'cfq'. Set using: 'echo scheduler_name > /sys/block/device/queue/scheduler'. Monitor I/O patterns with 'iostat -x' to validate scheduler choice.",
+            "Process Priority Management: Use ionice and nice to prioritize NFS-related processes. For critical NFS services: 'ionice -c2 -n0 -p $(pgrep nfsd)'. Consider using cgroups to manage resource allocation between different NFS exports or client groups."
+          ],
+          "codeExample": "nfs-resource-management-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "NFS Performance Optimization Assessment",
+    "description": "Test your understanding of NFS performance tuning concepts and practices",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Why might increasing rsize/wsize values not always improve NFS performance?",
+        "options": [
+          "Larger sizes require more CPU processing",
+          "Retransmission overhead on unreliable networks",
+          "The NFS protocol doesn't support large sizes",
+          "Server memory limitations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Larger rsize/wsize values can actually degrade performance on unreliable networks due to the overhead of retransmitting larger chunks of data when packets are lost."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the recommended way to determine the optimal number of NFS server threads?",
+        "options": [
+          "Use a fixed number based on RAM size",
+          "Monitor /proc/net/rpc/nfsd histogram",
+          "Always use the maximum allowed value",
+          "Match the client count"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The /proc/net/rpc/nfsd histogram provides data about thread utilization, allowing administrators to determine the optimal thread count based on actual workload patterns."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which storage configuration best supports NFS write performance?",
+        "options": [
+          "Using a single large partition",
+          "Separate devices for data and journals",
+          "Disabling write-back cache",
+          "Using software RAID"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Separating NFS data and journal locations onto different physical devices reduces I/O contention and improves overall write performance, especially during heavy workloads."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-06",
+    "language": "English",
+    "tags": ["nfs", "performance", "optimization", "linux", "system administration"]
+  }
+}

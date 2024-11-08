@@ -1,0 +1,116 @@
+{
+  "id": "defense-in-depth",
+  "parentTopic": "assets-threats-vulnerabilities",
+  "title": "Defense in Depth Strategies",
+  "description": "Master the implementation of layered security defenses to protect organizational assets. Learn how to design and deploy multiple security controls across different protection layers while ensuring comprehensive coverage against various attack vectors.",
+  "icon": "Layers",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "6 hours",
+  "content": [
+    {
+      "title": "Defense in Depth Fundamentals",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Security Control Layers",
+          "description": "Understanding the strategic implementation of multiple security control layers.",
+          "points": [
+            "Physical Security Layer encompasses: (1) Perimeter Security: fencing, gates, security guards (2) Building Security: access control systems, surveillance cameras (3) Environmental Controls: fire suppression, temperature monitoring (4) Equipment Security: locks, cables, secure enclosures. Implementation requires: risk assessment, regulatory compliance, and cost-benefit analysis. Example: Data center implementing mantraps, biometric access, and video surveillance with 90-day retention.",
+            "Network Security Layer includes: (1) Network Segmentation: VLANs, microsegmentation, zero trust architecture (2) Perimeter Defense: firewalls, IDS/IPS, VPNs (3) Network Access Control: 802.1x, MAC filtering (4) Network Monitoring: flow analysis, packet inspection. Design principles emphasize: least privilege, defense in depth, and continuous monitoring. Example: Implementing microsegmentation in cloud environments to contain potential breaches.",
+            "Application and Data Security Layer comprises: (1) Application Controls: input validation, session management, secure coding (2) Authentication: MFA, SSO, privileged access management (3) Authorization: RBAC, ABAC, JIT access (4) Data Protection: encryption, tokenization, DLP. Integration requires: secure SDLC, regular testing, and continuous validation. Example: Implementing application-layer firewalls with real-time threat intelligence updates."
+          ],
+          "codeExample": "security-layers-visual.tsx"
+        },
+        {
+          "subtitle": "Control Types and Implementation",
+          "description": "Comprehensive framework for implementing complementary security controls.",
+          "points": [
+            "Preventive Controls focus on: (1) Access Prevention: authentication, authorization, firewalls (2) Vulnerability Management: patching, hardening, secure configuration (3) Security Awareness: training, policies, procedures (4) Physical Security: barriers, locks, access cards. Implementation requires: baseline establishment, regular updates, and effectiveness monitoring. Example: Implementing JIT access for privileged accounts with automated de-provisioning.",
+            "Detective Controls include: (1) Monitoring Systems: SIEM, IDS, audit logs (2) Anomaly Detection: behavior analytics, threat hunting (3) Compliance Monitoring: configuration checking, policy validation (4) Incident Detection: alert correlation, security analytics. Integration requires: log collection, analysis capabilities, and response procedures. Example: Using AI-based UEBA to detect abnormal user behaviors.",
+            "Corrective Controls encompass: (1) Incident Response: containment, eradication, recovery (2) Backup Systems: data recovery, system restoration (3) Redundancy: failover systems, high availability (4) Remediation: vulnerability patching, system hardening. Implementation focuses on: rapid response, service restoration, and root cause resolution. Example: Automated system isolation and recovery procedures for ransomware incidents."
+          ],
+          "codeExample": "control-types-matrix-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Strategy Implementation and Management",
+      "icon": "GitMerge",
+      "sections": [
+        {
+          "subtitle": "Defense Strategy Development",
+          "description": "Methodologies for developing and maintaining comprehensive defense strategies.",
+          "points": [
+            "Strategic Planning Framework includes: (1) Risk Assessment: threat analysis, vulnerability assessment, impact evaluation (2) Control Selection: security requirements, compliance needs, cost considerations (3) Implementation Planning: resource allocation, timeline development, dependency management (4) Effectiveness Measurement: metrics definition, success criteria, ROI analysis. Framework ensures: aligned security investments, comprehensive coverage, and measurable outcomes.",
+            "Security Architecture Design principles: (1) Zero Trust: never trust, always verify (2) Least Privilege: minimal necessary access (3) Defense in Depth: multiple security layers (4) Continuous Validation: regular testing and assessment. Design process includes: current state analysis, target state definition, and transition planning. Example: Implementing zero trust architecture with continuous authentication and authorization.",
+            "Control Integration Methodology ensures: (1) Control Compatibility: interoperability between solutions (2) Coverage Analysis: gap identification and remediation (3) Performance Impact: system efficiency maintenance (4) Operational Requirements: business process support. Integration requires: thorough testing, change management, and user communication. Example: Integrating EDR with SIEM for enhanced threat detection and response."
+          ],
+          "codeExample": "defense-strategy-workflow-visual.tsx"
+        },
+        {
+          "subtitle": "Continuous Improvement and Validation",
+          "description": "Methods for maintaining and enhancing defense effectiveness.",
+          "points": [
+            "Security Testing Program includes: (1) Penetration Testing: external and internal assessments (2) Red Team Exercises: targeted attack simulations (3) Vulnerability Assessments: regular scanning and analysis (4) Configuration Reviews: security baseline validation. Program requires: structured methodology, clear scope, and actionable reporting. Example: Quarterly penetration tests with monthly vulnerability scans and continuous configuration monitoring.",
+            "Defense Effectiveness Metrics track: (1) Control Performance: detection rates, false positives (2) Coverage Gaps: unprotected assets, control failures (3) Incident Metrics: response times, resolution rates (4) Risk Reduction: threat mitigation, vulnerability remediation. Metrics support: program justification, resource allocation, and improvement planning. Regular review ensures metric relevance and accuracy.",
+            "Continuous Adaptation Framework addresses: (1) Threat Evolution: new attack methods, emerging risks (2) Technology Changes: new platforms, cloud adoption (3) Business Changes: new processes, acquisitions (4) Regulatory Updates: compliance requirements, standards changes. Framework enables: proactive defense updates, control optimization, and risk management. Example: Monthly reviews of threat intelligence to update defense strategies."
+          ],
+          "codeExample": "security-metrics-dashboard-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Defense in Depth Strategies Assessment",
+    "description": "Validate your understanding of layered security defenses and control implementation.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which control type focuses on identifying security incidents after they occur?",
+        "options": [
+          "Preventive",
+          "Detective",
+          "Corrective",
+          "Deterrent"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Detective controls are specifically designed to identify and alert on security incidents after they occur, enabling appropriate response actions."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary goal of implementing network segmentation?",
+        "options": [
+          "Reduce network speed",
+          "Contain breaches",
+          "Save bandwidth",
+          "Simplify management"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Network segmentation primarily aims to contain potential security breaches by limiting lateral movement within the network."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "How often should defense effectiveness metrics be reviewed?",
+        "options": [
+          "Regularly",
+          "Only after incidents",
+          "Annually",
+          "When audited"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Defense effectiveness metrics should be reviewed regularly to ensure continuous improvement and adaptation to evolving threats."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["defense in depth", "security controls", "network security", "physical security", "security architecture"]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "linux-nfs-fundamentals",
+  "title": "Linux NFS Fundamentals",
+  "description": "Master the Network File System (NFS) protocol in Linux environments. Learn about NFS versions, configuration, troubleshooting, and best practices for implementing reliable and secure network file sharing solutions.",
+  "icon": "Network",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "nfs-protocol-versions",
+      "title": "NFS Protocol Versions and Features",
+      "description": "Understanding different NFS versions (v2, v3, v4) and their key features, capabilities, and improvements",
+      "icon": "Versions"
+    },
+    {
+      "id": "nfs-configuration",
+      "title": "NFS Server and Client Configuration",
+      "description": "Learn how to properly configure NFS servers and clients, including exports, mount options, and security settings",
+      "icon": "Settings"
+    },
+    {
+      "id": "nfs-performance",
+      "title": "NFS Performance Optimization",
+      "description": "Techniques and best practices for optimizing NFS performance, including network, storage, and system configurations",
+      "icon": "Gauge"
+    },
+    {
+      "id": "nfs-troubleshooting",
+      "title": "NFS Troubleshooting and Common Issues",
+      "description": "Identifying and resolving common NFS issues, understanding error messages, and implementing effective solutions",
+      "icon": "AlertCircle"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Linux NFS Fundamentals Assessment",
+    "description": "Test your understanding of core NFS concepts, configuration, and troubleshooting skills",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary difference between NFS Version 2 and Version 3 regarding write operations?",
+        "options": [
+          "Version 2 supports TCP, while Version 3 only supports UDP",
+          "Version 2 requires server confirmation before replying, while Version 3 supports asynchronous writes",
+          "Version 3 only supports local file systems",
+          "Version 2 has better security features than Version 3"
+        ],
+        "correctAnswer": 1,
+        "explanation": "NFS Version 2 requires that servers save all data to disk before replying, while Version 3 introduces 'safe asynchronous writes' allowing servers to reply before data is written to disk, improving performance while maintaining data integrity."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the purpose of the 'sync' export option in NFS?",
+        "options": [
+          "To enable synchronous network communication",
+          "To ensure data is written to disk before server replies",
+          "To synchronize client and server clocks",
+          "To enable file locking synchronization"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'sync' export option ensures that the NFS server writes data to disk before replying to clients, providing better data safety at the cost of performance."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What causes the 'ESTALE' error in NFS operations?",
+        "options": [
+          "Network connectivity issues",
+          "Server running out of memory",
+          "Attempting to access a deleted or invalid file handle",
+          "Client authentication failure"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ESTALE errors occur when a file handle becomes invalid, typically due to the file being deleted, renamed, or when the export is no longer accessible."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "What is the significance of 'close-to-open' cache consistency in NFS?",
+        "options": [
+          "It ensures perfect cache coherency between clients",
+          "It validates file existence and permissions on open and writes changes on close",
+          "It closes all open files when the server restarts",
+          "It synchronizes file timestamps between clients"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Close-to-open cache consistency checks file existence and permissions when opening files and writes pending changes when closing files, providing practical file sharing capabilities for most use cases."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "Why should you avoid using the 'async' export option on NFS servers?",
+        "options": [
+          "It can lead to undetectable data corruption after server crashes",
+          "It makes the server run slower",
+          "It uses more network bandwidth",
+          "It prevents client connections"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The 'async' export option allows servers to reply before writing data to disk, which can lead to undetectable data corruption if the server crashes before writing the data to permanent storage."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-06",
+    "language": "English",
+    "tags": ["linux", "nfs", "network file system", "file sharing", "system administration"]
+  }
+}

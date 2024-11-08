@@ -1,0 +1,115 @@
+{
+  "id": "nfs-configuration",
+  "parentTopic": "linux-nfs-fundamentals",
+  "title": "NFS Server and Client Configuration",
+  "description": "Master the essential aspects of configuring NFS servers and clients in Linux environments. Learn about export options, mount configurations, security settings, and best practices for implementing reliable network file sharing.",
+  "icon": "Settings",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Server Export Configuration",
+      "icon": "Server",
+      "sections": [
+        {
+          "subtitle": "Understanding /etc/exports",
+          "description": "Mastering the NFS server's exports configuration file and its critical role in controlling access and behavior.",
+          "points": [
+            "Export File Structure: The /etc/exports file defines what directories are shared and how. Each line follows the format '/path/to/export client1(options) client2(options)'. Whitespace handling is critical - a space between hostname and options parentheses changes the entire meaning of the export. For example, '/data client1(rw)' is different from '/data client1 (rw)', where the latter accidentally grants world access.",
+            "Client Specification: Clients can be specified using hostnames, IP addresses, netgroups, or wildcards. IP networks are specified using CIDR notation (e.g., '192.168.1.0/24'). Using fully qualified domain names is recommended for consistency, especially in multi-domain environments. For example: '/data server1.domain.com(rw) *.trusted.domain(ro)'.",
+            "Critical Export Options: Key options include 'rw/ro' (read-write/read-only), 'sync/async' (write behavior), 'root_squash/no_root_squash' (root user handling), and 'subtree_check/no_subtree_check' (path verification). The 'sync' option is crucial for data safety, ensuring writes are committed to disk before replying to clients.",
+            "Export Administration: The 'exportfs' command manages exports, with '-r' to reread /etc/exports, '-a' to export all directories, and '-v' for verbose output. Changes to exports can be made active without requiring client remounts using 'exportfs -ra'."
+          ],
+          "codeExample": "nfs-exports-config-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Client Mount Configuration",
+      "icon": "Monitor",
+      "sections": [
+        {
+          "subtitle": "Mount Options and Management",
+          "description": "Understanding client-side mount options and their impact on NFS behavior and performance.",
+          "points": [
+            "Basic Mount Syntax: The mount command format is 'mount -t nfs server:/export /mountpoint'. Essential options include 'vers' (NFS version), 'rsize/wsize' (read/write buffer sizes), and 'timeo' (timeout value). Example: 'mount -t nfs -o vers=4,rsize=32768,wsize=32768 server:/data /mnt/data'.",
+            "Cache Management Options: Important caching options include 'ac/noac' (attribute caching), 'cto/nocto' (close-to-open consistency), and 'acregmin/acregmax' (cache timing controls). The 'noac' option provides stronger consistency but impacts performance by disabling attribute caching. Cache settings dramatically affect both performance and file consistency between clients.",
+            "Recovery Options: Mount options affecting recovery behavior include 'soft/hard' (server unavailability handling), 'intr/nointr' (interrupt ability), and 'retrans' (retry attempts). Hard mounts (default) are recommended for data integrity, while soft mounts can lead to data corruption but may be necessary for specific use cases.",
+            "Automated Mounting: Configure permanent mounts in /etc/fstab using the format 'server:/export /mountpoint nfs options 0 0'. Use automount daemons for dynamic mounting, which helps manage large numbers of exports and reduces system resource usage by mounting shares only when accessed."
+          ],
+          "codeExample": "nfs-mount-options-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Security Configuration",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Implementing NFS Security",
+          "description": "Configuring security features and understanding access control mechanisms in NFS.",
+          "points": [
+            "Access Control Implementation: Configure host-level access through exports file restrictions and firewall rules. User-level access is controlled through file permissions and root squashing. Example: Using netgroups for client specification and combining with specific export options like 'all_squash' for enhanced security.",
+            "Root Squashing: The 'root_squash' option (default) maps remote root users to the nobody account, preventing privileged access. 'no_root_squash' allows remote root users to retain privileges but should be used cautiously. Consider 'all_squash' for maximum security in public-facing exports.",
+            "Kerberos Integration: NFSv4 supports Kerberos authentication for enhanced security. Configuration involves setting up a KDC (Key Distribution Center), configuring principals, and specifying security levels (krb5, krb5i, krb5p) in exports and mount options. Example: 'sec=krb5p' enables full privacy protection with encryption.",
+            "Firewall Configuration: NFSv4 simplifies firewall setup by using only port 2049. Earlier versions require additional ports for auxiliary services (portmap, mountd, statd, lockd). Configure firewall rules to allow NFS traffic only from trusted networks and implement connection tracking for stateful filtering."
+          ],
+          "codeExample": "nfs-security-config-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "NFS Configuration Assessment",
+    "description": "Validate your understanding of NFS server and client configuration concepts",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the impact of adding a space between a hostname and its options parentheses in /etc/exports?",
+        "options": [
+          "It has no effect",
+          "It grants world access to the export",
+          "It blocks all access",
+          "It enables root access"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Adding a space between hostname and options parentheses in /etc/exports accidentally creates a separate entry that grants world access, potentially creating a serious security issue."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which mount option is recommended for ensuring data integrity in production environments?",
+        "options": [
+          "soft",
+          "hard",
+          "async",
+          "nolock"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'hard' mount option is recommended for production use as it ensures data integrity by continuously retrying operations until the server responds, preventing potential data corruption."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of the 'root_squash' export option?",
+        "options": [
+          "To compress root directory data",
+          "To prevent remote root users from having root privileges",
+          "To enable root access from all clients",
+          "To optimize root directory access"
+        ],
+        "correctAnswer": 1,
+        "explanation": "root_squash maps remote root users to the nobody account, preventing privileged access and enhancing security by limiting the potential impact of root-level access from clients."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-06",
+    "language": "English",
+    "tags": ["nfs", "configuration", "linux", "system administration", "security"]
+  }
+}

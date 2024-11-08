@@ -1,0 +1,112 @@
+{
+  "id": "network-fundamentals",
+  "parentTopic": "networks-and-security",
+  "title": "Network Architecture and Data Transmission",
+  "description": "Master the foundational concepts of network architecture, data transmission principles, and network topology design. Understand how data flows through networks and the implications for security design.",
+  "icon": "Share2",
+  "difficulty": "Beginner",
+  "estimatedDuration": "5 hours",
+  "content": [
+    {
+      "title": "Network Architecture Fundamentals",
+      "icon": "Workflow",
+      "sections": [
+        {
+          "subtitle": "Network Types and Topologies",
+          "description": "Understanding different network architectures and their security implications",
+          "points": [
+            "Local Area Networks (LANs): Modern LAN architectures incorporate multiple security layers: Physical security controls, network access control (802.1X), and traffic segmentation. Design considerations include: Scalability requirements, redundancy needs, and security zoning. Example: Implementing a hierarchical three-tier network design with core, distribution, and access layers, using VLANs for logical segmentation and spanning tree protocol for loop prevention.",
+            "Wide Area Networks (WANs): Enterprise WAN connectivity requires robust security: SD-WAN security features, encryption requirements, and secure routing protocols. Critical components include: MPLS services, site-to-site VPNs, and QoS mechanisms. Best practice: Implementing redundant WAN links with automatic failover, using IPsec tunnels with strong encryption for all inter-site traffic.",
+            "Metropolitan Area Networks (MANs): MANs connect multiple sites within geographic regions: Carrier ethernet services, dark fiber implementations, and wireless backhaul options. Security focus includes: Layer 2 security controls, encryption requirements, and physical path diversity. Example: Deploying carrier ethernet with MAC security (MACSec) encryption and redundant paths for critical sites."
+          ],
+          "codeExample": "network-topology-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Data Transmission Principles",
+      "icon": "ArrowLeftRight",
+      "sections": [
+        {
+          "subtitle": "Data Communication and Encoding",
+          "description": "Exploring how data is transmitted and secured across networks",
+          "points": [
+            "OSI Model Implementation: Each layer requires specific security controls: Physical layer security (cable management, port security), Data link layer protection (MAC filtering, port security), Network layer controls (ACLs, routing security), and upper layer security (encryption, authentication). Example: Implementing comprehensive security at each layer, from physical cable locks to application-layer encryption.",
+            "Data Encapsulation Process: Secure data encapsulation involves multiple protection mechanisms: Header encryption options, payload protection, and protocol security features. Security considerations include: Protocol header protection, traffic analysis prevention, and secure encapsulation methods. Best practice: Using authenticated encryption modes (like AES-GCM) for data protection while maintaining performance.",
+            "Error Detection and Recovery: Reliable data transmission requires: Cyclic redundancy checks (CRC), forward error correction (FEC), and automatic repeat request (ARQ) mechanisms. Implementation includes: Error detection codes, retransmission protocols, and quality monitoring. Example: Configuring BER thresholds and FEC on fiber optic links while monitoring for potential security incidents."
+          ],
+          "codeExample": "data-transmission-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Network Performance and Reliability",
+      "icon": "Activity",
+      "sections": [
+        {
+          "subtitle": "Network Quality and Optimization",
+          "description": "Ensuring reliable and secure network performance",
+          "points": [
+            "Bandwidth Management: Effective bandwidth control requires: Quality of Service (QoS) policies, traffic shaping mechanisms, and monitoring tools. Implementation includes: DSCP marking, queuing strategies, and bandwidth reservation. Example: Implementing hierarchical QoS policies to prioritize critical security traffic while preventing resource exhaustion attacks.",
+            "Latency Optimization: Network latency management involves: Path optimization, protocol tuning, and performance monitoring. Key considerations include: Round-trip time (RTT) monitoring, jitter control, and buffer management. Best practice: Using performance routing (PfR) with security-aware path selection to optimize both performance and security.",
+            "High Availability Design: Resilient networks require: Redundant components, failover mechanisms, and disaster recovery capabilities. Implementation includes: Device redundancy, link aggregation, and automated failover configurations. Example: Deploying HSRP with BFD for fast failure detection while maintaining security policy consistency across redundant devices."
+          ],
+          "codeExample": "network-performance-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Network Architecture Fundamentals Assessment",
+    "description": "Test your understanding of network architecture and data transmission principles",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary benefit of a hierarchical network design?",
+        "options": [
+          "Reduced cost",
+          "Simplified security",
+          "Easier scalability",
+          "Faster speed"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A hierarchical network design (core, distribution, access layers) provides easier scalability and management by modularizing the network into distinct functional layers."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "In the OSI model, which layer handles error detection and correction?",
+        "options": [
+          "Application Layer",
+          "Data Link Layer",
+          "Network Layer",
+          "Transport Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Data Link Layer (Layer 2) handles error detection and correction on a hop-by-hop basis using mechanisms like CRC checks and ARQ protocols."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the purpose of DSCP marking in QoS?",
+        "options": [
+          "Mark packets for priority treatment",
+          "Encrypt sensitive data",
+          "Detect network errors",
+          "Control access"
+        ],
+        "correctAnswer": 0,
+        "explanation": "DSCP (Differentiated Services Code Point) marking is used to classify and mark packets for different levels of service priority in QoS implementations."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["network architecture", "data transmission", "network topology", "OSI model", "network performance", "QoS"]
+  }
+}

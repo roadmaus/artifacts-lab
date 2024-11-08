@@ -1,0 +1,120 @@
+{
+  "id": "python-security-automation",
+  "title": "Automate Cybersecurity Tasks with Python",
+  "description": "Master the art of security automation using Python programming. Learn to create sophisticated security tools for log analysis, threat hunting, and incident response while building practical skills in security-focused programming, data processing, and tool development. This course bridges the gap between Python programming and practical cybersecurity automation.",
+  "icon": "Shield",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "python-security-fundamentals",
+      "title": "Python Security Fundamentals",
+      "description": "Master core Python concepts with a security focus, including secure coding practices, error handling, and building basic security tools.",
+      "icon": "Code"
+    },
+    {
+      "id": "security-text-processing",
+      "title": "Security Text Processing and Analysis",
+      "description": "Learn advanced text processing techniques for security data, including regex for IoC extraction and log analysis.",
+      "icon": "FileSearch"
+    },
+    {
+      "id": "security-automation-tools",
+      "title": "Building Security Automation Tools",
+      "description": "Develop practical security automation tools for threat hunting, incident response, and security monitoring.",
+      "icon": "Bot"
+    },
+    {
+      "id": "advanced-security-projects",
+      "title": "Advanced Security Automation Projects",
+      "description": "Create comprehensive security tools integrating multiple concepts for real-world security automation scenarios.",
+      "icon": "Construction"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Python Security Automation Assessment",
+    "description": "Validate your understanding of security automation concepts and Python programming for cybersecurity.",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which Python data structure would be most efficient for storing and checking for duplicate IP addresses in a large log file?",
+        "options": [
+          "List",
+          "Set",
+          "Dictionary with IP as values",
+          "Tuple"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A Set is most efficient for storing unique values and checking for duplicates due to its O(1) lookup time and automatic handling of duplicates."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "When processing sensitive security data in Python, what is the recommended way to handle file operations?",
+        "options": [
+          "Using try-finally blocks with proper file closing",
+          "Using print statements for debugging",
+          "Storing file contents in global variables",
+          "Reading the entire file into memory at once"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Using try-finally blocks or context managers (with statements) ensures proper file handling and resource cleanup, even if errors occur during processing."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of using regular expressions in security automation?",
+        "options": [
+          "To make code run faster",
+          "To format output in colors",
+          "To match and extract patterns like IPs and URLs",
+          "To encrypt sensitive data"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Regular expressions are primarily used in security automation for pattern matching and extracting security-relevant data like IP addresses, URLs, and other Indicators of Compromise (IoCs)."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "Why is error handling crucial in security automation scripts?",
+        "options": [
+          "To prevent script crashes during critical security operations",
+          "To make the code look professional",
+          "To improve script execution speed",
+          "To reduce memory usage"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Proper error handling is essential in security automation to ensure scripts don't crash during critical operations and maintain logging of issues for security audit trails."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "Which approach is recommended when processing large security log files in Python?",
+        "options": [
+          "Process the entire file at once using readlines()",
+          "Process the file line by line using a for loop",
+          "Store all lines in a list for later processing",
+          "Convert the file to JSON first"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Processing large log files line by line using a for loop is memory-efficient as it doesn't require loading the entire file into memory at once."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": [
+      "python",
+      "security automation",
+      "cybersecurity",
+      "scripting",
+      "threat hunting",
+      "incident response",
+      "log analysis"
+    ]
+  }
+}

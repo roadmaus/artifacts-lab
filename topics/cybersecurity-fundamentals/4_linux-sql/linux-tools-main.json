@@ -1,0 +1,112 @@
+{
+  "id": "tools-of-trade",
+  "title": "Tools of the Trade: Linux and SQL",
+  "description": "Master the essential computing tools needed for cybersecurity: Linux operating system and SQL databases. This comprehensive course provides hands-on experience with both command-line and graphical interfaces while building fundamental skills in system administration, data manipulation, and secure computing practices.",
+  "icon": "Terminal",
+  "difficulty": "Beginner",
+  "subtopics": [
+    {
+      "id": "linux-fundamentals",
+      "title": "Linux Operating System Fundamentals",
+      "description": "Master the core concepts of Linux, including system architecture, command-line operations, and essential administrative tasks",
+      "icon": "Terminal"
+    },
+    {
+      "id": "bash-essentials",
+      "title": "Bash Shell and Command Line Operations",
+      "description": "Deep dive into Bash shell scripting, text processing, and advanced command-line techniques",
+      "icon": "Code"
+    },
+    {
+      "id": "linux-security",
+      "title": "Linux Security and User Management",
+      "description": "Learn to implement robust security measures, manage users, and control system access",
+      "icon": "Shield"
+    },
+    {
+      "id": "sql-fundamentals",
+      "title": "SQL and Database Management",
+      "description": "Master database concepts and SQL queries for effective data manipulation and retrieval",
+      "icon": "Database"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Linux and SQL Foundations Assessment",
+    "description": "Validate your understanding of core Linux and SQL concepts",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which component of the Linux operating system directly interfaces with hardware?",
+        "options": [
+          "The kernel",
+          "The shell",
+          "The desktop environment",
+          "System utilities"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Linux kernel is the core component that directly interfaces with hardware, managing system resources, process scheduling, and device communication."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary advantage of using the command-line interface over a GUI?",
+        "options": [
+          "It's more visually appealing",
+          "It requires less technical knowledge",
+          "It enables automation and scripting",
+          "It's easier for beginners"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The command-line interface (CLI) enables powerful automation through scripting and batch processing, making it more efficient for repetitive tasks than GUI operations."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "In SQL, which clause is used to filter results before grouping?",
+        "options": [
+          "HAVING",
+          "WHERE",
+          "GROUP BY",
+          "FILTER"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The WHERE clause filters individual rows before any grouping occurs, while HAVING filters groups after GROUP BY is applied."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "What command displays the last few lines of a file in Linux?",
+        "options": [
+          "head",
+          "tail",
+          "last",
+          "end"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'tail' command displays the last portion of a file, commonly used for viewing recent log entries or file updates."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "Which SQL join type retains all records from both tables even when there's no match?",
+        "options": [
+          "INNER JOIN",
+          "LEFT JOIN",
+          "FULL OUTER JOIN",
+          "RIGHT JOIN"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A FULL OUTER JOIN returns all records from both tables, matching them where possible and using NULL values where no match exists."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["linux", "sql", "command line", "database", "system administration", "cybersecurity tools"]
+  }
+}

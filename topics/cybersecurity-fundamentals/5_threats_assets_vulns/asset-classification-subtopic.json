@@ -1,0 +1,106 @@
+{
+  "id": "asset-classification",
+  "parentTopic": "assets-threats-vulnerabilities",
+  "title": "Asset Classification and Protection",
+  "description": "Master the principles and methodologies of identifying, classifying, and protecting organizational assets. Learn systematic approaches to asset management, valuation techniques, and implementation of appropriate security controls based on asset criticality and business impact.",
+  "icon": "Database",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "6 hours",
+  "content": [
+    {
+      "title": "Asset Identification and Classification Fundamentals",
+      "icon": "List",
+      "sections": [
+        {
+          "subtitle": "Asset Discovery and Inventory",
+          "description": "Comprehensive methodologies for identifying and cataloging organizational assets across all categories.",
+          "points": [
+            "Asset Discovery Methods combine automated and manual approaches for comprehensive asset identification. Automated tools include network scanners (like Nmap), asset management systems (like ServiceNow), and continuous monitoring solutions. Manual processes involve physical audits, documentation reviews, and stakeholder interviews. Key outputs include: hardware inventory, software licensing data, data asset catalogs, and configuration details. Organizations must maintain real-time asset visibility through continuous discovery and inventory updates.",
+            "Asset Categories Framework defines five primary classifications: (1) Information Assets: structured data (databases), unstructured data (documents), intellectual property, and backup data. (2) Software Assets: commercial applications, custom software, operating systems, and security tools. (3) Hardware Assets: servers, endpoints, network devices, and storage systems. (4) Physical Assets: facilities, environmental controls, security systems, and equipment. (5) Human Assets: employees, contractors, knowledge base, and specialized skills. Each category requires specific protection mechanisms and management approaches.",
+            "Asset Ownership and Responsibility Structure establishes clear accountability through: Primary Owner (strategic decisions), Custodian (day-to-day management), and Users (proper usage). The ownership model must define: decision rights, maintenance responsibilities, access management, and incident response roles. Example: A customer database has a business unit director as owner, IT team as custodian, and sales team as users, each with documented responsibilities."
+          ],
+          "codeExample": "asset-discovery-workflow-visual.tsx"
+        },
+        {
+          "subtitle": "Asset Valuation and Business Impact",
+          "description": "Methodologies for determining asset value and criticality through multiple assessment dimensions.",
+          "points": [
+            "Asset Value Assessment incorporates multiple dimensions: (1) Financial Impact: replacement cost, revenue generation potential, operational costs. (2) Operational Impact: business process dependencies, service delivery requirements, recovery priorities. (3) Legal/Regulatory Impact: compliance requirements, contractual obligations, liability exposure. (4) Reputational Impact: brand value, customer trust, market position. Organizations must use quantitative and qualitative metrics to establish comprehensive asset values that guide protection investments.",
+            "Business Impact Analysis (BIA) for assets evaluates: Maximum Tolerable Downtime (MTD), Recovery Time Objective (RTO), and Recovery Point Objective (RPO). Critical considerations include: business process dependencies, seasonal variations in criticality, and downstream impacts. BIA findings drive: continuity planning, redundancy requirements, and recovery strategies. Example: An e-commerce platform might have an MTD of 4 hours, RTO of 1 hour, and RPO of 5 minutes.",
+            "Data Classification Framework implements multi-level protection based on sensitivity: (1) Public: freely shareable information requiring integrity protection. (2) Internal: business-use information requiring basic access controls. (3) Confidential: sensitive information requiring strong access controls and encryption. (4) Restricted: critical information requiring highest-level protection. Each level specifies: handling requirements, access restrictions, encryption standards, and audit controls. Classification must consider: regulatory requirements, business value, and potential damage from disclosure."
+          ],
+          "codeExample": "asset-valuation-matrix-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Protection Controls and Security Measures",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Security Control Implementation",
+          "description": "Comprehensive framework for implementing multi-layered security controls based on asset classification.",
+          "points": [
+            "Control Selection Framework follows the defense-in-depth principle with multiple protection layers: (1) Administrative Controls: policies, procedures, training programs. (2) Technical Controls: access management, encryption, monitoring systems. (3) Physical Controls: barriers, surveillance, environmental protection. Control selection criteria includes: asset value, threats, vulnerabilities, regulatory requirements, and cost-effectiveness. Implementation requires: risk assessment, control testing, and continuous monitoring.",
+            "Access Control Matrix defines protection through: Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC), and Mandatory Access Control (MAC). Implementation considerations include: principle of least privilege, separation of duties, and need-to-know basis. Access review procedures ensure: periodic validation, attestation workflows, and privilege adjustment. Example: Database access restricted to specific roles with additional controls for sensitive fields.",
+            "Data Protection Mechanisms employ multiple techniques: (1) Encryption: data-at-rest, data-in-transit, key management. (2) Data Loss Prevention: content inspection, endpoint controls, network monitoring. (3) Backup and Recovery: retention policies, secure storage, testing procedures. Protection must address: data lifecycle stages, regulatory compliance, and business continuity requirements. Example: Implementing AES-256 encryption for confidential data with secure key management."
+          ],
+          "codeExample": "security-controls-framework-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Asset Classification and Protection Assessment",
+    "description": "Validate your understanding of asset classification principles, valuation methodologies, and protection strategies.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of conducting a Business Impact Analysis (BIA) for assets?",
+        "options": [
+          "To calculate asset purchase costs",
+          "To determine recovery priorities",
+          "To identify asset owners",
+          "To test security controls"
+        ],
+        "correctAnswer": 1,
+        "explanation": "BIA primarily determines recovery priorities by analyzing how asset unavailability impacts business operations, helping establish MTD, RTO, and RPO requirements."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "In the asset ownership model, what is the main responsibility of an asset custodian?",
+        "options": [
+          "Day-to-day management",
+          "Strategic planning",
+          "Policy creation",
+          "Budget approval"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Asset custodians are responsible for day-to-day management and maintenance of assets, while owners handle strategic decisions and users handle proper usage."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which factor most strongly influences the selection of security controls for an asset?",
+        "options": [
+          "Asset age",
+          "Purchase price",
+          "Asset classification level",
+          "Physical location"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The asset's classification level, which reflects its sensitivity and importance to the organization, is the primary factor in determining appropriate security controls."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["asset management", "classification", "security controls", "data protection", "risk management"]
+  }
+}

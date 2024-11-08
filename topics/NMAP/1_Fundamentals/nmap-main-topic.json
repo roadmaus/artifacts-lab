@@ -1,0 +1,133 @@
+{
+  "id": "nmap-network-enumeration",
+  "title": "NMAP Network Enumeration",
+  "description": "Master the art and science of network enumeration using NMAP, the industry-standard network mapping tool. Learn comprehensive scanning techniques, from basic port discovery to advanced NSE scripting, while understanding security implications and professional best practices. This course provides hands-on experience with real-world scenarios, evasion techniques, and enterprise-grade methodologies essential for penetration testers and network security professionals.",
+  "icon": "Network",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "nmap-fundamentals",
+      "title": "NMAP Fundamentals",
+      "description": "Master core NMAP concepts including installation, syntax, target specification, and essential scan types. Learn to interpret scan results and understand the implications of different scanning techniques in various network environments.",
+      "icon": "Terminal"
+    },
+    {
+      "id": "port-scanning-fundamentals",
+      "title": "Port Scanning Fundamentals",
+      "description": "Dive deep into port states, scanning methodologies, and result interpretation. Learn to optimize scan timing, handle different network conditions, and effectively document findings.",
+      "icon": "Radio"
+    },
+    {
+      "id": "host-discovery-techniques",
+      "title": "Host Discovery Techniques",
+      "description": "Explore advanced host discovery methods including ping scanning, ARP techniques, and OS detection. Master host discovery in challenging network environments and through security controls.",
+      "icon": "Radar"
+    },
+    {
+      "id": "service-version-detection",
+      "title": "Service and Version Detection",
+      "description": "Learn sophisticated service fingerprinting techniques, version detection methodologies, and banner grabbing. Understand how to accurately identify services while minimizing false positives.",
+      "icon": "Search"
+    },
+    {
+      "id": "firewall-ids-evasion",
+      "title": "Firewall and IDS Evasion",
+      "description": "Master advanced evasion techniques including timing manipulation, fragmentation, decoy scanning, and source port manipulation. Learn to adapt scanning strategies to bypass security controls.",
+      "icon": "Shield"
+    },
+    {
+      "id": "nse-scripting-essentials",
+      "title": "NSE Scripting Essentials",
+      "description": "Harness the power of NMAP's Scripting Engine for automated scanning and vulnerability assessment. Learn script categories, custom development, and integration with security workflows.",
+      "icon": "Code"
+    }
+  ],
+  "mainQuiz": {
+    "title": "NMAP Network Enumeration Mastery Assessment",
+    "description": "Validate your comprehensive understanding of NMAP scanning techniques, evasion methods, and professional applications.",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which scan type would be most appropriate for a stealth scan of a production server during business hours?",
+        "options": [
+          "TCP Connect scan with maximum speed (-sT -T5)",
+          "SYN scan with paranoid timing (-sS -T0)",
+          "UDP scan with normal timing (-sU -T3)",
+          "XMAS scan with aggressive timing (-sX -T4)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A SYN scan with paranoid timing (-sS -T0) offers the best balance of stealth and reliability. The paranoid timing prevents overwhelming production services, while SYN scanning remains less detectable than full TCP connects."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "A network scan shows several ports in 'filtered' state. What is the most effective next step?",
+        "options": [
+          "Switch to TCP Connect scanning",
+          "Increase the timing template",
+          "Use ACK scanning to probe firewall rules",
+          "Run a full UDP scan"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ACK scanning (-sA) is specifically designed to map firewall rulesets and can help determine whether ports are filtered by stateful or stateless packet filtering, making it the most effective next step."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "When scanning a large enterprise network, what is the most critical first step?",
+        "options": [
+          "Run an aggressive scan with version detection",
+          "Perform comprehensive host discovery",
+          "Execute NSE vulnerability scripts",
+          "Start port scanning immediately"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Host discovery is crucial before detailed scanning of large networks. It helps identify active hosts, conserves resources, and prevents overwhelming the network with unnecessary scans of inactive hosts."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "Your scan needs to evade IDS detection. Which combination would be least likely to trigger alerts?",
+        "options": [
+          "Decoy scanning with timing delays",
+          "Fragment packets with source port manipulation",
+          "Maximum speed scan with version detection",
+          "Normal scan with NSE scripts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Combining packet fragmentation with source port manipulation effectively evades many IDS systems. Fragmentation prevents pattern matching, while source port manipulation can bypass port-based rules."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "During version detection (-sV), NMAP reports 'tcpwrapped' for several ports. What does this indicate?",
+        "options": [
+          "The ports are behind a firewall",
+          "TCP Wrappers is controlling access",
+          "The scan was blocked",
+          "Version detection failed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'tcpwrapped' response specifically indicates that TCP Wrappers is controlling access to the service. This access control mechanism accepts connections but requires authentication before allowing service access."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-07",
+    "language": "English",
+    "tags": [
+      "nmap",
+      "network security",
+      "penetration testing",
+      "port scanning",
+      "network enumeration",
+      "vulnerability assessment",
+      "security tools",
+      "network mapping"
+    ]
+  }
+}

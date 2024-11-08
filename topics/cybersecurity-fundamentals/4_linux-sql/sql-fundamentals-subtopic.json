@@ -1,0 +1,122 @@
+{
+  "id": "sql-fundamentals",
+  "parentTopic": "tools-of-trade",
+  "title": "SQL and Database Management",
+  "description": "Master fundamental SQL concepts and database management principles. Learn to write efficient queries, understand database structure, and implement secure data handling practices while working with relational databases.",
+  "icon": "Database",
+  "difficulty": "Beginner",
+  "estimatedDuration": "8 hours",
+  "content": [
+    {
+      "title": "Database Fundamentals",
+      "icon": "TableProperties",
+      "sections": [
+        {
+          "subtitle": "Relational Database Concepts",
+          "description": "Core concepts of relational databases and their implementation",
+          "points": [
+            "Database Architecture and Components form the foundation of relational databases. Key elements include tables (relations), columns (attributes), rows (records), and relationships. Understanding normalization prevents data redundancy and maintains integrity. Example: A properly normalized customer order system separates customer details, orders, and products into distinct tables with relationships.",
+            "Data Types and Constraints ensure data integrity and optimize storage. Common types include INTEGER, VARCHAR, DATETIME, and BOOLEAN. Constraints like PRIMARY KEY, FOREIGN KEY, UNIQUE, and CHECK maintain data validity. Example: Creating a users table with 'username VARCHAR(50) UNIQUE NOT NULL' ensures unique usernames and prevents null values.",
+            "Database Security Principles include authentication, authorization, and audit trails. Role-based access control (RBAC) and principle of least privilege prevent unauthorized access. Example: Creating application-specific database users with minimal required privileges: 'CREATE USER 'app_user'@'localhost' IDENTIFIED BY 'password'; GRANT SELECT, INSERT ON app_db.* TO 'app_user'@'localhost';"
+          ],
+          "codeExample": "database-concepts-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Query Fundamentals",
+      "icon": "Search",
+      "sections": [
+        {
+          "subtitle": "Basic Query Operations",
+          "description": "Essential SQL query techniques for data retrieval and manipulation",
+          "points": [
+            "SELECT Statement Fundamentals include column selection, table specification, and result filtering. Understanding SELECT, FROM, WHERE, ORDER BY, and LIMIT clauses enables precise data retrieval. Example: Finding recent high-value orders: 'SELECT customer_name, order_total FROM orders WHERE order_total > 1000 ORDER BY order_date DESC LIMIT 10;'",
+            "Data Filtering and Sorting Operations use WHERE, HAVING, and ORDER BY clauses. Comparison operators, logical operators (AND, OR, NOT), and pattern matching (LIKE, IN) enable complex filtering. Example: Finding active users with specific email domains: 'SELECT username, email FROM users WHERE status = 'active' AND email LIKE '%@company.com' ORDER BY username;'",
+            "Aggregate Functions (COUNT, SUM, AVG, MAX, MIN) and GROUP BY enable data analysis. HAVING clause filters grouped results. Example: Analyzing sales performance: 'SELECT category, COUNT(*) as total_sales, AVG(amount) as avg_sale FROM sales GROUP BY category HAVING total_sales >= 100;'"
+          ],
+          "codeExample": "query-basics-visual.tsx"
+        },
+        {
+          "subtitle": "Joins and Relationships",
+          "description": "Advanced query techniques for working with multiple tables",
+          "points": [
+            "JOIN Operations (INNER, LEFT, RIGHT, FULL) combine data from multiple tables. Understanding join types and their effects ensures accurate result sets. Example: Listing all departments and their employees: 'SELECT d.name, COUNT(e.id) as employee_count FROM departments d LEFT JOIN employees e ON d.id = e.dept_id GROUP BY d.name;'",
+            "Subqueries and Derived Tables enable complex data operations. Correlated subqueries reference outer query tables, while derived tables create temporary result sets. Example: Finding employees earning above department average: 'SELECT e.name FROM employees e WHERE salary > (SELECT AVG(salary) FROM employees WHERE dept_id = e.dept_id);'",
+            "Query Optimization Techniques improve performance through proper indexing, efficient joins, and smart query structure. EXPLAIN statement analyzes query execution plans. Example: Using indexes effectively: 'CREATE INDEX idx_email ON users(email) WHERE status = 'active';' improves email search performance."
+          ],
+          "codeExample": "joins-relationships-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Data Manipulation and Security",
+      "icon": "ShieldAlert",
+      "sections": [
+        {
+          "subtitle": "Data Modification and Security",
+          "description": "Secure data manipulation and protection techniques",
+          "points": [
+            "Data Modification Operations (INSERT, UPDATE, DELETE) safely change database content. Transaction management ensures data consistency. Example: Secure funds transfer: 'BEGIN; UPDATE accounts SET balance = balance - 100 WHERE id = 1; UPDATE accounts SET balance = balance + 100 WHERE id = 2; COMMIT;'",
+            "SQL Injection Prevention uses prepared statements and input validation. Understanding common attack vectors enables secure query construction. Example: Using parameterized queries: 'SELECT * FROM users WHERE username = ? AND password = ?' with bound parameters prevents SQL injection.",
+            "Backup and Recovery Procedures ensure data availability and integrity. Regular backups, point-in-time recovery, and backup testing prevent data loss. Example: Creating automated daily backups: 'mysqldump --single-transaction --routines --triggers database_name > backup_$(date +%Y%m%d).sql'"
+          ],
+          "codeExample": "data-security-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "SQL Fundamentals Assessment",
+    "description": "Validate your understanding of SQL concepts and database management",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which SQL join type includes all records from both tables, regardless of matching values?",
+        "options": [
+          "LEFT JOIN",
+          "INNER JOIN",
+          "FULL OUTER JOIN",
+          "RIGHT JOIN"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A FULL OUTER JOIN returns all records from both tables, including unmatched records from both sides, with NULL values where there is no match."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the main purpose of database normalization?",
+        "options": [
+          "To speed up queries",
+          "To reduce data redundancy",
+          "To encrypt data",
+          "To compress storage"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Database normalization primarily aims to reduce data redundancy and dependency by organizing data into separate, related tables following specific normal forms."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which technique best prevents SQL injection attacks?",
+        "options": [
+          "Using prepared statements",
+          "Encrypting the database",
+          "Regular backups",
+          "Strong passwords"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Prepared statements prevent SQL injection by separating SQL logic from data, ensuring that user input is treated as data and cannot be executed as code."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["sql", "database", "query optimization", "data security", "database management"]
+  }
+}

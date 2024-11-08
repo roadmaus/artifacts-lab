@@ -1,0 +1,122 @@
+{
+  "id": "bash-essentials",
+  "parentTopic": "tools-of-trade",
+  "title": "Bash Shell and Command Line Operations",
+  "description": "Master the Bash shell environment, essential command-line operations, and advanced text processing techniques. Learn to navigate, manipulate, and automate system tasks effectively using the command line interface.",
+  "icon": "Code",
+  "difficulty": "Beginner",
+  "estimatedDuration": "8 hours",
+  "content": [
+    {
+      "title": "Bash Shell Environment",
+      "icon": "Terminal",
+      "sections": [
+        {
+          "subtitle": "Shell Basics and Configuration",
+          "description": "Understanding the Bash shell environment and its configuration mechanisms",
+          "points": [
+            "Shell Environment Variables control various aspects of the shell's behavior and provide information to running processes. Key variables include PATH (command search locations), HOME (user's home directory), and PS1 (primary prompt appearance). Example: Adding a custom directory to PATH: 'export PATH=$PATH:/custom/bin' makes all executable files in that directory available as commands.",
+            "Shell Configuration Files (.bashrc, .bash_profile, .bash_history) determine shell behavior and maintain command history. The startup file sequence affects environment setup, with login shells reading .bash_profile and interactive shells reading .bashrc. Example: Adding aliases to .bashrc like 'alias ll='ls -la'' creates permanent custom commands.",
+            "Command History Management uses the .bash_history file and HISTCONTROL variable to track commands. Features include command recall (using up arrow or Ctrl-R), history expansion (!), and history size control. Example: Setting 'HISTCONTROL=ignoredups:erasedups' eliminates duplicate commands and maintains a cleaner history."
+          ],
+          "codeExample": "bash-environment-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Essential Command Line Operations",
+      "icon": "FileTerminal",
+      "sections": [
+        {
+          "subtitle": "File and Directory Operations",
+          "description": "Advanced file manipulation and directory management techniques",
+          "points": [
+            "File Operations Beyond Basics include advanced cp options (recursive, preserve attributes), mv features (interactive, backup), and rm safeguards. Understanding these prevents data loss and ensures secure file handling. Example: 'cp -a /source/. /dest/' copies files while preserving all attributes and permissions, crucial for system file backups.",
+            "Advanced Directory Navigation techniques include pushd/popd for directory stack management, find for complex file searches, and xargs for command construction. Example: 'find /var/log -type f -mtime +30 -exec rm {} \\;' safely removes log files older than 30 days.",
+            "File Descriptors and I/O Redirection control data flow between commands and files. Understanding stdin (0), stdout (1), and stderr (2) enables complex command pipelines. Example: 'command 2>/dev/null 1>output.txt' separates normal output from errors, sending errors to null and output to a file."
+          ],
+          "codeExample": "file-operations-visual.tsx"
+        },
+        {
+          "subtitle": "Text Processing and Pattern Matching",
+          "description": "Advanced text manipulation using grep, sed, and awk",
+          "points": [
+            "Pattern Matching with grep supports basic and extended regular expressions. Options like -r (recursive), -i (case-insensitive), and -v (invert match) enable powerful text searching. Example: 'grep -r -l \"password\" /etc/' lists files containing the word 'password', useful for security audits.",
+            "Stream Editing with sed enables complex text transformations. Common operations include substitution (s/old/new/), deletion (d), and line selection (n,mp). Example: 'sed -i \"s/\\b(https?:\\/\\/)?(?:www\\.)?([^[:space:]]+)/[\\2]/g\" file.txt' converts URLs to simplified markdown links.",
+            "Advanced Text Processing using awk provides full programming capabilities for text analysis. Features include field processing, pattern matching, and arithmetic operations. Example: 'awk -F, \"{sum += $3} END {print \\\"Average: \\\" sum/NR}\" data.csv' calculates column averages in CSV files."
+          ],
+          "codeExample": "text-processing-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Shell Scripting Fundamentals",
+      "icon": "FileCode",
+      "sections": [
+        {
+          "subtitle": "Script Structure and Control Flow",
+          "description": "Essential elements of shell script development and flow control",
+          "points": [
+            "Script Structure and Best Practices include shebang lines, exit codes, and variable handling. Proper error checking and documentation ensure script reliability. Example: Using 'set -euo pipefail' at script start enables strict error handling, preventing silent failures.",
+            "Control Structures (if, case, loops) manage script flow. Understanding test conditions, loop types, and exit conditions is crucial for robust scripts. Example: 'while IFS= read -r line; do [commands] done < input.txt' properly reads files line by line, handling spaces and special characters.",
+            "Function Development and Usage modularize code and improve maintainability. Functions can take parameters, return values (via exit codes), and maintain local variables. Example: Creating a logging function 'log() { echo \"$(date '+%Y-%m-%d %H:%M:%S') $*\" >> script.log; }' standardizes script logging."
+          ],
+          "codeExample": "shell-scripting-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Bash and Command Line Assessment",
+    "description": "Validate your understanding of Bash shell operations and command line skills",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which command would you use to find all files modified in the last 24 hours?",
+        "options": [
+          "ls -t",
+          "find . -mtime -1",
+          "grep -t 24",
+          "dir -m 24"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The find command with -mtime -1 searches for files modified within the last 24 hours. The negative value means 'less than' the specified number of days."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the purpose of the 'set -e' command in a bash script?",
+        "options": [
+          "To exit the script",
+          "To echo commands",
+          "To stop on errors",
+          "To set variables"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'set -e' command causes a script to exit immediately if any command returns a non-zero (error) status, helping to catch and handle errors."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which awk command would print the last field of each line in a file?",
+        "options": [
+          "awk '{print $1}'",
+          "awk '{print $0}'",
+          "awk '{print $NF}'",
+          "awk '{print $END}'"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In awk, $NF refers to the last field of each line, regardless of how many fields are present. $0 prints the entire line, and $1 prints the first field."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["bash", "shell scripting", "command line", "text processing", "linux", "automation"]
+  }
+}

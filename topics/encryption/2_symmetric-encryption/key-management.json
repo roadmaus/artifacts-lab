@@ -1,0 +1,156 @@
+{
+  "id": "key-management",
+  "parentTopic": "symmetric-encryption",
+  "title": "Key Management and Distribution",
+  "description": "Learn essential practices for generating, storing, distributing, and rotating symmetric encryption keys securely, including key lifecycle management and distribution protocols.",
+  "icon": "KeyRound",
+  "difficulty": "Advanced",
+  "estimatedDuration": "2.5 hours",
+  "content": [
+    {
+      "title": "Key Generation and Storage",
+      "icon": "Key",
+      "sections": [
+        {
+          "subtitle": "Secure Key Generation",
+          "description": "Best practices for generating cryptographically secure keys.",
+          "points": [
+            "Use cryptographically secure random number generators (CSPRNG)",
+            "Ensure sufficient entropy during generation",
+            "Follow key length requirements for chosen algorithm",
+            "Never use predictable or weak keys"
+          ],
+          "codeExample": "rsa-key-generation"
+        },
+        {
+          "subtitle": "Key Storage Security",
+          "description": "Methods and considerations for secure key storage.",
+          "points": [
+            "Use hardware security modules (HSM) when possible",
+            "Encrypt keys at rest using key encryption keys (KEK)",
+            "Implement proper access controls and audit logging",
+            "Consider secure key backup and recovery procedures",
+            "Never store keys in plaintext or version control"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Key Distribution Protocols",
+      "icon": "Share2",
+      "sections": [
+        {
+          "subtitle": "Secure Distribution Methods",
+          "description": "Protocols and techniques for safely sharing symmetric keys.",
+          "points": [
+            "Diffie-Hellman key exchange protocol",
+            "Key wrapping using asymmetric encryption",
+            "Out-of-band distribution methods",
+            "Certificate-based key distribution"
+          ]
+        },
+        {
+          "subtitle": "Key Exchange Protocols",
+          "description": "Understanding common key exchange mechanisms.",
+          "points": [
+            "TLS key exchange process",
+            "Kerberos key distribution",
+            "Perfect Forward Secrecy (PFS)",
+            "Session key generation and management"
+          ],
+          "codeExample": "key-distribution"
+        }
+      ]
+    },
+    {
+      "title": "Key Lifecycle Management",
+      "icon": "RefreshCw",
+      "sections": [
+        {
+          "subtitle": "Key Rotation",
+          "description": "Implementing effective key rotation policies.",
+          "points": [
+            "Regular key rotation schedules",
+            "Automatic vs. manual rotation",
+            "Managing multiple active keys",
+            "Handling key version transitions"
+          ]
+        },
+        {
+          "subtitle": "Key Revocation",
+          "description": "Procedures for handling compromised or expired keys.",
+          "points": [
+            "Immediate key revocation processes",
+            "Maintaining revocation lists",
+            "Emergency key replacement procedures",
+            "Impact assessment and recovery"
+          ]
+        },
+        {
+          "subtitle": "Monitoring and Auditing",
+          "description": "Tracking key usage and maintaining audit trails.",
+          "points": [
+            "Key usage monitoring",
+            "Access logging and auditing",
+            "Compliance reporting",
+            "Detection of unauthorized access attempts"
+          ],
+          "codeExample": "// Example of key usage logging\nfunction logKeyUsage(keyId, operation, user) {\n    const logEntry = {\n        timestamp: new Date().toISOString(),\n        keyId: keyId,\n        operation: operation,\n        user: user,\n        systemInfo: getSystemInfo(),\n        auditTrail: generateAuditTrail()\n    };\n    \n    // Store log securely\n    secureLog.append(logEntry);\n    \n    // Check for suspicious patterns\n    alertIfSuspicious(logEntry);\n}"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Key Management Quiz",
+    "description": "Test your understanding of key management principles and practices",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which of the following is the most secure way to store symmetric keys?",
+        "options": [
+          "Hardware Security Module (HSM)",
+          "Environment variables",
+          "Configuration files",
+          "Database table"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Hardware Security Modules (HSMs) provide the highest level of security for key storage, offering both physical and logical protection for cryptographic keys."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is Perfect Forward Secrecy (PFS)?",
+        "options": [
+          "A property ensuring past sessions cannot be decrypted if a long-term key is compromised",
+          "A method of storing keys in multiple locations",
+          "A technique for generating random keys",
+          "A protocol for key rotation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Perfect Forward Secrecy ensures that session keys cannot be compromised even if the long-term key is later compromised, by generating unique session keys for each session."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of key rotation?",
+        "options": [
+          "To limit the impact of potential key compromises",
+          "To increase encryption speed",
+          "To reduce storage requirements",
+          "To simplify key distribution"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Key rotation limits the amount of data encrypted with any single key and reduces the impact of potential key compromises by regularly changing encryption keys."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["security", "key-management", "cryptography", "best-practices"]
+  }
+}

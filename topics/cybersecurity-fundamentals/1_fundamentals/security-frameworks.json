@@ -1,0 +1,112 @@
+{
+  "id": "security-frameworks",
+  "parentTopic": "foundations-of-cybersecurity",
+  "title": "Security Frameworks and Controls",
+  "description": "Comprehensive examination of major security frameworks, compliance standards, and control types used to establish and maintain effective security programs. Learn how to select, implement, and assess security controls within various frameworks.",
+  "icon": "Layout",
+  "difficulty": "Beginner",
+  "estimatedDuration": "4 hours",
+  "content": [
+    {
+      "title": "Major Security Frameworks",
+      "icon": "GitFork",
+      "sections": [
+        {
+          "subtitle": "Understanding Security Frameworks",
+          "description": "An exploration of widely-adopted security frameworks that provide structured approaches to managing security risks and implementing controls.",
+          "points": [
+            "NIST Cybersecurity Framework (CSF) consists of five core functions: Identify, Protect, Detect, Respond, and Recover. Implementation tiers range from Partial (Tier 1) to Adaptive (Tier 4). Framework profiles help organizations move from current to target state. Example: A healthcare organization using CSF to structure their security program, mapping controls to HIPAA requirements and identifying gaps.",
+            "ISO 27001 provides a systematic approach to information security through the Information Security Management System (ISMS). Key components include: Scope definition, risk assessment methodology, Statement of Applicability (SoA), and continuous improvement through the Plan-Do-Check-Act cycle. Example: Financial institution implementing ISO 27001 to demonstrate robust security practices to clients and regulators.",
+            "MITRE ATT&CK Framework maps adversary tactics and techniques, enabling organizations to assess security capabilities and gaps. The framework covers: Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Command and Control, Exfiltration, and Impact. Example: Using ATT&CK to evaluate security tools and develop threat hunting programs."
+          ],
+          "codeExample": "framework-comparison-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Control Categories and Types",
+      "icon": "Shield",
+      "sections": [
+        {
+          "subtitle": "Security Control Implementation",
+          "description": "Detailed analysis of security control types, their implementation, and effectiveness measurement.",
+          "points": [
+            "Administrative Controls involve policies, procedures, and guidelines that define security expectations and requirements. Examples include: Security policies, standard operating procedures (SOPs), personnel security policies, and change management procedures. Critical components: Clear documentation, regular reviews, enforcement mechanisms, and employee training programs. Example: Implementing a comprehensive acceptable use policy with annual certification requirements.",
+            "Technical Controls utilize technology to protect assets and enforce security policies. Categories include: Preventive (firewalls, encryption), Detective (IDS/IPS, SIEM), Corrective (backup systems, patch management), and Compensating controls (alternative measures when primary controls aren't feasible). Example: Implementing multi-factor authentication with biometric and token-based factors to compensate for password vulnerabilities.",
+            "Physical Controls protect tangible assets and computing resources. Key elements include: Access control systems, surveillance, environmental controls, and secure areas. Implementation considerations: Cost, effectiveness, regulatory requirements, and user impact. Example: Using mantraps, biometric access controls, and CCTV systems to protect data centers."
+          ],
+          "codeExample": "control-types-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Compliance and Industry Standards",
+      "icon": "CheckCircle",
+      "sections": [
+        {
+          "subtitle": "Regulatory Compliance Implementation",
+          "description": "Understanding major compliance requirements and implementing controls to meet regulatory obligations.",
+          "points": [
+            "GDPR (General Data Protection Regulation) requirements focus on personal data protection and privacy rights. Key principles: Lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, and confidentiality. Implementation involves: Data mapping, privacy impact assessments, consent management, and breach notification procedures. Example: Implementing data subject access request (DSAR) processes with automated workflow and response tracking.",
+            "PCI DSS (Payment Card Industry Data Security Standard) mandates security controls for payment card data. 12 requirements cover: Network security, encryption, access control, monitoring, testing, and security management. Critical processes: Cardholder data discovery, scope reduction, continuous monitoring, and quarterly vulnerability scanning. Example: Implementing network segmentation to isolate cardholder data environment and reduce PCI scope.",
+            "SOC 2 (Service Organization Control) focuses on five trust service criteria: Security, availability, processing integrity, confidentiality, and privacy. Implementation requires: Control definition, documentation, testing, and independent auditor assessment. Key activities: Risk assessment, control mapping, evidence collection, and gap remediation. Example: Cloud service provider implementing SOC 2 controls to demonstrate security assurance to customers."
+          ],
+          "codeExample": "compliance-mapping-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Security Frameworks and Controls Assessment",
+    "description": "Evaluate your understanding of security frameworks, control types, and compliance requirements.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which function in the NIST Cybersecurity Framework focuses on developing and implementing appropriate safeguards?",
+        "options": [
+          "Detect",
+          "Protect",
+          "Respond",
+          "Identify"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Protect function within the NIST CSF focuses on developing and implementing appropriate safeguards to ensure delivery of critical infrastructure services and limit potential cybersecurity events."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of compensating controls?",
+        "options": [
+          "To replace all existing controls",
+          "To provide alternative security measures when primary controls aren't feasible",
+          "To detect security incidents",
+          "To enforce physical security"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Compensating controls provide alternative security measures when primary controls cannot be implemented due to technical, business, or operational constraints."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Under GDPR, which of the following is a key principle for processing personal data?",
+        "options": [
+          "Maximum data collection",
+          "Indefinite data retention",
+          "Data minimization",
+          "Unrestricted processing"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Data minimization is a key GDPR principle requiring that personal data collection and processing be limited to what is necessary for the specified purposes."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-01",
+    "language": "English",
+    "tags": ["security frameworks", "security controls", "compliance", "NIST", "ISO 27001", "GDPR", "PCI DSS"]
+  }
+}

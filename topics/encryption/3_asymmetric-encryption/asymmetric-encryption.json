@@ -1,0 +1,112 @@
+{
+  "id": "asymmetric-encryption",
+  "title": "Asymmetric Encryption",
+  "description": "Learn about public-key cryptography, how asymmetric encryption works, and its real-world applications in securing digital communications and transactions.",
+  "icon": "Lock",
+  "difficulty": "Intermediate",
+  "subtopics": [
+    {
+      "id": "public-key-fundamentals",
+      "title": "Public Key Fundamentals",
+      "description": "Understanding the basics of public and private keys, mathematical principles, and key generation.",
+      "icon": "Key"
+    },
+    {
+      "id": "rsa-algorithm",
+      "title": "RSA Algorithm",
+      "description": "Deep dive into the RSA algorithm, including key generation, encryption, and decryption processes.",
+      "icon": "Binary"
+    },
+    {
+      "id": "digital-signatures",
+      "title": "Digital Signatures",
+      "description": "How to use asymmetric encryption for creating and verifying digital signatures.",
+      "icon": "PenTool"
+    },
+    {
+      "id": "practical-applications-asymmetric",
+      "title": "Practical Applications",
+      "description": "Real-world implementations in SSL/TLS, secure email, and cryptocurrency.",
+      "icon": "Globe"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Asymmetric Encryption Fundamentals",
+    "description": "Test your understanding of asymmetric encryption concepts and applications.",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the main difference between symmetric and asymmetric encryption?",
+        "options": [
+          "Asymmetric encryption uses different keys for encryption and decryption",
+          "Asymmetric encryption is always faster than symmetric encryption",
+          "Asymmetric encryption only uses one key",
+          "Asymmetric encryption cannot be used for digital signatures"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Asymmetric encryption uses a pair of mathematically related keys - a public key for encryption and a private key for decryption, while symmetric encryption uses the same key for both operations."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which of these is NOT a common use case for asymmetric encryption?",
+        "options": [
+          "Bulk data encryption of large files",
+          "Digital signatures",
+          "Key exchange in SSL/TLS",
+          "Secure email communication"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Due to its computational overhead, asymmetric encryption is not typically used for bulk data encryption. Symmetric encryption is preferred for large files, while asymmetric encryption is used for key exchange and authentication."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "In RSA encryption, which key is used to encrypt data?",
+        "options": [
+          "The recipient's public key",
+          "The sender's private key",
+          "The recipient's private key",
+          "Both public and private keys simultaneously"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In RSA encryption, data is encrypted using the recipient's public key, ensuring that only the recipient (who holds the corresponding private key) can decrypt the message."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "What happens if you lose your private key?",
+        "options": [
+          "All data encrypted with the corresponding public key becomes permanently inaccessible",
+          "You can regenerate the private key from the public key",
+          "The data automatically switches to symmetric encryption",
+          "You can recover the key through your email"
+        ],
+        "correctAnswer": 0,
+        "explanation": "If you lose your private key, any data encrypted with the corresponding public key becomes permanently inaccessible, as the private key cannot be regenerated or recovered."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "Which property of asymmetric encryption enables digital signatures?",
+        "options": [
+          "The ability to encrypt with a private key and decrypt with a public key",
+          "The speed of the encryption process",
+          "The length of the keys used",
+          "The use of symmetric keys"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Digital signatures work by encrypting a message digest with the sender's private key, which can then be verified using the sender's public key - this is possible due to the reversible nature of asymmetric key pairs."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-10-26",
+    "language": "English",
+    "tags": ["cryptography", "security", "encryption", "public-key", "RSA"]
+  }
+}

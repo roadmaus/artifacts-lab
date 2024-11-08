@@ -1,0 +1,112 @@
+{
+  "id": "network-security-testing",
+  "title": "Network Security Testing",
+  "description": "Master the fundamentals of network security testing, including wireless network analysis, packet capture techniques, and security assessment methodologies. Learn industry-standard tools, understand network protocols, and develop practical skills for identifying and evaluating network vulnerabilities.",
+  "icon": "Wifi",
+  "difficulty": "Beginner",
+  "subtopics": [
+    {
+      "id": "wireless-network-fundamentals",
+      "title": "Wireless Network Fundamentals",
+      "description": "Understanding IEEE 802.11 protocols, authentication methods, and wireless network architecture",
+      "icon": "Radio"
+    },
+    {
+      "id": "packet-analysis-basics",
+      "title": "Packet Analysis Fundamentals",
+      "description": "Learn packet capture techniques, traffic analysis, and protocol interpretation",
+      "icon": "Network"
+    },
+    {
+      "id": "security-assessment-tools",
+      "title": "Security Assessment Tools",
+      "description": "Master essential network security testing tools and methodologies",
+      "icon": "Tool"
+    },
+    {
+      "id": "wireless-attack-vectors",
+      "title": "Wireless Attack Vectors",
+      "description": "Understanding common wireless network vulnerabilities and attack methodologies",
+      "icon": "Shield"
+    }
+  ],
+  "mainQuiz": {
+    "title": "Network Security Testing Assessment",
+    "description": "Validate your understanding of network security testing concepts and methodologies",
+    "totalQuestions": 5,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "What is the primary purpose of monitor mode in wireless network testing?",
+        "options": [
+          "To connect to multiple networks simultaneously",
+          "To capture all wireless packets regardless of destination",
+          "To increase wireless signal strength",
+          "To hide the testing device from detection"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Monitor mode allows a wireless interface to capture all wireless packets in range, regardless of their destination, which is essential for network analysis and testing."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which information is NOT typically included in wireless beacon frames?",
+        "options": [
+          "Connected client MAC addresses",
+          "Network name (ESSID)",
+          "Supported data rates",
+          "Channel information"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Beacon frames contain network configuration information like ESSID, encryption, data rates, and channel, but not the MAC addresses of connected clients."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the purpose of MAC filtering in wireless networks?",
+        "options": [
+          "To encrypt wireless traffic",
+          "To boost signal strength",
+          "To restrict network access based on device MAC addresses",
+          "To compress network packets"
+        ],
+        "correctAnswer": 2,
+        "explanation": "MAC filtering is a security feature that restricts network access to only devices whose MAC addresses are on an approved list."
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "How often does an Access Point typically send beacon frames?",
+        "options": [
+          "About 10 times per second",
+          "Once per minute",
+          "Every 5 seconds",
+          "Only when clients connect"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Access Points broadcast beacon frames approximately 10 times per second to announce their presence and share network information."
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "In Open System Authentication, what happens after a client requests authentication?",
+        "options": [
+          "The AP immediately grants network access",
+          "The client must provide encryption keys",
+          "The AP authenticates and awaits association request",
+          "The client must verify its identity"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In Open System Authentication, the AP authenticates the client without requiring credentials, but the client must still request association before gaining network access."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-07",
+    "language": "English",
+    "tags": ["network security", "wireless security", "packet analysis", "security testing", "network protocols", "wireless networks"]
+  }
+}

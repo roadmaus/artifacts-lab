@@ -1,0 +1,110 @@
+{
+  "id": "security-text-processing",
+  "parentTopic": "python-security-automation",
+  "title": "Security Text Processing and Analysis",
+  "description": "Master advanced text processing techniques essential for security automation, including regular expressions for IOC extraction, log parsing, and pattern matching. Learn to process and analyze security-relevant text data efficiently and accurately.",
+  "icon": "FileSearch",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "8 hours",
+  "content": [
+    {
+      "title": "Regular Expressions for Security",
+      "icon": "Search",
+      "sections": [
+        {
+          "subtitle": "IOC Pattern Matching",
+          "description": "Advanced regular expression patterns for identifying and extracting various types of Indicators of Compromise (IOCs) from security data.",
+          "points": [
+            "IP Address Pattern Matching: Complex regex patterns for IPv4 and IPv6 addresses, including validation. Advanced techniques include handling CIDR notation and IP ranges. Example: Pattern ^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$ for strict IPv4 matching with explanation of each component.",
+            "URL and Domain Extraction: Sophisticated patterns for identifying URLs, domains, and subdomains in security logs. Includes handling of various URL formats, schemes, and internationalized domain names. Example: Pattern for matching URLs while avoiding false positives in log data, including proper handling of URL-encoded characters and parameters.",
+            "Email Address Detection: Advanced patterns for email address extraction with security considerations. Includes validation against RFC standards and detection of potentially malicious patterns. Example: Comprehensive email regex that balances accuracy with performance, including handling of plus addressing and subdomain routing.",
+            "File Hash Recognition: Patterns for identifying different types of cryptographic hashes (MD5, SHA1, SHA256, etc.). Includes validation of format and length. Example: Pattern collection for different hash types with length verification and format validation to ensure accuracy.",
+            "Malware Indicators: Regular expressions for identifying common malware patterns, file paths, and registry keys. Includes patterns for known malware naming conventions and suspicious file characteristics. Example: Patterns for detecting suspicious PowerShell commands, encoded scripts, and common malware file paths."
+          ],
+          "codeExample": "ioc-regex-patterns-visual.tsx"
+        },
+        {
+          "subtitle": "Log File Pattern Analysis",
+          "description": "Techniques for extracting and analyzing security-relevant information from various log formats using regular expressions.",
+          "points": [
+            "Log Format Recognition: Parsing different log formats (Common Log Format, Extended Log Format, Windows Event Logs) using regex. Includes handling of timestamp formats, severity levels, and event IDs. Example: Detailed patterns for parsing Apache, IIS, and Windows Security Event logs with named capture groups.",
+            "Timestamp Extraction and Normalization: Advanced regex for parsing various timestamp formats and converting to standardized format. Includes handling of timezone information and different date formats. Example: Comprehensive timestamp parsing with support for multiple formats and proper timezone handling.",
+            "Error and Alert Pattern Matching: Regular expressions for identifying security events, errors, and alerts in logs. Includes severity classification and correlation patterns. Example: Patterns for detecting failed login attempts, privilege escalation, and suspicious process execution.",
+            "Session and Transaction Analysis: Patterns for tracking user sessions, transactions, and activity sequences in logs. Includes correlation of related events and session reconstruction. Example: Regex patterns for following user activity across multiple log entries and identifying session boundaries."
+          ],
+          "codeExample": "log-analysis-patterns-visual.tsx"
+        }
+      ]
+    },
+    {
+      "title": "Advanced Text Processing Techniques",
+      "icon": "FileText",
+      "sections": [
+        {
+          "subtitle": "Security Data Extraction and Analysis",
+          "description": "Advanced techniques for processing and analyzing security-relevant text data beyond regular expressions.",
+          "points": [
+            "Content Classification: Text processing techniques for classifying security content and alerts. Includes methods for categorizing threats, identifying attack patterns, and prioritizing alerts. Example: Implementation of text classification for security alerts using keyword analysis and pattern matching.",
+            "Data Normalization: Standardization techniques for security data from different sources. Includes handling of different formats, character encodings, and data representations. Example: Normalizing vendor-specific security alert formats into a standard schema.",
+            "Pattern Correlation: Advanced techniques for correlating patterns across multiple data sources. Includes temporal correlation, spatial analysis, and behavior pattern matching. Example: Correlating login attempts across different system logs to identify brute force attacks.",
+            "Performance Optimization: Techniques for efficient processing of large security datasets. Includes streaming processing, batching, and optimization strategies. Example: Implementing efficient text processing pipelines for real-time log analysis."
+          ],
+          "codeExample": "advanced-text-processing-visual.tsx"
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "title": "Security Text Processing Assessment",
+    "description": "Validate your understanding of text processing techniques for security applications.",
+    "totalQuestions": 3,
+    "passingScore": 80,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which regex pattern correctly matches a SHA-256 hash?",
+        "options": [
+          "[0-9a-f]{64}",
+          "[A-Fa-f0-9]{64}",
+          "\\w{64}",
+          "[0-9A-F]{64}"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The pattern [A-Fa-f0-9]{64} correctly matches SHA-256 hashes by allowing both uppercase and lowercase hexadecimal characters with exactly 64 characters length."
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "When processing security logs, what is the primary advantage of using named capture groups in regex?",
+        "options": [
+          "It makes the regex faster",
+          "It provides meaningful labels for extracted data",
+          "It uses less memory",
+          "It prevents regex injection attacks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Named capture groups provide meaningful labels for extracted data, making the code more maintainable and self-documenting when processing complex log formats."
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "What is the best approach for handling multiple timestamp formats in security logs?",
+        "options": [
+          "Convert all timestamps to epoch time",
+          "Use multiple regex patterns in sequence",
+          "Always use UTC format",
+          "Store timestamps as strings"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Converting all timestamps to epoch time provides a standardized format for comparison and analysis, eliminating timezone and format inconsistencies in security log analysis."
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-11-05",
+    "language": "English",
+    "tags": ["text processing", "regular expressions", "log analysis", "pattern matching", "security data", "IOC extraction"]
+  }
+}
