@@ -1,39 +1,35 @@
 # Artifacts Lab
 
-## Summary
-
-Artifacts Lab is a fork of the Claude Artifact Runner, transformed into a specialized learning platform that enables managing and rendering hundreds of components within a unified knowledge base. The project extends the original runner's capabilities to support educational use cases and bulk component management.
+A specialized platform for managing and rendering interactive visual components within a knowledge base, designed to enhance learning through visual engagement.
 
 ## Overview
 
-This platform is designed for educators and learners who want to:
+Artifacts Lab transforms the Claude Artifact Runner into an educational platform that excels at:
 
-1. Organize and manage large collections of educational components
-2. Create structured learning paths through component-based content
-3. Efficiently render and serve multiple components simultaneously
-4. Build and maintain educational knowledge bases
-5. visual learners
+- Managing large collections of visual and interactive components
+- Creating engaging learning experiences for visual learners
+- Rendering multiple components simultaneously within topics
+- Building maintainable knowledge bases with visual elements
 
-## What's Included
+## Key Features
 
-### Original Features
+- **Visual Component Management**: Organize and render multiple interactive components
+- **Topic-Based Structure**: Group related components into learning paths
+- **Interactive Learning**: Support for various component types including:
+  - Interactive diagrams
+  - Visual demonstrations
+  - Progress tracking
+  - Knowledge checks
+  - Practice exercises
 
-- **React 18** for building user interfaces
-- **TypeScript** for type-safe development
-- **Vite** for fast development and building
-- **Shadcn UI** for pre-built, customizable components
-- **Tailwind CSS** for styling
-- **Recharts** for data visualizations
-- **Lucide React** for icons
+## Tech Stack
 
-### Enhanced Features
+Built with modern technologies for optimal performance:
 
-- Knowledge base integration
-- Bulk component rendering system
-- Topics-based organization structure
-- Performance optimizations for large component sets
-- Educational content management tools
-- 
+- React 18 with TypeScript
+- Vite for development
+- Tailwind CSS + Shadcn UI
+- Recharts for data visualization
 
 #### Prerequisites
 
